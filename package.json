@@ -1,0 +1,23 @@
+{
+  "name": "paypal",
+  "version": "1.0.0",
+  "description": "E-wallet\r This is my thesis project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BateBo-2000/https---github.com-BateBo-2000-E-wallet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BateBo-2000/https---github.com-BateBo-2000-E-wallet/issues"
+  },
+  "homepage": "https://github.com/BateBo-2000/https---github.com-BateBo-2000-E-wallet#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
