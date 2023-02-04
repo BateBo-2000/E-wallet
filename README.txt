@@ -16,7 +16,7 @@ It will include the following features:
 
 I am planning to use 3 layer architecture:
 -database - MySQL workbench
--backend - JS, typescript and D3
+-backend - JS, typescript
 -frontend - html/css, JS
 
 The backend will be divided on 3 layers: 
