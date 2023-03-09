@@ -1,4 +1,5 @@
 const express = require('express');
+// const test = require('./../database/queries')                        /*testing purposes*/
 let routerAccount = express.Router();
 /* this router is handling everything that starts with /account/*/
 
