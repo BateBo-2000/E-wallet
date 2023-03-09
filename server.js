@@ -1,9 +1,22 @@
 require('dotenv').config()
 const express = require('express')
 const jwt = require('jsonwebtoken')
+const {auth} = require('./authorization_service')
+const routerAccount = require('./routes/account')
+const routerExchange = require('./routes/exchange')
+const routerStats = require('./routes/stats')
+
 const app = express()
 const port = process.env.PORT || 5000
 app.use(express.json())
+
+//routes
+app.use('/stats',routerStats)
+app.use('/account',routerAccount)
+app.use('/exchange-rates',routerExchange)
+
+//testing data
+/*
 
 const test_data = [{
     a:1,
@@ -25,17 +38,9 @@ app.post('/login', (req,res)=>{
     res.json({accessToken: token})
 })
 
-function auth (req, res, next) {
-    const authHeader = req.headers['authorization']
-    const token = authHeader && authHeader.split(' ')[1]
-    if(authHeader == null) return res.sendStatus(401)
 
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, user) => {
-        if(error)return res.sendStatus(403)
-        req.user = user
-        next()
-    })
-}
+*/
 
-
-app.listen(5000, () => {console.log(`Server listening on port ${port}`)})
+app.listen(port,err => {
+    if(err) return console.log('ERROR!'+err) 
+    console.log(`Server listening on port ${port}`)})
