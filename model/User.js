@@ -52,9 +52,10 @@ class User {
             const [changer, _] = await db.execute(sql)
         return changer
     }
-    async getBuyUsername(username){
-        //when you try to login this searches by username and password
-        //writes the attempts if username matches in account_logins
+    async getByUsername(username){ //tested
+        let sql = `SELECT * FROM login_data WHERE username = "${username}";`
+        const user = await db.execute(sql)
+        return user[0]
     }
     async getById(id){
         let sql = `SELECT * FROM users WHERE user_id = ${id};`
