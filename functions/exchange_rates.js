@@ -54,10 +54,32 @@ async function getInTime(currencyArray, baseCurrency, apikey, start_date, end_da
     console.log(error)
   } 
 }
-//get fluctuation
 
+//conversion
+async function convert(fromCurrency, toCurrency, amount, date, apikey){
+  try {
+    const res = await axios.get('https://api.apilayer.com/exchangerates_data/convert',{
+    headers: {
+      "apikey":apikey
+    },
+    params: {
+      "from ": fromCurrency,
+      "to": toCurrency,
+      "amount": amount,
+      "date": dateFormater(date)
+    }
+  })
+    return res.data
+  } catch (error) {
+    console.log(error)
+  } 
+}
+
+
+//exporting
 module.exports = {
   getLatest,
   getInTime,
-  dateFormater
+  dateFormater,
+  convert
 }

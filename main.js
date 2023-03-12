@@ -1,7 +1,9 @@
-const {getInTime} = require('./functions/exchange_rates')
-const {dateFormater} = require('./functions/exchange_rates')
+require('dotenv').config()
+const {convert} = require('./functions/exchange_rates')
+
 async function main(){
     
-    console.log(dateFormater('2022-10-14'))
+    let data = await convert('USD','EUR',10_000,new Date(),process.env.APILAYER_KEY)
+    console.log(data)
 }
 main()
