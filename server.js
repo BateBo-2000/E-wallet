@@ -5,6 +5,7 @@ const {auth} = require('./authorization_service')
 const routerAccount = require('./routes/account')
 const routerExchange = require('./routes/exchange')
 const routerStats = require('./routes/stats')
+const routerLogin = require('./routes/login')
 
 
 const app = express()
@@ -15,6 +16,7 @@ app.use(express.json())
 app.use('/stats',routerStats)
 app.use('/account',routerAccount)
 app.use('/exchange-rates',routerExchange)
+app.use('/login',routerLogin)
 
 
 app.listen(port,err => {
