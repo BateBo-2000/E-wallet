@@ -1,5 +1,4 @@
-const express = require('express');
-// const test = require('./../database/queries')                        /*testing purposes*/
+const express = require ('express');
 let routerAccount = express.Router();
 /* this router is handling everything that starts with /account/*/
 
@@ -18,7 +17,7 @@ routerAccount
     res.sendStatus(200)
 })
 .put('/user',(req, res)=>{
-    //handle put request    == change data
+    //handle put request    == change multiple fields
     res.sendStatus(200)
 })
 .delete('/user',(req, res)=>{
@@ -26,7 +25,7 @@ routerAccount
     res.sendStatus(200)
 })
 .patch('/user',(req, res)=>{
-    //handle patch request  == change data
+    //handle patch request  == change one field
     res.sendStatus(200)
 })
 

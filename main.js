@@ -1,5 +1,7 @@
-require('dotenv').config()
-console.log(process.env.DATABASE_USERNAME)
-console.log(process.env.DATABASE_PASSWORD)
-console.log(process.env.DATABASE)
-console.log(process.env.HOST)
+const {getInTime} = require('./functions/exchange_rates')
+const {dateFormater} = require('./functions/exchange_rates')
+async function main(){
+    
+    console.log(dateFormater('2022-10-14'))
+}
+main()
