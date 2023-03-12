@@ -20,11 +20,87 @@ GET http://localhost:5000/stats/diagram
 GET http://localhost:5000/account/user
 ###
 
-GET http://localhost:5000/exchange-rates/today
+POST http://localhost:5000/exchange-rates/latest
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR"
+}
 ###
-GET http://localhost:5000/exchange-rates/this-week
+POST http://localhost:5000/exchange-rates/fluctuation/this-week
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR"
+}
 ###
-GET http://localhost:5000/exchange-rates/this-month
+POST http://localhost:5000/exchange-rates/fluctuation/last-30-days
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR"
+}
 ###
-GET http://localhost:5000/exchange-rates/this-year
+POST http://localhost:5000/exchange-rates/fluctuation/this-year
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR"
+}
+
+###
+POST http://localhost:5000/exchange-rates/fluctuation/custom
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR",
+    "start_date":"2023-02-17",
+    "end_date":"2023-01-12"
+}
+
+###
+POST http://localhost:5000/exchange-rates/timeseries/this-week
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR"
+}
+###
+POST http://localhost:5000/exchange-rates/timeseries/last-30-days
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR"
+}
+###
+POST http://localhost:5000/exchange-rates/timeseries/this-year
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR"
+}
+
+###
+POST http://localhost:5000/exchange-rates/timeseries/custom
+Content-Type: application/json
+
+{
+    "currencyArray":["USD","BGN","GBP"],
+    "baseCurrency":"EUR",
+    "start_date":"2023-01-17",
+    "end_date":"2023-02-12"
+}
+
+
+
+### 
+GET https://api.apilayer.com/exchangerates_data/latest?symbols=GBP%2CUDS%2CEUR&base=BGN&base=BGN
 
