@@ -1,9 +1,14 @@
-require('dotenv').config()
-const {convert} = require('./functions/exchange_rates')
+const { json } = require('stream/consumers')
+const pool = require('./database/connectionPool')
 
-async function main(){
-    
-    let data = await convert('USD','EUR',10_000,new Date(),process.env.APILAYER_KEY)
-    console.log(data)
+async function getUser(){
+    return pool.execute("SELECT * FROM paypal.users;")   
 }
-main()
+let a = async ()=>{
+        const result = await getUser()
+        console.log(result)
+
+}
+a()
+
+

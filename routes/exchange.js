@@ -1,8 +1,8 @@
 require('dotenv').config()
 const express = require ('express')
-const {getLatest} = require('./../functions/exchange_rates')
-const {getInTime} = require('./../functions/exchange_rates')
-const {convert} = require('./../functions/exchange_rates')
+const {getLatest} = require('./../controllers/exchange_rates')
+const {getInTime} = require('./../controllers/exchange_rates')
+const {convert} = require('./../controllers/exchange_rates')
 let routerExchange = express.Router()
 /* this router is for currency exchange rates */
 /* idk if i should make every currency different route so for now its just 'exchange-rates'*/
@@ -21,9 +21,7 @@ req.body
 
 routerExchange
 .post('/latest',async (req, res)=>{         /*return the currency exchage rate fot today*/
-    let baseCurrency = req.body.baseCurrency
-    let currencyArray = req.body.currencyArray
-    
+    let {baseCurrency, currencyArray} = req.body
     let data = await getLatest(currencyArray, baseCurrency, process.env.APILAYER_KEY)
     res.json(data).status(200)
 })
@@ -31,8 +29,7 @@ routerExchange
     let end_date = new Date()
     let temp_date = new Date().setDate(new Date().getDate()-7)
     let start_date = new Date(temp_date).toISOString()                         /* 7 days before the current date*/
-    let baseCurrency = req.body.baseCurrency
-    let currencyArray = req.body.currencyArray
+    let {baseCurrency, currencyArray} = req.body
 
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
@@ -41,9 +38,8 @@ routerExchange
     let end_date = new Date()
     let temp_date = new Date().setDate(new Date().getDate()-30)
     let start_date = new Date(temp_date).toISOString()                         /* 30 days before the current date*/
-    let baseCurrency = req.body.baseCurrency
-    let currencyArray = req.body.currencyArray
-
+    
+    let {baseCurrency, currencyArray} = req.body
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
 })
@@ -51,18 +47,14 @@ routerExchange
     let end_date = new Date()
     let temp_date = new Date().setDate(new Date().getDate()-360)
     let start_date = new Date(temp_date).toISOString()                        /* 364 days before the current date*/
-    let baseCurrency = req.body.baseCurrency                                                
-    let currencyArray = req.body.currencyArray
+    let {baseCurrency, currencyArray} = req.body
 
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
 })
 .post('/fluctuation/custom',async (req, res)=>{          /*return the currency exchage rate fot customisible time*/
-    let start_date = req.body.start_date                                              /*starting date*/
-    let end_date = req.body.end_date                                                    /*end date*/
-    let baseCurrency = req.body.baseCurrency                                            
-    let currencyArray = req.body.currencyArray
 
+    let {start_date,end_date,baseCurrency,currencyArray}=req.body
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
 })
@@ -70,8 +62,7 @@ routerExchange
     let end_date = new Date()
     let temp_date = new Date().setDate(new Date().getDate()-7)
     let start_date = new Date(temp_date).toISOString()                         /* 7 days before the current date*/
-    let baseCurrency = req.body.baseCurrency
-    let currencyArray = req.body.currencyArray
+    let {baseCurrency, currencyArray} = req.body
 
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
@@ -80,8 +71,7 @@ routerExchange
     let end_date = new Date()
     let temp_date = new Date().setDate(new Date().getDate()-30)
     let start_date = new Date(temp_date).toISOString()                         /* 30 days before the current date*/
-    let baseCurrency = req.body.baseCurrency
-    let currencyArray = req.body.currencyArray
+    let {baseCurrency, currencyArray} = req.body
 
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
@@ -91,29 +81,20 @@ routerExchange
     let end_date = new Date()
     let temp_date = new Date().setDate(new Date().getDate()-360)
     let start_date = new Date(temp_date).toISOString()                        /* 364 days before the current date*/
-    let baseCurrency = req.body.baseCurrency                                                
-    let currencyArray = req.body.currencyArray
+    let {baseCurrency, currencyArray} = req.body
 
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
 })
 .post('/timeseries/custom',async (req, res)=>{          /*return the currency exchage rate fot customisible time*/
 
-    let start_date = req.body.start_date                                              /*starting date*/
-    let end_date = req.body.end_date                                                    /*end date*/
-    let baseCurrency = req.body.baseCurrency                                            
-    let currencyArray = req.body.currencyArray
-
+    let {start_date,end_date,baseCurrency,currencyArray}=req.body
     let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
 })
 .post('/converter',async (req, res)=>{    
-          
-    let date = req.body.date
-    let fromCurrency = req.body.fromCurrency                                            
-    let toCurrency = req.body.toCurrency
-    let amount = req.body.amount
 
+    let {date, fromCurrency, toCurrency, amount} = req.body
     let data = await convert(fromCurrency,toCurrency,amount,date,process.env.APILAYER_KEY)
     res.json(data).status(200)
 })
