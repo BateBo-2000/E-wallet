@@ -31,7 +31,7 @@ routerExchange
     let start_date = new Date(temp_date).toISOString()                         /* 7 days before the current date*/
     let baseCurrency = req.body.baseCurrency
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/fluctuation')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
 })
 .post('/fluctuation/last-30-days',async (req, res)=>{      /*return the currency exchage rate fot this month*/
@@ -40,7 +40,7 @@ routerExchange
     let start_date = new Date(temp_date).toISOString()                         /* 30 days before the current date*/
     let baseCurrency = req.body.baseCurrency
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/fluctuation')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
 })
 .post('/fluctuation/this-year',async (req, res)=>{       /*return the currency exchage rate fot this year*/
@@ -49,7 +49,7 @@ routerExchange
     let start_date = new Date(temp_date).toISOString()                        /* 364 days before the current date*/
     let baseCurrency = req.body.baseCurrency                                                
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/fluctuation')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
 })
 .post('/fluctuation/custom',async (req, res)=>{          /*return the currency exchage rate fot customisible time*/
@@ -57,7 +57,7 @@ routerExchange
     let end_date = req.body.end_date                                                    /*end date*/
     let baseCurrency = req.body.baseCurrency                                            
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/fluctuation')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/fluctuation')
     res.json(data).status(200)
 })
 .post('/timeseries/this-week',async (req, res)=>{     /*return the currency exchage rate fot this week*/
@@ -66,7 +66,7 @@ routerExchange
     let start_date = new Date(temp_date).toISOString()                         /* 7 days before the current date*/
     let baseCurrency = req.body.baseCurrency
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/timeseries')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
 })
 .post('/timeseries/last-30-days',async (req, res)=>{      /*return the currency exchage rate fot this month*/
@@ -75,7 +75,7 @@ routerExchange
     let start_date = new Date(temp_date).toISOString()                         /* 30 days before the current date*/
     let baseCurrency = req.body.baseCurrency
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/timeseries')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
 })
 .post('/timeseries/this-year',async (req, res)=>{       /*return the currency exchage rate fot this year*/
@@ -84,7 +84,7 @@ routerExchange
     let start_date = new Date(temp_date).toISOString()                        /* 364 days before the current date*/
     let baseCurrency = req.body.baseCurrency                                                
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/timeseries')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
 })
 .post('/timeseries/custom',async (req, res)=>{          /*return the currency exchage rate fot customisible time*/
@@ -92,7 +92,7 @@ routerExchange
     let end_date = req.body.end_date                                                    /*end date*/
     let baseCurrency = req.body.baseCurrency                                            
     let currencyArray = req.body.currencyArray
-    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'https://api.apilayer.com/exchangerates_data/timeseries')
+    let data = await getInTime(currencyArray, baseCurrency, process.env.APILAYER_KEY, start_date, end_date,'/timeseries')
     res.json(data).status(200)
 })
 

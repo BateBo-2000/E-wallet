@@ -34,10 +34,10 @@ async function getLatest(currencyArray, baseCurrency, apikey){
   } 
 }
 
-//get custom timelapse
+//get custom timelapse/fluctuation
 async function getInTime(currencyArray, baseCurrency, apikey, start_date, end_date,resourceUrl){
   try {
-    const res = await axios.get(resourceUrl,{
+    const res = await axios.get('https://api.apilayer.com/exchangerates_data'+resourceUrl,{
     headers: {
       "apikey":apikey
     },
