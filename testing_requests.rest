@@ -35,7 +35,6 @@ Content-Type: application/json
     "last_name": "Doe",
     "address": "sofia adress 1",
     "date_of_birth": "1990-12-12",
-    "role": "user",
     "secret_question": "secret querstion 1",
     "secret_answer": "secret answer 1"
 }
@@ -58,11 +57,34 @@ Content-Type: application/json
 
 
 
+###
+POST http://localhost:5000/login
+Content-Type: application/json
 
-
+{
+   "username":"user",
+    "password":"pass" 
+}
 ###
 
-GET http://localhost:5000/login?username="John"
+POST  http://localhost:5000/login/register
+Content-Type: application/json
+
+{
+    "username":"user",
+    "password":"pass",
+    "egn": "3456275347",
+    "id_card_number": "1234",
+    "first_name": "John",
+    "mid_name": "second",
+    "last_name": "Doe",
+    "address": "sofia adress 1",
+    "date_of_birth": "1990-12-12",
+    "role": "user",
+    "secret_question": "secret querstion 1",
+    "secret_answer": "secret answer 1"
+}
+
 
 
 

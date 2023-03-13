@@ -8,7 +8,9 @@ routerLogin.use(function stamp(req,res,next){
     next()
 })
 
-routerLogin.route('/')
-.get(login_con.Login)
+//handling login and register
+routerLogin
+.post('/' ,login_con.Login)
+.post('/register',login_con.Register)
 
 module.exports = routerLogin;
