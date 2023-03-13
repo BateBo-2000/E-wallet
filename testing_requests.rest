@@ -51,6 +51,13 @@ Content-Type: application/json
     "first_name":"TOm"
 }
 
+###
+POST  http://localhost:5000/account/login_info
+Content-Type: application/json
+
+{
+    "id":34
+}
 
 
 

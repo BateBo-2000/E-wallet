@@ -10,8 +10,9 @@ routerAccount.use(function stamp(req,res,next){
 
 routerAccount.route('/info')
 .get(account_con.getInfo)
-//.post(account_con.addUser)
 .delete(account_con.deleteUser)
 .patch(account_con.changeField)
+
+routerAccount.post('/login_info',account_con.getLoginTry)
 
 module.exports = routerAccount;

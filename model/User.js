@@ -53,18 +53,20 @@ class User {
         return changer
     }
     async getByUsername(username){ //tested
-        let sql = `SELECT * FROM login_data WHERE username = "${username}";`
+        let sql = `SELECT * FROM paypal.login_data WHERE username = "${username}";`
         const user = await db.execute(sql)
         return user[0]
     }
     async getById(id){
-        let sql = `SELECT * FROM users WHERE user_id = ${id};`
+        let sql = `SELECT * FROM paypal.users WHERE user_id = ${id};`
         const user = await db.execute(sql)
         return user[0]
         //used just to get the info for the user
     }
-    async userLogged(){
-        
+    async getLoginTryInfo(id){
+        let sql = `SELECT * FROM paypal.account_logins WHERE user_id = ${id};`
+        const user = await db.execute(sql)
+        return user[0]
     }
 }
 module.exports = User
