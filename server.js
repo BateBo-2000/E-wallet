@@ -7,6 +7,8 @@ const routerExchange = require('./routes/exchange')
 const routerStats = require('./routes/stats')
 const routerLogin = require('./routes/login')
 const routerTrans = require('./routes/transactions')
+const routerBalance = require('./routes/balance')
+const routerBalanceHistory = require('./routes/balance_history')
 
 
 const app = express()
@@ -19,6 +21,8 @@ app.use('/account',routerAccount)
 app.use('/exchange-rates',routerExchange)
 app.use('/login',routerLogin)
 app.use('/transactions',routerTrans)
+app.use('/balance',routerBalance)
+app.use('/balance_history',routerBalanceHistory)
 
 
 app.listen(port,err => {

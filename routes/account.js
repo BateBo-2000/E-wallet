@@ -1,5 +1,5 @@
 const express = require ('express');
-const account_con = require('../controllers/account')
+const account_con = require('../controllers/account_controller')
 let routerAccount = express.Router();
 /* this router is handling everything that starts with /account/*/
 

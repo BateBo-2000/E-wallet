@@ -1,5 +1,5 @@
 const express = require ('express');
-const login_con = require('../controllers/login')
+const login_con = require('../controllers/login_controller')
 let routerLogin = express.Router();
 /* this router is handling everything that starts with /login/*/
 

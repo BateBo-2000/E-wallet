@@ -1,8 +1,8 @@
 require('dotenv').config()
 const express = require ('express')
-const {getLatest} = require('./../controllers/exchange_rates')
-const {getInTime} = require('./../controllers/exchange_rates')
-const {convert} = require('./../controllers/exchange_rates')
+const {getLatest} = require('./../controllers/exchange_rates_controller')
+const {getInTime} = require('./../controllers/exchange_rates_controller')
+const {convert} = require('./../controllers/exchange_rates_controller')
 let routerExchange = express.Router()
 /* this router is for currency exchange rates */
 /* idk if i should make every currency different route so for now its just 'exchange-rates'*/
