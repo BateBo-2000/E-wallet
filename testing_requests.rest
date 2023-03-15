@@ -237,7 +237,7 @@ POST  http://localhost:5000/balance_history
 Content-Type: application/json
 
 {
-    "balanceId":4,
+    "balanceId":5,
     "amount_after_change":1000,
     "change_amount":100.45,
     "reason_for_change":"spent in starbucks"
@@ -254,7 +254,7 @@ POST  http://localhost:5000/balance_history/getHistoryByDates
 Content-Type: application/json
 
 {
-    "balanceId":5,
+    "balanceId":4,
     "start_date":"2023-03-14",
     "end_date":"2023-03-16"
 }

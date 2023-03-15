@@ -25,9 +25,9 @@ class BalanceHistory{
         //gets history by date
         //from date to date
         //date fromat YYYY-MM-DD
-        let sql = `select * from paypal.balance_history 
+        let sql = `select * from paypal.historyCur  
         where
-        date_of_update between '${start_date}' and '${end_date}';`
+        date_of_update between "${start_date}" and "${end_date}" and balance_id = ${this.balance_id}`
         const [history, _] = await db.execute(sql)
         return history
     }
