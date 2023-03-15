@@ -197,6 +197,76 @@ Content-Type: application/json
 
 
 
+
+
+
+
+
+###
+GET  http://localhost:5000/balance?user_id=5
+###
+POST  http://localhost:5000/balance/create
+Content-Type: application/json
+
+{
+    "user_id":6,
+    "currency":4
+}
+###
+POST  http://localhost:5000/balance/update
+Content-Type: application/json
+
+{
+    "user_id":5,
+    "balance_id":7,
+    "amount":69.69
+}
+
+
+
+
+
+
+
+
+
+###
+POST  http://localhost:5000/balance_history
+Content-Type: application/json
+
+{
+    "balanceId":4,
+    "amount_after_change":1000,
+    "change_amount":100.45,
+    "reason_for_change":"spent in starbucks"
+}
+###
+POST  http://localhost:5000/balance_history/getHistory
+Content-Type: application/json
+
+{
+    "balanceId":4
+}
+###
+POST  http://localhost:5000/balance_history/getHistoryByDates
+Content-Type: application/json
+
+{
+    "balanceId":5,
+    "start_date":"2023-03-14",
+    "end_date":"2023-03-16"
+}
+
+
+
+
+
+
+
+
+
+
+
 ###
 POST  http://localhost:5000/transactions/make
 Content-Type: application/json

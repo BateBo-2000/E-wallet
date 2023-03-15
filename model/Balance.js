@@ -3,8 +3,8 @@ class Balance{
     constructor(user_id){
         this.user_id = user_id
     }
-    async getBalanceByUserID(){
-        let sql = `Select * FROM balance WHERE user_id=${id};`
+    async getBalanceByUser(){
+        let sql = `Select * FROM balance WHERE user_id=${this.user_id};`
         const [balance, _] = await db.execute(sql)
         return balance
     }

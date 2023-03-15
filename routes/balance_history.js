@@ -9,8 +9,8 @@ routerBalanceHistory.use(function stamp(req,res,next){
 })
 
 routerBalanceHistory
-.get('/',balance_history_con.record)
-.post('/create',balance_history_con.getHistory)
-.post('/update',balance_history_con.getHistoryByDate)
+.post('/',balance_history_con.record)
+.post('/getHistory',balance_history_con.getHistory)
+.post('/getHistoryByDates',balance_history_con.getHistoryByDate)
 
 module.exports = routerBalanceHistory;
