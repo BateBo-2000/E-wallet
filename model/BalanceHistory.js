@@ -9,13 +9,15 @@ class BalanceHistory{
         then write it down in the balance_history with the reason_for_change = transaction receiver
         */
         let sql = `INSERT INTO paypal.balance_history(balance_id,amount_after_change,change_amount,reason_for_change)VALUES(${this.balance_id},${amount_after_change}, ${change_amount},'${reason_for_change}');`
-
+        
         const [record, _] = await db.execute(sql)
         return record
     }
     async getHistory(){
         // returns all of the records for the balance_id provided
+       
         let sql = `select * from paypal.historyCur WHERE balance_id = ${this.balance_id};`
+         /*  historyCur is view that shows the balance_history + currency through balance*/
         const [history, _] = await db.execute(sql)
         return history
     }
