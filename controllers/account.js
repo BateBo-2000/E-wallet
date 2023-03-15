@@ -9,11 +9,9 @@ exports.getInfo = async (req, res, next) =>{
 exports.deleteUser = async (req, res, next) =>{
 
     let user = new User()
-    let id = req.query.id *1        //neat way to ensure it is string not a number
+    let id = req.query.id *1                //neat way to ensure it is string not a number
     user = await user.deleteUser(id)
-    res.status(200).json(user)  //if we have found the id
-
-    
+    res.status(200).json(user)              //if we have found the id
 }
 exports.changeField = async (req, res, next) =>{
     let user = new User()  
