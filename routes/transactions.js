@@ -10,8 +10,8 @@ routerTrans.use(function stamp(req,res,next){
 
 routerTrans
 .post('/make',trans_con.makeTrans)
-.post('/history',trans_con.getHistory)
-.delete('/delete',trans_con.delete)
+.get('/history',trans_con.getHistory)
+.delete('/delete',trans_con.delete)             // admin stuff
 .post('/searchByDate',trans_con.searchByDate)
 .post('/searchByMoney',trans_con.searchByMoney)
 .post('/searchByReciever',trans_con.searchByReciever)

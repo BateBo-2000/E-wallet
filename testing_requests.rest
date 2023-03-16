@@ -274,43 +274,37 @@ POST  http://localhost:5000/transactions/make
 Content-Type: application/json
 
 {
-
+    "user_id":4,
+    "reciever":"starbucks",
+    "amount":10.49,
+    "currency":"BGN"
 }
 ###
-POST  http://localhost:5000/transactions/history
-Content-Type: application/json
+GET  http://localhost:5000/transactions/history?user_id=4
 
-{
-
-}
-###
-DELETE  http://localhost:5000/transactions/delete?id=10
-
-###
-POST  http://localhost:5000/transactions/make
-Content-Type: application/json
-
-{
-
-}
 ###
 POST  http://localhost:5000/transactions/searchByDate
 Content-Type: application/json
 
 {
-
+    "user_id":4,
+    "start_date":"2023-03-16",
+    "end_date":"2023-03-17"
 }
 ###
 POST  http://localhost:5000/transactions/searchByMoney
 Content-Type: application/json
 
 {
-
+    "user_id":4,
+    "dependency":"<",
+    "amount": 60
 }
 ###
 POST  http://localhost:5000/transactions/searchByReciever
 Content-Type: application/json
 
 {
-
+    "reciever":"starbucks",
+    "user_id":4
 }
