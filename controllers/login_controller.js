@@ -3,11 +3,9 @@ const User = require('../model/User')
 const Logger = require('../model/Logger')
 const bcrypt = require('bcrypt')
 exports.Login = async (req, res, next) =>{
-
     /*  use compare passwords (bcrypted - with salts /note have to alter databse)
         when comparing passwords timestamp it in account_logins
     */
-
     let {username, password} = req.body
     let logger = new Logger(username,password)
     let userData = await logger.getLoginDataByUsername()

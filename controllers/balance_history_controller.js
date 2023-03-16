@@ -1,5 +1,5 @@
 const BalanceHistory = require('../model/BalanceHistory')
-exports.record = async (req, res, next) =>{             //!!!!! USE CURRENCY  GET ID !!!!!!!
+exports.record = async (req, res, next) =>{
     //records in balance history
     let balanceId = req.body.balanceId*1
     let {amount_after_change,change_amount,reason_for_change} = req.body
@@ -19,5 +19,4 @@ exports.getHistoryByDate = async (req, res, next) =>{
     let balanceHistory = new BalanceHistory(balanceId*1)
     balanceHistory = await balanceHistory.getHistory()
     res.status(200).json(balanceHistory)
-
 }

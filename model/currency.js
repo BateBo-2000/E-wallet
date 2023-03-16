@@ -5,9 +5,9 @@ class Currency{
     }
     async getId(){
         //searches the name and returns the id of the currency
-        let sql = `select * from paypal.currency WHERE currency_name = ${currencyName};`
+        let sql = `select * from paypal.currency WHERE currency_name = "${this.currencyName}";`
         const [currency_id, _] = await db.execute(sql)
-        return currency_id
+        return currency_id[0]
     }
     async add(){    //admin only
         //adds currency
