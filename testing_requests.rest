@@ -275,8 +275,8 @@ Content-Type: application/json
 
 {
     "user_id":4,
-    "reciever":"starbucks",
-    "amount":10.49,
+    "reciever":"c",
+    "amount":46.49,
     "currency":"BGN"
 }
 ###
@@ -308,3 +308,39 @@ Content-Type: application/json
     "reciever":"starbucks",
     "user_id":4
 }
+
+
+
+
+
+
+
+
+
+###
+POST  http://localhost:5000/stats/spending
+Content-Type: application/json
+
+{
+    "user_id":4,
+    "start_date":"2023-03-10",
+    "end_date":"2023-03-17",
+    "step":"day"
+}
+###
+POST  http://localhost:5000/stats/spending-reciever
+Content-Type: application/json
+
+{
+    "user_id":4
+}
+###
+POST  http://localhost:5000/stats/reciever
+Content-Type: application/json
+
+{
+    "user_id":4,
+    "start_date":"2023-03-10",
+    "end_date":"2023-03-17"
+}
+

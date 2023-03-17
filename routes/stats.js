@@ -9,8 +9,9 @@ routerStats.use(function stamp(req,res,next){
 })
 
 routerStats
-.get('/spending',stats_con.getSpending)
-.post('/income',stats_con.getIncome)
-.get('/diagramOfMoney',stats_con.getDiagramJson)
+.post('/spending',stats_con.getSpending)   //req can have parameter step:day/week/month 
+.post('/spending-reciever',stats_con.getSpendingByReciever)
+.post('/reciever',stats_con.getCountbyReciever)
+
 
 module.exports = routerStats;
