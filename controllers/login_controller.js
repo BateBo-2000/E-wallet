@@ -35,10 +35,10 @@ exports.Register = async (req, res, next) =>{
     let {username, password} = req.body
     let hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS*1)
 
-    let user = new User()
-    user = await user.addUser(req.body)
+    let user = new User()                           
+    user = await user.addUser(req.body)             //adding the account data
     let logger = new Logger(username,hashedPassword)
-    logger = await logger.insertUserLoginData(user.insertId)
+    logger = await logger.insertUserLoginData(user.insertId)       //adding the login data    
     logger = {user, logger}
     res.json(logger).status(200)
 
