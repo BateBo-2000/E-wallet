@@ -328,3 +328,42 @@ Content-Type: application/json
     "end_date":"2023-03-17"
 }
 
+
+
+
+
+
+
+###
+GET   http://localhost:5000/delayed-payments/get?user_id=4
+Content-Type: application/json
+
+###
+POST  http://localhost:5000/delayed-payments/create
+Content-Type: application/json
+
+{
+    "user_id":4,
+    "start_date":"2023-03-19 22:19:00",
+    "title":"pay the bills",
+    "text":"ready for production ig"
+}
+###
+POST  http://localhost:5000/delayed-payments//create-recurring
+Content-Type: application/json
+
+{
+    "user_id":4,
+    "start_date":"2023-03-19 20:43:00",
+    "title":"pay the bills",
+    "text":"ready for production ig",
+    "second":40
+}
+###
+POST  http://localhost:5000/delayed-payments/delete
+Content-Type: application/json
+
+{
+    "user_id":4,
+    "reminder_id":108
+}

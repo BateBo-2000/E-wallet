@@ -9,7 +9,7 @@ const routerLogin = require('./routes/login')
 const routerTrans = require('./routes/transactions')
 const routerBalance = require('./routes/balance')
 const routerBalanceHistory = require('./routes/balance_history')
-
+const routerDelayedPayments = require('./routes/delayedpayments')
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -23,6 +23,7 @@ app.use('/login',routerLogin)
 app.use('/transactions',routerTrans)
 app.use('/balance',routerBalance)
 app.use('/balance_history',routerBalanceHistory)
+app.use('/delayed-payments',routerDelayedPayments)
 
 
 app.listen(port,err => {
