@@ -71,7 +71,7 @@ class User {
     async getEmail(id){
         let sql = `SELECT email FROM paypal.users WHERE user_id = ${id};`
         const user = await db.execute(sql)
-        return user[0]
+        return user[0][0].email
     }
 }
 module.exports = User
