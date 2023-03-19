@@ -5,7 +5,6 @@ const emailer = require('../model/Emailer')
 
 exports.startReminder = async (req, res ,next) => {
 
-
     //add in db
     let reminder = new DelayedPayments(req.body.user_id)
     result = await reminder.createReminder(req.body.text, req.body.start_date, true, '')
@@ -24,7 +23,8 @@ exports.startReminder = async (req, res ,next) => {
     if(typeof year !== "undefined") rule.year = year*1
     if(typeof DayOfWeek !== "undefined") rule.DayOfWeek = DayOfWeek*1
     //get the other stuff
-    const {title, text} = req.body
+    const title = `Your E-wallet reminder: ${req.body.title}`
+    const text = req.body.text
     //get the email
     let email = new User()
     email = await email.getEmail(req.body.user_id)
@@ -47,24 +47,32 @@ exports.createReminder = async(req, res ,next) => {
      * Saves it in the database 
      * When the rimider is compleated it deletes it from the db
      */
-    //add in db
-    let reminder = new DelayedPayments(req.body.user_id)
-    result = await reminder.createReminder(req.body.text, req.body.start_date)
-    //add in scheduler
-    let email = new User()
-    email = await email.getEmail(req.body.user_id)
-    const jobname = result.insertId+"" //generating job name
-    const title = `Your E-wallet reminder: ${req.body.title}`
-    const text = req.body.text
-    schedule.scheduleJob(jobname, req.body.start_date, async function (){
-        //mail
-        await emailer.sendMail(email,title, text)
-        //delete from db
-        reminder.deleteReminder(result.insertId)
-        //console for less ptsd
-        console.log('email sent')
-    });
-    res.status(200).json(result)
+    //check the date if it is correct
+    let now = new Date()
+    let checkdate = new Date(req.body.start_date)
+    if(now >= checkdate) {
+        res.status(400).json({message: "cant set reminders for the past ;)"})
+    }else{
+        //add in db
+        let reminder = new DelayedPayments(req.body.user_id)
+        result = await reminder.createReminder(req.body.text, req.body.start_date)
+        //add in scheduler
+        let email = new User()
+        email = await email.getEmail(req.body.user_id)
+        const jobname = result.insertId+"" //generating job name
+        const title = `Your E-wallet reminder: ${req.body.title}`
+        const text = req.body.text
+        schedule.scheduleJob(jobname, req.body.start_date, async function (){
+            //mail
+            await emailer.sendMail(email,title, text)
+            //delete from db
+            reminder.deleteReminder(result.insertId)
+            //console for less ptsd
+            console.log('email sent')
+        });
+        res.status(200).json(result)
+    }
+    
 }
 exports.getReminders = async (req, res ,next) => {
     //get from database

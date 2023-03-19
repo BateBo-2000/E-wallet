@@ -344,7 +344,7 @@ Content-Type: application/json
 
 {
     "user_id":4,
-    "start_date":"2023-03-19 22:19:00",
+    "start_date":"2023-03-19 22:22:30",
     "title":"pay the bills",
     "text":"ready for production ig"
 }
@@ -365,5 +365,5 @@ Content-Type: application/json
 
 {
     "user_id":4,
-    "reminder_id":108
+    "reminder_id":110
 }
