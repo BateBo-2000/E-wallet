@@ -11,9 +11,9 @@ class Logger{
         this.password = newPassword;
     }
     async getLoginDataByUsername(){
-        let sql = `Select * from login_data WHERE username="${this.username}"`
+        let sql = `Select * from login_data WHERE username="${this.username}" LIMIT 1`
         const user = await db.execute(sql)
-        return user[0]
+        return user[0][0]
     }
     async insertUserLoginData(user_id){
 

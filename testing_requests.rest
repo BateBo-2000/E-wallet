@@ -1,19 +1,15 @@
-GET http://localhost:5000/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJKb2huIiwiaWF0IjoxNjc4MzExNDcwfQ.C2_yj7V2CNFCEXgF9tKIbmj27df6sSsJwQfC8DAOVXw
 
-
-
-
-
-###
-GET http://localhost:5000/account/info?id=25
+GET http://localhost:5000/account/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 
 
 ###
-DELETE  http://localhost:5000/account/info/?id=25
+DELETE  http://localhost:5000/account/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 
 ###
-PATCH http://localhost:5000/account/info?id=4
+PATCH http://localhost:5000/account/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -21,15 +17,8 @@ Content-Type: application/json
 }
 
 ###
-POST  http://localhost:5000/account/login_info
-Content-Type: application/json
-
-{
-    "id":34
-}
-
-
-
+GET   http://localhost:5000/account/login_info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 
 
 
@@ -39,7 +28,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-   "username":"user",
+    "username":"user",
     "password":"pass" 
 }
 ###
@@ -69,8 +58,8 @@ Content-Type: application/json
 
 
 ###
-
 POST http://localhost:5000/exchange-rates/latest
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -79,6 +68,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/this-week
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -87,6 +77,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/last-30-days
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -95,6 +86,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/this-year
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -104,6 +96,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/custom
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -115,6 +108,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/exchange-rates/timeseries/this-week
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -123,6 +117,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/timeseries/last-30-days
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -131,6 +126,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/timeseries/this-year
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -140,6 +136,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/exchange-rates/timeseries/custom
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -150,6 +147,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/converter
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -172,21 +170,22 @@ Content-Type: application/json
 
 
 ###
-GET  http://localhost:5000/balance?user_id=5
+GET  http://localhost:5000/balance
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 ###
 POST  http://localhost:5000/balance/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
-    "user_id":6,
     "currency":"GBP"
 }
 ###
 POST  http://localhost:5000/balance/update
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
-    "user_id":5,
     "balance_id":7,
     "amount":69.69
 }
@@ -203,6 +202,7 @@ Content-Type: application/json
 
 ###
 POST  http://localhost:5000/balance_history
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -213,6 +213,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/balance_history/getHistory
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -220,6 +221,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/balance_history/getHistoryByDates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
@@ -240,42 +242,43 @@ Content-Type: application/json
 
 ###
 POST  http://localhost:5000/transactions/make
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
-    "user_id":4,
     "reciever":"c",
     "amount":46.49,
     "currency":"BGN"
 }
 ###
 GET  http://localhost:5000/transactions/history?user_id=4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 
 ###
 POST  http://localhost:5000/transactions/searchByDate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
-    "user_id":4,
-    "start_date":"2023-03-16",
-    "end_date":"2023-03-17"
+    "start_date":"2023-03-15",
+    "end_date":"2023-03-20"
 }
 ###
 POST  http://localhost:5000/transactions/searchByMoney
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
-    "user_id":4,
     "dependency":"<",
     "amount": 60
 }
 ###
 POST  http://localhost:5000/transactions/searchByReciever
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDc3MjIsImV4cCI6MTY3OTM1MTMyMn0.EEmOO9GTLPQVyf1Au7j_3h5-hgYQxDROuU6y9dBHhDI
 Content-Type: application/json
 
 {
-    "reciever":"starbucks",
-    "user_id":4
+    "reciever":"starbucks"
 }
 
 
@@ -288,27 +291,24 @@ Content-Type: application/json
 
 ###
 POST  http://localhost:5000/stats/spending
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDk4MjEsImV4cCI6MTY3OTM1MzQyMX0.JPZLvN3NqlqP15vNZzuV7IYnJCZat1ykGihbavmljxs
 Content-Type: application/json
 
 {
-    "user_id":4,
     "start_date":"2023-03-10",
     "end_date":"2023-03-17",
     "step":"day"
 }
 ###
-POST  http://localhost:5000/stats/spending-reciever
-Content-Type: application/json
+GET   http://localhost:5000/stats/spending-reciever
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDk4MjEsImV4cCI6MTY3OTM1MzQyMX0.JPZLvN3NqlqP15vNZzuV7IYnJCZat1ykGihbavmljxs
 
-{
-    "user_id":4
-}
 ###
 POST  http://localhost:5000/stats/reciever
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDk4MjEsImV4cCI6MTY3OTM1MzQyMX0.JPZLvN3NqlqP15vNZzuV7IYnJCZat1ykGihbavmljxs
 Content-Type: application/json
 
 {
-    "user_id":4,
     "start_date":"2023-03-10",
     "end_date":"2023-03-17"
 }
@@ -320,25 +320,26 @@ Content-Type: application/json
 
 
 ###
-GET   http://localhost:5000/delayed-payments/get?user_id=4
-Content-Type: application/json
+GET   http://localhost:5000/delayed-payments/get
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDk4MjEsImV4cCI6MTY3OTM1MzQyMX0.JPZLvN3NqlqP15vNZzuV7IYnJCZat1ykGihbavmljxs
+
 
 ###
 POST  http://localhost:5000/delayed-payments/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDk4MjEsImV4cCI6MTY3OTM1MzQyMX0.JPZLvN3NqlqP15vNZzuV7IYnJCZat1ykGihbavmljxs
 Content-Type: application/json
 
 {
-    "user_id":4,
     "start_date":"2023-03-19 22:22:30",
     "title":"pay the bills",
     "text":"ready for production ig"
 }
 ###
 POST  http://localhost:5000/delayed-payments//create-recurring
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDk4MjEsImV4cCI6MTY3OTM1MzQyMX0.JPZLvN3NqlqP15vNZzuV7IYnJCZat1ykGihbavmljxs
 Content-Type: application/json
 
 {
-    "user_id":4,
     "start_date":"2023-03-19 20:43:00",
     "title":"pay the bills",
     "text":"ready for production ig",
@@ -346,9 +347,9 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/delayed-payments/delete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6InVzZXIiLCJpYXQiOjE2NzkzNDk4MjEsImV4cCI6MTY3OTM1MzQyMX0.JPZLvN3NqlqP15vNZzuV7IYnJCZat1ykGihbavmljxs
 Content-Type: application/json
 
 {
-    "user_id":4,
-    "reminder_id":110
+    "reminder_id":113
 }

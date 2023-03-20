@@ -3,7 +3,7 @@ const DelayedPayments = require('../model/DelayedPayment')
 const User = require('../model/User')
 const emailer = require('../model/Emailer')
 
-exports.startReminder = async (req, res ,next) => {
+exports.startReminder = async (req, res) => {
 
     //add in db
     let reminder = new DelayedPayments(req.body.user_id)
@@ -41,7 +41,7 @@ exports.startReminder = async (req, res ,next) => {
 
 
 }
-exports.createReminder = async(req, res ,next) => {
+exports.createReminder = async(req, res) => {
     /**
      * Creates a reminder 
      * Saves it in the database 
@@ -74,14 +74,14 @@ exports.createReminder = async(req, res ,next) => {
     }
     
 }
-exports.getReminders = async (req, res ,next) => {
+exports.getReminders = async (req, res) => {
     //get from database
-    let user_id = req.query.user_id
+    let user_id = req.body.user_id
     let reminder = new DelayedPayments(user_id)
     reminder = await reminder.getReminders()
     res.status(200).send(reminder)
 }
-exports.deleteReminder = (req, res ,next) => {
+exports.deleteReminder = (req, res) => {
     /**
      * Here first the reminder is stopped 
      * Then it is removed from the db

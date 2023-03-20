@@ -1,6 +1,6 @@
 const Statics = require('../model/Statistics')
 const {dateFormater} = require('./exchange_rates_controller')
-exports.getCountbyReciever = async (req, res, next) =>{ 
+exports.getCountbyReciever = async (req, res) =>{ 
     /* retruns how much time you have spent money and where (ordered)*/
     let {user_id, start_date, end_date} = req.body
     let stat = new Statics(user_id*1)
@@ -12,7 +12,7 @@ exports.getCountbyReciever = async (req, res, next) =>{
     res.json(result).status(200)
     
 }
-exports.getSpendingByReciever = async (req, res, next) =>{
+exports.getSpendingByReciever = async (req, res) =>{
 
     let {user_id} = req.body
     let stat = new Statics(user_id*1)
@@ -28,7 +28,7 @@ exports.getSpendingByReciever = async (req, res, next) =>{
     res.json(result).status(200)
     
 }
-exports.getSpending = async (req, res, next) =>{
+exports.getSpending = async (req, res) =>{
 
     let {user_id, start_date, end_date, step} = req.body
 

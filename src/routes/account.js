@@ -1,6 +1,7 @@
 const express = require ('express');
 const account_con = require('../controllers/account_controller')
 let routerAccount = express.Router();
+const {authenticate} = require('../app/authorization middleware/authorization_service')
 /* this router is handling everything that starts with /account/*/
 
 routerAccount.use(function stamp(req,res,next){
@@ -9,10 +10,10 @@ routerAccount.use(function stamp(req,res,next){
 })
 
 routerAccount.route('/info')
-.get(account_con.getInfo)
-.delete(account_con.deleteUser)
-.patch(account_con.changeField)
+.get(authenticate, account_con.getInfo)
+.delete(authenticate, account_con.deleteUser)
+.patch(authenticate, account_con.changeField)
 
-routerAccount.post('/login_info',account_con.getLoginTry)
-
+routerAccount.get('/login_info', authenticate, account_con.getLoginTry)
+//da sloja delete history
 module.exports = routerAccount;
