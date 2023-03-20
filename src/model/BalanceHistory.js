@@ -1,4 +1,4 @@
-const db = require('../database/connectionPool')
+const db = require('../app/connectionPool')
 class BalanceHistory{
     constructor(balance_id){
         this.balance_id = balance_id

@@ -1,21 +1,6 @@
 GET http://localhost:5000/test
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJKb2huIiwiaWF0IjoxNjc4MzExNDcwfQ.C2_yj7V2CNFCEXgF9tKIbmj27df6sSsJwQfC8DAOVXw
 
-### 
-
-
-###
-
-GET http://localhost:5000/stats/pieChart
-###
-GET http://localhost:5000/stats/diagram
-###
-
-GET http://localhost:5000/account/info
-
-
-
-
 
 
 

@@ -1,4 +1,4 @@
-const db = require('../database/connectionPool')
+const db = require('../app/connectionPool')
 class Balance{
     constructor(user_id){
         this.user_id = user_id

@@ -1,4 +1,4 @@
-const db = require('../database/connectionPool')
+const db = require('../app/connectionPool')
 class User {
     user_id
     egn

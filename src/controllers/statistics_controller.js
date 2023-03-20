@@ -9,7 +9,6 @@ exports.getCountbyReciever = async (req, res, next) =>{
     stat.forEach(element => {
         result.push([Object.values(element)[0], Object.values(element)[1]])
     });
-    console.log(result)
     res.json(result).status(200)
     
 }
@@ -26,7 +25,6 @@ exports.getSpendingByReciever = async (req, res, next) =>{
         let reciever = Object.values(element)[2]
         result.push([amount, currency, reciever])
     });
-    console.log(result)
     res.json(result).status(200)
     
 }
@@ -58,7 +56,6 @@ exports.getSpending = async (req, res, next) =>{
         eDate = dateSetter(sDate,step)
         
     }
-    console.log(result)
     res.json(result).status(200)
 }
 
