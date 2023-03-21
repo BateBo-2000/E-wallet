@@ -23,6 +23,7 @@ exports.sendMail = (reciever, title, text) =>{
                 console.log(error)
                 return reject({message:  "error has occured"})
             }
+            console.log("email sent")
             return resolve({message: "Email Sent"})
         })
     })

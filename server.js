@@ -1,7 +1,5 @@
 require('dotenv').config()
 const express = require('express')
-const jwt = require('jsonwebtoken')
-const {auth} = require('./src/app/authorization middleware/authorization_service')
 const routerAccount = require('./src/routes/account')
 const routerExchange = require('./src/routes/exchange')
 const routerStats = require('./src/routes/stats')
@@ -10,6 +8,7 @@ const routerTrans = require('./src/routes/transactions')
 const routerBalance = require('./src/routes/balance')
 const routerBalanceHistory = require('./src/routes/balance_history')
 const routerDelayedPayments = require('./src/routes/delayedpayments')
+const routerAdmin = require('./src/routes/admin')
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -24,6 +23,7 @@ app.use('/transactions',routerTrans)
 app.use('/balance',routerBalance)
 app.use('/balance_history',routerBalanceHistory)
 app.use('/delayed-payments',routerDelayedPayments)
+app.use('/admin',routerAdmin)
 
 
 app.listen(port,err => {
