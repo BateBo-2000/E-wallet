@@ -4,17 +4,12 @@ class Transaction{
         this.user_id = user_id
     }
 
-    async makeTransaction(reciever, amount, currency_id){   // !!!!! REMOVE FORM THE FIRST BALANCE AND ADD TO THE NEXT
-        let sql = `INSERT INTO paypal.transactions
-        (user_id,
-        reciever,
-        amount,
-        currency_id)
-        VALUES
-        (${this.user_id},
-        "${reciever}",
-        ${amount},
-        ${currency_id});`
+    async makeTransaction(sender_balance_id,reciever_id, reciever_balance_id, amount, currency_id){ 
+    /**
+     * one time it timed me out but the error stopped then i restartded pc ERROR: ER_LOCK_WAIT_TIMEOUT, errno: 1205,
+     * idk => idc
+     */
+        let sql = `INSERT INTO paypal.transactions (user_id, sender_balance_id, amount, currency_id, reciever_id, reciever_balance_id ) VALUES (${this.user_id},${sender_balance_id},${amount},${currency_id},${reciever_id},${reciever_balance_id});`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
@@ -22,9 +17,6 @@ class Transaction{
         let sql = `SELECT * from paypal.transcur where trans_id = ${trans_id}`
         const [transaction, _] = await db.execute(sql)
         return transaction
-    }
-    async deleteTransaction(){// admin stuff
-
     }
     async getAll(){
         let sql = `SELECT * from paypal.transcur where user_id = ${this.user_id}`
@@ -36,8 +28,8 @@ class Transaction{
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
-    async searchByReciever(reciever){
-        let sql = `SELECT * from paypal.transcur where reciever = "${reciever}" AND user_id = ${this.user_id}`
+    async searchByReciever(reciever_id){
+        let sql = `SELECT * from paypal.transcur where reciever_id = "${reciever_id}" AND user_id = ${this.user_id}`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
@@ -46,11 +38,16 @@ class Transaction{
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
-    async serachByPlace(place){ 
-        //when you put a place it return all transactions assosiated with it
-        let sql = `SELECT amount,currency_name, date_done from paypal.transcur WHERE reciever = '${place}' AND user_id = ${this.user_id}; `
+    async serachByPlace(reciever_id){ 
+        //when you put a reciever_id it return all transactions assosiated with it
+        let sql = `SELECT amount,currency_name, date_done from paypal.transcur WHERE reciever_id = ${reciever_id} AND user_id = ${this.user_id}; `
         const data = await db.execute(sql)
         return data[0]
+    }
+    async searchByBalance(balance_id){
+        let sql = `Select * from paypal.transactions WHERE user_id = ${this.user_id} and sender_balance_id = ${balance_id}`
+        const [transaction, _] = await db.execute(sql)
+        return transaction
     }
     
 }

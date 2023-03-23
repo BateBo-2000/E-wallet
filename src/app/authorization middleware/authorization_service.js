@@ -31,7 +31,7 @@ function createToken(payload, secret) {
     const token = jwt.sign(
         payload, 
         secret,
-        { expiresIn: '1h' } // token expires in 1 hour
+        { expiresIn: '1d' } // token expires in 1 day
     )
     return token;
 }

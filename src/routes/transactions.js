@@ -12,7 +12,6 @@ routerTrans.use(function stamp(req,res,next){
 routerTrans
 .post('/make', authenticate, trans_con.makeTrans)
 .get('/history', authenticate, trans_con.getHistory)
-.delete('/delete', authenticate, trans_con.delete)             // admin stuff
 .post('/searchByDate', authenticate, trans_con.searchByDate)
 .post('/searchByMoney', authenticate, trans_con.searchByMoney)
 .post('/searchByReciever', authenticate, trans_con.searchByReciever)
