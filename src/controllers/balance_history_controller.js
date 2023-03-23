@@ -1,4 +1,4 @@
-const BalanceHistory = require('../model/BalanceHistory')
+const BalanceHistory = require('../repository/BalanceHistory')
 exports.record = async (req, res) =>{
     //records in balance history
     let balanceId = req.body.balanceId*1

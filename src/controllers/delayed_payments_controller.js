@@ -1,7 +1,7 @@
 const schedule = require('node-schedule')
-const DelayedPayments = require('../model/DelayedPayment')
-const User = require('../model/User')
-const emailer = require('../model/Emailer')
+const DelayedPayments = require('../repository/DelayedPayment')
+const User = require('../repository/User')
+const emailer = require('../repository/Emailer')
 
 exports.startReminder = async (req, res) => {
 

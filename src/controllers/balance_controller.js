@@ -1,5 +1,5 @@
-const Balance = require('../model/Balance')
-const Currency = require('../model/Currency')
+const Balance = require('../repository/Balance')
+const Currency = require('../repository/Currency')
 // exports.getBalanceById = async (req, res) =>{ //I'll add it if needed
 //     //gets balance by balance_id
 // }

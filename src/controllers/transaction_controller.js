@@ -1,7 +1,7 @@
-const Currency = require('../model/Currency')
-const Transaction = require('../model/Transaction')
-const Balance = require('../model/Balance')
-const BalanceHistroy = require('../model/BalanceHistory')
+const Currency = require('../repository/Currency')
+const Transaction = require('../repository/Transaction')
+const Balance = require('../repository/Balance')
+const BalanceHistroy = require('../repository/BalanceHistory')
 exports.makeTrans = async (req,res) => {
     //destructure
     let sender = req.body.user_id

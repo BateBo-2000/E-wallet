@@ -1,4 +1,4 @@
-const Admin = require('../model/Admin') 
+const Admin = require('../repository/Admin') 
 // GET REQUESTS
 exports.get = async (req, res)=>{
     let admin = new Admin(req.body.user_id)

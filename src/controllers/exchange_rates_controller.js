@@ -1,7 +1,7 @@
 require('dotenv').config()
-const {getLatest} = require('../model/ExchangeRates')
-const {getInTime} = require('../model/ExchangeRates')
-const {convert} = require('../model/ExchangeRates')
+const {getLatest} = require('../repository/ExchangeRates')
+const {getInTime} = require('../repository/ExchangeRates')
+const {convert} = require('../repository/ExchangeRates')
 
 exports.getLatestFluctuations = async (req, res)=>{         /*return the currency exchage rate fot today*/
     let {baseCurrency, currencyArray} = req.body

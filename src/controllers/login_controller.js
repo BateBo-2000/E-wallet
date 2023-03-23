@@ -1,7 +1,7 @@
 require('dotenv').config()
 const bcrypt = require('bcrypt')
-const User = require('../model/User')
-const Logger = require('../model/Logger')
+const User = require('../repository/User')
+const Logger = require('../repository/Logger')
 const {createToken} = require('../app/authorization middleware/authorization_service')
 exports.Login = async (req, res) =>{
     /*  use compare passwords (bcrypted - with salts /note have to alter databse)
