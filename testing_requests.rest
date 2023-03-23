@@ -1,15 +1,15 @@
 
 GET http://localhost:5000/account/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 
 
 ###
 DELETE  http://localhost:5000/account/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 
 ###
 PATCH http://localhost:5000/account/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 ###
 GET   http://localhost:5000/account/login_info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 
 
 
@@ -59,7 +59,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/exchange-rates/latest
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -68,7 +68,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/this-week
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -77,7 +77,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/last-30-days
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -86,7 +86,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/this-year
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -96,7 +96,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/exchange-rates/fluctuation/custom
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -108,7 +108,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/exchange-rates/timeseries/this-week
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -117,7 +117,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/timeseries/last-30-days
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -126,7 +126,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/timeseries/this-year
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -136,7 +136,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/exchange-rates/timeseries/custom
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -147,7 +147,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:5000/exchange-rates/converter
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -171,10 +171,10 @@ Content-Type: application/json
 
 ###
 GET  http://localhost:5000/balance
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 ###
 POST  http://localhost:5000/balance/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -182,7 +182,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/balance/update
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -202,7 +202,7 @@ Content-Type: application/json
 
 ###
 POST  http://localhost:5000/balance_history
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -213,7 +213,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/balance_history/getHistory
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -221,7 +221,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/balance_history/getHistoryByDates
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -242,7 +242,7 @@ Content-Type: application/json
 
 ###
 POST  http://localhost:5000/transactions/make
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -253,11 +253,11 @@ Content-Type: application/json
 }
 ###
 GET  http://localhost:5000/transactions/history?user_id=
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 
 ###
 POST  http://localhost:5000/transactions/searchByDate
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -266,7 +266,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/transactions/searchByMoney
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -275,7 +275,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/transactions/searchByReciever
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -283,7 +283,7 @@ Content-Type: application/json
 }
 ###
 POST  http://localhost:5000/transactions/searchByReciever
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -371,11 +371,11 @@ Content-Type: application/json
 ###
 //have to set the table and teh condition for search
 GET http://localhost:5000/admin/getCustom?table=users&condition=user_id=4
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 
 ###
 POST http://localhost:5000/admin/addCurrency
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -384,20 +384,20 @@ Content-Type: application/json
 ###
 //change currency
 DELETE  http://localhost:5000/admin/deleteCurrency?currency_id=8
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 ###
 //change user_id
 DELETE  http://localhost:5000/admin/deleteUser?user_id=55
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 ###
 //change balance_id and user_id
 DELETE  http://localhost:5000/admin/deleteBalance?balance_id=55
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 
 
 ###
 PATCH http://localhost:5000/admin/changeBalance
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -407,7 +407,7 @@ Content-Type: application/json
 
 ###
 PATCH http://localhost:5000/admin/updateRole
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -417,7 +417,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/admin/sendMail
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTI1NzA0LCJleHAiOjE2Nzk2MTIxMDR9.SmNpacqDWI-18MtP54VjnEWmymOh8zXk8jXC_8-6h18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
 Content-Type: application/json
 
 {
@@ -425,6 +425,27 @@ Content-Type: application/json
     "title":"testing admin message",
     "text":"test successfull"
 }
+
+###
+POST http://localhost:5000/payment/importMoney
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
+Content-Type: application/json
+
+{
+    "amount":155,
+    "balance_id":17
+}
+
+###
+POST http://localhost:5000/payment/withdrawMoney
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5NTk2NjQ3LCJleHAiOjE2Nzk2ODMwNDd9.2fhmiGKARYvBB4yY2qs1kfR6SRF0l9-eymNJmPupamw
+Content-Type: application/json
+
+{
+    "amount":15.5,
+    "balance_id":17
+}
+
 
 
 

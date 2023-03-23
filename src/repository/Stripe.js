@@ -4,13 +4,13 @@ class Stripe{
         //add stripe stuff
     }
 
-    async getPaymentLink(amount,currency){
+    async importMoney(amount,currency){
         /**
          * custom payment link for the exact money i will put in
          * 
          * product= `Put ${amount} ${currency} in your e-wallet`
          */
-        return "stripe link"
+        return true
     }
     async returnMoney(amount,currency){
         /**
@@ -22,7 +22,8 @@ class Stripe{
          * in order to refund the money there has to be a transaction 
          * so basically the user pays 0.01 currency and gets refunded 0.01+amount in currency
          */
-        return "money refunded"
+        return true
     }
 
 }
+module.exports = Stripe

@@ -9,11 +9,5 @@ class Currency{
         const [currency_id, _] = await db.execute(sql)
         return currency_id[0]
     }
-    async add(){    //admin only
-        //adds currency
-    }
-    async remove(currency_id){    //admin only
-        //removes currency
-    }
 }
 module.exports = Currency

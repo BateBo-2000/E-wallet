@@ -4,12 +4,12 @@ class Balance{
         this.user_id = user_id
     }
     async getBalanceByUser(){
-        let sql = `Select * FROM balance WHERE user_id=${this.user_id};`
+        let sql = `Select * FROM paypal.balance WHERE user_id=${this.user_id};`
         const [balance, _] = await db.execute(sql)
         return balance
     }
     async getBalanceById(balance_id){
-        let sql = `Select * FROM balance WHERE user_id=${this.user_id} AND balance_id = ${balance_id};`
+        let sql = `Select * FROM paypal.balance WHERE user_id=${this.user_id} AND balance_id = ${balance_id};`
         const [balance, _] = await db.execute(sql)
         return balance
     }
@@ -29,6 +29,11 @@ class Balance{
     async searchByCurrency(currency_id){
         // gets the first balance by the given currency
         let sql = `Select balance_id from paypal.balcur WHERE user_id = ${this.user_id} and currency_name = "${currency_id}" LIMIT 1`
+        const [data, _] = await db.execute(sql)
+        return data
+    }
+    async getCurrencyName(balance_id){
+        let sql = `select currency_name from paypal.balcur where balance_id = ${balance_id} AND user_id = ${this.user_id};`
         const [data, _] = await db.execute(sql)
         return data
     }
