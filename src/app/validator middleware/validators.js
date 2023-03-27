@@ -117,7 +117,6 @@ exports.AaddCurrency = (req, res, next) => {
 }
 exports.AdeleteUser = (req, res, next) => {
     const {error, value} = validator(schemas.AdeleteUser, req.query)
-    console.log(req.query)
 	if(error) return res.status(400).json(error.message) 
     next()
 }                                                                                           
