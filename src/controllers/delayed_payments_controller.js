@@ -1,45 +1,41 @@
 const schedule = require('node-schedule')
 const DelayedPayments = require('../repository/DelayedPayment')
 const User = require('../repository/User')
+const cronValidator = require('cron-validator');
+
 const emailer = require('../repository/Emailer')
 
 exports.startReminder = async (req, res) => {
-
+    const title = `Your E-wallet reminder: ${req.body.title}`
+    const text = req.body.text
+    const cron = req.body.cron
     //add in db
     let reminder = new DelayedPayments(req.body.user_id)
-    result = await reminder.createReminder(req.body.title, req.body.text, req.body.start_date, true, '')
+    result = await reminder.createReminder(title, text, req.body.start_date, true, cron)
 
     /*job's name is saved as the id of the reminder in the database for ease of access */
     const jobname = result.insertId+"" //to convert it to string faster
-    //create the reccuring interval
-    const rule = new schedule.RecurrenceRule();
-    const {second, minute, hour, date, month, year, DayOfWeek} = req.body
-        //sets the recurrance rule
-    if(typeof second !== "undefined") rule.second = second*1
-    if(typeof minute !== "undefined") rule.second = minute*1
-    if(typeof hour !== "undefined") rule.hour = hour*1
-    if(typeof date !== "undefined") rule.date = date*1
-    if(typeof month !== "undefined") rule.month = month*1
-    if(typeof year !== "undefined") rule.year = year*1
-    if(typeof DayOfWeek !== "undefined") rule.DayOfWeek = DayOfWeek*1
     //get the other stuff
-    const title = `Your E-wallet reminder: ${req.body.title}`
-    const text = req.body.text
+    
+    
     //get the email
     let email = new User()
     email = await email.getEmail(req.body.user_id)
     
-    //addinto the scheduler
-    schedule.scheduleJob(jobname, rule, async function (){
-        //mail
-        await emailer.sendMail(email,title, text)
-        //console for less ptsd
-        console.log('email sent job name = '+jobname)
-    });
     
-    res.status(200).json({result, rule})
-
-
+    //checking the cron expression
+    if (cronValidator.isValidCron(cron)) {
+        //addinto the scheduler
+        schedule.scheduleJob(jobname, cron, async function (){
+            //mail
+            await emailer.sendMail(email,title, text)
+            //console for less ptsd
+            console.log('email sent job name = '+jobname)
+        });
+        return res.status(200).json({result, cron}) 
+    } 
+    res.status(400).json({error: "invalid cron expression"})
+    
 }
 exports.createReminder = async(req, res) => {
     /**

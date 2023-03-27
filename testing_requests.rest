@@ -350,10 +350,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "start_date":"2023-03-19 20:43:00",
+    "start_date":"2023-03-27 20:43:00",
     "title":"pay the bills",
     "text":"ready for production ig",
-    "second":40
+    "cron": "*/2 * * * *"
 }
 ###
 POST  http://localhost:5000/delayed-payments/delete
@@ -361,7 +361,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "reminder_id":113
+    "reminder_id":137
 }
 
 

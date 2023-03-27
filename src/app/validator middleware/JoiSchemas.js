@@ -99,12 +99,13 @@ exports.DPcreate = Joi.object({
     title: Joi.string().max(50).required(),
     text: Joi.string().max(1000).required()
 })
-// exports.DPcreateReocurrning = Joi.object({
-//     start_date: Joi.date().iso().raw().required().greater(new Date()),
-//     title: Joi.string().length(50).required(),
-//     text: Joi.string().length(1000).required(),
+exports.DPcreateReocurrning = Joi.object({
+    start_date: Joi.date().iso().raw().required().greater(new Date()),
+    title: Joi.string().length(50).required(),
+    text: Joi.string().length(1000).required(),
+    cron: Joi.string().required()
 
-// })
+})
 exports.DPdelete = Joi.object({
     reminder_id: Joi.number().integer().positive().required()
 })

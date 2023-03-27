@@ -98,9 +98,9 @@ exports.DPcreate = (req, res, next) => {
 	if(error) return res.status(400).json(error.message) 
     next()
 }
-//fix reoccurning !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 exports.DPdelete = (req, res, next) => {
-    const {error, value} = validator(schemas.DPdelete, req.query)
+    const {error, value} = validator(schemas.DPdelete, req.body) //this should be body!
 	if(error) return res.status(400).json(error.message) 
     next()
 }
