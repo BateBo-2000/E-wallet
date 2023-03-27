@@ -1,23 +1,26 @@
+const { title } = require('process')
 const db = require('../app/connectionPool')
 class DelayedPayment{
     constructor(user_id){
         this.user_id=user_id
     }
-    async createReminder(text,date,isReocurrning=false,remind_interval=null){
+    async createReminder(title,text,remind_date,isReocurrning=false,remind_interval=null){
         //creates a reminder
         let sql = `INSERT INTO paypal.reminders(
             user_id,
             remind,
             remind_date,
             isReocurrning,
-            remind_interval
+            remind_interval,
+            title
             )
             VALUES
             (${this.user_id},
             "${text}",
-            "${date}",
+            "${remind_date}",
             ${isReocurrning},
-            "${remind_interval}"
+            "${remind_interval}",
+            "${title}"
             );`
         const [result, _] = await db.execute(sql)
         return result

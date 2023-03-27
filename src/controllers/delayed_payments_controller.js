@@ -7,7 +7,7 @@ exports.startReminder = async (req, res) => {
 
     //add in db
     let reminder = new DelayedPayments(req.body.user_id)
-    result = await reminder.createReminder(req.body.text, req.body.start_date, true, '')
+    result = await reminder.createReminder(req.body.title, req.body.text, req.body.start_date, true, '')
 
     /*job's name is saved as the id of the reminder in the database for ease of access */
     const jobname = result.insertId+"" //to convert it to string faster
@@ -55,7 +55,7 @@ exports.createReminder = async(req, res) => {
     }else{
         //add in db
         let reminder = new DelayedPayments(req.body.user_id)
-        result = await reminder.createReminder(req.body.text, req.body.start_date)
+        result = await reminder.createReminder(req.body.title, req.body.text, req.body.start_date)
         //add in scheduler
         let email = new User()
         email = await email.getEmail(req.body.user_id)
@@ -68,7 +68,7 @@ exports.createReminder = async(req, res) => {
             //delete from db
             reminder.deleteReminder(result.insertId)
             //console for less ptsd
-            console.log('email sent')
+            //added it in the sendMail part
         });
         res.status(200).json(result)
     }
