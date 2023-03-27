@@ -1,6 +1,7 @@
 const express = require('express');
 const trans_con = require('../controllers/transaction_controller')
 const {authenticate} = require('../app/authorization middleware/authorization_service')
+const {transactionsMake, transactionsSearchByDate, transactionsSearchByMoney,transactionsSearchByReciever,transactionsSearchByRecieverBalance} = require('../app/validator middleware/validators')
 let routerTrans = express.Router();
 /* this router is handling everything that starts with /transactions/*/
 
@@ -10,10 +11,10 @@ routerTrans.use(function stamp(req,res,next){
 })
 
 routerTrans
-.post('/make', authenticate, trans_con.makeTrans)
-.get('/history', authenticate, trans_con.getHistory)
-.post('/searchByDate', authenticate, trans_con.searchByDate)
-.post('/searchByMoney', authenticate, trans_con.searchByMoney)
-.post('/searchByReciever', authenticate, trans_con.searchByReciever)
+.post('/make', transactionsMake, authenticate, trans_con.makeTrans)
+.get('/history', transactionsSearchByDate, authenticate, trans_con.getHistory)
+.post('/searchByDate', transactionsSearchByMoney, authenticate, trans_con.searchByDate)
+.post('/searchByMoney', transactionsSearchByReciever, authenticate, trans_con.searchByMoney)
+.post('/searchByReciever', transactionsSearchByRecieverBalance, authenticate, trans_con.searchByReciever)
 
 module.exports = routerTrans;

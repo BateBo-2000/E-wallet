@@ -20,7 +20,7 @@ exports.deleteCurrency = async (req, res)=>{
 // USER
 exports.deleteUser = async (req, res)=>{
     let admin = new Admin(req.body.user_id)
-    admin = await admin.deleteUser(req.query.user_id)
+    admin = await admin.deleteUser(req.query.deleteUser_id)
     res.json(admin).status(200)
 }
 // BALANCE 

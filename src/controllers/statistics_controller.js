@@ -1,5 +1,5 @@
 const Statics = require('../repository/Statistics')
-const {dateFormater} = require('./exchange_rates_controller')
+const {dateFormater} = require('../repository/ExchangeRates')
 exports.getCountbyReciever = async (req, res) =>{ 
     /* retruns how much time you have spent money and where (ordered)*/
     let {user_id, start_date, end_date} = req.body
