@@ -115,7 +115,8 @@ exports.AgetCustom = Joi.object({
     condition: Joi.string().required()
 })                                                                               
 exports.AaddCurrency = Joi.object({
-    currency_name: Joi.string().uppercase().length(3).required(),
+    currency_id:Joi.number().integer().positive().required(),
+    currency_name: Joi.string().uppercase().length(3).required()
 })
 exports.AdeleteCurrency = Joi.object({
     currency_id: Joi.number().integer().positive().required()

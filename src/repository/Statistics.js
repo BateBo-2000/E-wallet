@@ -18,10 +18,10 @@ class Statics {
     async getSpendingByReciever(){ 
         //gets how much have you spent on something durning this period
         let sql = 
-        `SELECT SUM(amount),currency_name ,reciever
+        `SELECT SUM(amount),currency_name ,reciever_id
         FROM paypal.transcur 
         WHERE  user_id = ${this.user_id} 
-        GROUP BY reciever
+        GROUP BY reciever_id
         HAVING SUM(amount) !=0`
         const data = await db.execute(sql)
         return data[0]
@@ -29,12 +29,12 @@ class Statics {
     async getRecieverCount(start_date, end_date){ 
         //gets how much have you spent on something durning this period
         let sql = `SELECT 
-        COUNT(*), reciever
+        COUNT(*), reciever_id
         FROM paypal.transcur
         WHERE user_id = ${this.user_id}
         AND date_done BETWEEN '${start_date} 00:00:00' 
         AND '${end_date} 00:00:00'
-        GROUP BY reciever
+        GROUP BY reciever_id
         HAVING COUNT(*) > 0`;
         const data = await db.execute(sql)
         return data[0]

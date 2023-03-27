@@ -320,7 +320,7 @@ Content-Type: application/json
 
 {
     "start_date":"2023-03-10",
-    "end_date":"2023-03-17"
+    "end_date":"2023-03-30"
 }
 
 
@@ -378,7 +378,8 @@ POST http://localhost:5000/admin/addCurrency
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5OTM3ODE5LCJleHAiOjE2ODAwMjQyMTl9.H9y7AqVlI4YvKXrVLjWnEf-5LGEBrZRXANQYYzDpjRU
 Content-Type: application/json
 
-{
+{   
+    "currency_id": 2,
     "currency_name":"YEN"
 }
 ###

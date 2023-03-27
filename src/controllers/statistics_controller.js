@@ -9,6 +9,7 @@ exports.getCountbyReciever = async (req, res) =>{
     stat.forEach(element => {
         result.push([Object.values(element)[0], Object.values(element)[1]])
     });
+    if(result.length === 1) return res.json({message: "no transactions to reciever"}).status(204)
     res.json(result).status(200)
     
 }
@@ -25,6 +26,7 @@ exports.getSpendingByReciever = async (req, res) =>{
         let reciever = Object.values(element)[2]
         result.push([amount, currency, reciever])
     });
+    if(result.length === 1) return res.json({message: "no transactions to that reciever"}).status(204)
     res.json(result).status(200)
     
 }
@@ -56,6 +58,7 @@ exports.getSpending = async (req, res) =>{
         eDate = dateSetter(sDate,step)
         
     }
+    if(result.length === 1) return res.json({message: "no spending found"}).status(204)
     res.json(result).status(200)
 }
 

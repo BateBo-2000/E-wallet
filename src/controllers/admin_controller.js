@@ -9,7 +9,7 @@ exports.get = async (req, res)=>{
 // CURRENCY
 exports.addCurrency = async (req, res)=>{
     let admin = new Admin(req.body.user_id)
-    admin = await admin.addCurrency(req.body.currency_name)
+    admin = await admin.addCurrency(req.body.currency_id,req.body.currency_name)
     res.json(admin).status(200)
 }
 exports.deleteCurrency = async (req, res)=>{

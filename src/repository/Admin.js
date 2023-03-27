@@ -7,12 +7,18 @@ class Admin{
         this.admin_id = admin_id
     }
     //used for adding supported currency
-    async addCurrency(currency_name){
-        let sql = `INSERT INTO paypal.currency (currency_name) VALUES ("${currency_name}");`
-        const [data, _] = await db.execute(sql)
-        //write it down
-        await this.wirteChanges("ADDED CURRENCY: this admin executed query:"+sql)
-        return data
+    async addCurrency(currency_id,currency_name){
+        try{
+            let sql = `INSERT INTO paypal.currency (currency_id, currency_name) VALUES (${currency_id},"${currency_name}");`
+            const [data, _] = await db.execute(sql)
+            //write it down
+            await this.wirteChanges("ADDED CURRENCY: this admin executed query:"+sql)
+            return data
+        }catch(err){
+            await this.wirteChanges("ADDED CURRENCY FAIL: this admin tried to add currency:"+currency_name)
+            return err
+        }
+        
     }
     //used for removing supported currency
     async deleteCurrency(currency_id){
