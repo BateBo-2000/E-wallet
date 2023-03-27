@@ -10,10 +10,13 @@ const routerBalanceHistory = require('./src/routes/balance_history')
 const routerDelayedPayments = require('./src/routes/delayedpayments')
 const routerAdmin = require('./src/routes/admin')
 const routerPayment = require('./src/routes/payment')
+const {startReminders} = require('./src/app/reminderStarter')
 
 const app = express()
 const port = process.env.PORT || 5000
 app.use(express.json())
+
+startReminders()
 
 //routes
 app.use('/stats',routerStats)

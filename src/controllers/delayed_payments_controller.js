@@ -2,7 +2,6 @@ const schedule = require('node-schedule')
 const DelayedPayments = require('../repository/DelayedPayment')
 const User = require('../repository/User')
 const cronValidator = require('cron-validator');
-
 const emailer = require('../repository/Emailer')
 
 exports.startReminder = async (req, res) => {

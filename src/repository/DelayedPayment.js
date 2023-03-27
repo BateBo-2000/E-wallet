@@ -1,4 +1,3 @@
-const { title } = require('process')
 const db = require('../app/connectionPool')
 class DelayedPayment{
     constructor(user_id){
