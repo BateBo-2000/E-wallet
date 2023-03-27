@@ -282,12 +282,12 @@ Content-Type: application/json
     "reciever_id":6
 }
 ###
-POST  http://localhost:5000/transactions/searchByReciever
+POST  http://localhost:5000/transactions/searchByBalance
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjc5OTM3ODE5LCJleHAiOjE2ODAwMjQyMTl9.H9y7AqVlI4YvKXrVLjWnEf-5LGEBrZRXANQYYzDpjRU
 Content-Type: application/json
 
 {
-    "balance":1
+    "balance_id":2
 }
 
 

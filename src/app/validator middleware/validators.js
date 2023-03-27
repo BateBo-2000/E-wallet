@@ -76,8 +76,8 @@ exports.transactionsSearchByReciever = (req, res, next) => {
 	if(error) return res.status(400).json(error.message) 
     next()
 }
-exports.transactionsSearchByRecieverBalance = (req, res, next) => {
-    const {error, value} = validator(schemas.transactionsSearchByRecieverBalance, req .body)
+exports.transactionsSearchByBalance = (req, res, next) => {
+    const {error, value} = validator(schemas.transactionsSearchByBalance, req .body)
 	if(error) return res.status(400).json(error.message) 
     next()
 }

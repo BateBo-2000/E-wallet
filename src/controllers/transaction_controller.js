@@ -60,6 +60,6 @@ exports.searchByDate = async (req,res) => {
 exports.searchByBalance = async (req,res) => {
     //returns list of transactions made in a window of time between_start date and end_date for the user
     let transaction = new Transaction(req.body.user_id*1)
-    transaction = await transaction.searchByBalance(req.body.balance*1)
+    transaction = await transaction.searchByBalance(req.body.balance_id*1)
     res.json(transaction).status(200)
 }

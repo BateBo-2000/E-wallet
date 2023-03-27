@@ -80,8 +80,8 @@ exports.transactionsSearchByMoney = Joi.object({
 exports.transactionsSearchByReciever = Joi.object({
     reciever_id: Joi.number().integer().positive().required()
 })
-exports.transactionsSearchByRecieverBalance = Joi.object({
-    balance: Joi.number().integer().positive().required()
+exports.transactionsSearchByBalance = Joi.object({
+    balance_id: Joi.number().integer().positive().required()
 })
 /**STATS */
 exports.spending = Joi.object({
