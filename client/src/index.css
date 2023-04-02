@@ -6,6 +6,10 @@
   font-family: 'Edu NSW ACT Foundation', cursive;
   color: #333;
 }
+body{
+  background-color: #aab7fd;
+}
+
 .navbar {
   padding: 20px;
   display: flex;
@@ -28,21 +32,24 @@
 .navbar a:hover {
   color: #f1356d;
 }
-.content {
-  max-width: 600px;
-  margin: 40px auto;
+.page-content {
+  max-width: 300px;
+  margin: auto;
   padding: 20px;
 }
 
 
-/* login form */
+/* base components */
 .box{
+  border-radius: 6px;
+  background-color: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 400px;
+  height: auto;
   width: 300px;
   display: flex;
   flex-direction: column;
 }
+
 .title {
   width: 100%;
   height: 30%;
@@ -83,11 +90,14 @@
   transition-delay: 0s, 0s;
 }
 
-.form input :focus{
-    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(58 151 212 / 36%) 0px 0px 0px 4px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+.button-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .submit-button{
+  margin: 0 20px;
   background-color: #405cf5;
   border-radius: 6px;
   border-width: 0;
@@ -107,12 +117,45 @@
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(13, 90, 179, 0.3) 0 0 0 4px;
 }
 
-.login-button .submit-button{
-  margin: 0 20px;
-}
-
-.login .link {
-  height: 30;
+.link {
+  margin-bottom: 5px;
+  font-size: 18px;
+  height: 30px;
   text-align: center;
   text-decoration: none;
+}
+
+.checkbox-wrap{
+  margin: 20px;
+  display: block;
+  text-align: center;
+}
+.checkbox-wrap .checkbox{
+  box-shadow: none;
+}
+
+
+/* login form */
+
+/* sign-in form */
+.sign-in .title{
+  height: 100px;
+}
+
+/* account-info-form */
+.account-info-form .submit-button{
+  margin-bottom: 20px;
+}
+.account-info-form .page-content{
+  max-width: 800px;
+}
+.account-info-form .box {
+  width: 800px;
+}
+.account-info-form form .form-content{
+  display: flex;
+  flex-direction: row;
+}
+.account-info-form form .form-content .side{
+  width: 50%;
 }
