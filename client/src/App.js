@@ -10,8 +10,10 @@ import Account from './components/Account'
 import ExchangeRates from './components/Exchange-rates'
 import Reminders from './components/Reminders'
 import AccountInfoForm from './components/AccountInfoForm'
+import Terms from './components/terms'
 
 function App() {
+  
   return (
     <Router>
       <div className="App">
@@ -24,27 +26,25 @@ function App() {
               <Route path='/sign-in'>
                 <SignInForm/>
               </Route>
+              <Route path='/terms'>
+                <Terms/>
+              </Route>
               <Route path='/account-info-form'>
                 <AccountInfoForm/>
               </Route>
               <Route path='/account'>
-                <NavBar/>
                 <Account/>
               </Route>
               <Route path='/exchange-rates'>
-                <NavBar/>
                 <ExchangeRates/>
               </Route>
               <Route path='/reminders'>
-                <NavBar/>
                 <Reminders/>
               </Route>
               <Route path='/money'>
-                <NavBar/>
                 <Home/>
               </Route>
               <Route path='/'>
-                <NavBar/>
                 <Home/>
               </Route>
               <Route path='*'>

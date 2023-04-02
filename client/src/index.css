@@ -6,40 +6,30 @@
   font-family: 'Edu NSW ACT Foundation', cursive;
   color: #333;
 }
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body{
   background-color: #aab7fd;
 }
-
-.navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
-}
-.navbar h1 {
-  color: #f1356d;
-}
-.navbar .links {
-  margin-left: auto;
-}
-.navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-}
-.navbar a:hover {
-  color: #f1356d;
+.content{
+  position: relative;
+  min-height: 100vh;
 }
 .page-content {
   max-width: 300px;
   margin: auto;
-  padding: 20px;
+  padding: 6rem;
 }
 
 
 /* base components */
+/*
+ Here i describe my basic components from the html page
+*/
 .box{
   border-radius: 6px;
   background-color: #f2f2f2;
@@ -122,7 +112,9 @@ body{
   font-size: 18px;
   height: 30px;
   text-align: center;
-  text-decoration: none;
+}
+.link :hover{
+  color: #2e57dd;
 }
 
 .checkbox-wrap{
@@ -133,6 +125,10 @@ body{
 .checkbox-wrap .checkbox{
   box-shadow: none;
 }
+
+/*
+ Here I override the components's css if needed for reusing purposes  
+*/
 
 
 /* login form */
@@ -158,4 +154,109 @@ body{
 }
 .account-info-form form .form-content .side{
   width: 50%;
+}
+/* Terms page */
+.terms .p-wrap{
+  border-radius: 5px;
+  margin: 20px;
+  background-color: #e7e7e7;
+  text-align: center;
+}
+
+.terms .page-content{
+  max-width: 800px;
+}
+.terms .box{
+  width: 800px;
+}
+
+/* home */
+.home .page-content{
+  max-width: 90vh;
+}
+.home .box{
+  width: 100vh;
+  min-height: 60vh;
+}
+
+
+/* navbar */
+nav{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5rem;            /* Nav height */
+}
+
+nav .box{
+  border-radius: 0;
+  box-shadow: none;
+  box-shadow: 0px 4px 5px #6976c0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+nav .logo{
+  background-color: #6e84ff;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+nav .logo img{
+  width: 100%;
+  height: 100%;
+}
+
+nav .box .link-wrap {
+  width: 10%;
+  height: 100%;
+  margin-top: auto;
+  text-align: center;
+}
+nav h2{
+  padding: 2.5vh 0;
+}
+nav .box .link-wrap:hover{
+  background-color: #aab7fd;  
+}
+#logout{
+  color: rgb(172, 18, 18);
+}
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;            /* Footer height */
+}
+footer .box{
+  border-radius: 0;
+  box-shadow: none;
+  box-shadow: 0px 4px 10px #8890b8 inset;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+footer .box .link-wrap{
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+footer .link{
+  margin-top: 1.5rem;
+}
+footer .contact-wrap{
+  width: 50%;
+  height: 4.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }

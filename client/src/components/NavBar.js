@@ -1,17 +1,25 @@
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({elements}) => {
+    
+    console.log(elements)
+
     return ( 
-        <div className="navbar">
-            <img src='.../public/E-wallet-logo.png' alt="Logo" />
-            <a href="https://www.youtube.com/watch?v=jOTeBVtlnXU" target="blank">Husslers anthem</a>
-            <Link to="/">Home</Link>
-            <Link to="/account">Account</Link>
-            <Link to="/exchange-rates">Exchange Rates</Link>
-            <Link to="/reminders">Reminders</Link>
-            <Link to="/money">My Money</Link>
-            <Link to="/login">Log out</Link>
-        </div>
+        <nav>
+            <div className="box">
+                <div className="logo">
+                    <img src='https://cdn.discordapp.com/attachments/903228880222060564/1092201949178384525/image.png' alt="Logo" />
+                </div>
+
+                {elements && elements.map((element)=>(
+                    <div className="link-wrap">
+                    <Link to={element.link}>
+                        <h2>{element.name}</h2>
+                    </Link>
+                    </div>
+                ))}
+            </div>
+        </nav>
      );
 }
  
