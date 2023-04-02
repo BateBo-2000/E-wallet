@@ -3,6 +3,10 @@ import { useHistory } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 const AccountInfoForm = () => {
+    
+    const isLogged = false   //change if logged 
+
+    const NavElements = [{id:2,name:"Home" ,link:"/"}]
     const history = useHistory();
     const handleClick = () =>{
         history.push('/')
@@ -10,7 +14,8 @@ const AccountInfoForm = () => {
 
     return ( 
         <div>
-            <NavBar/>
+            {isLogged && <NavBar elements={NavElements}/>}
+            {!isLogged && <NavBar/>}
             <div className="account-info-form">
                 <div className="page-content">
                     <div className="box">

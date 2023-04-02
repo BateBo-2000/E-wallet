@@ -1,10 +1,13 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 const Terms = () => {
-    const NavElements = [{id:2,name:"Home" ,link:"/"}]
+    const isLogged = false   //change if logged 
+
+    const NavElements = [{id:2,name:"Home" ,link:"/"},{id:1,name:"Back" ,link:"/account-info-form"}]
     return ( 
         <div>
-            <NavBar elements={NavElements}/>
+            {isLogged && <NavBar elements={[NavElements[0]]}/>}
+            {!isLogged && <NavBar elements={[NavElements[1]]}/>}
             <div className="terms">
                     <div className="page-content">
                         <div className="box">

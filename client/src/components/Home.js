@@ -3,7 +3,6 @@ import Footer from "./Footer";
 const Home = () => {
     const NavElements = [
         {id:1,name:"Admin" ,link:"/admin"},
-        {id:2,name:"Home" ,link:"/"},
         {id:3,name:"Account" ,link:"/account"},
         {id:4,name:"Money" ,link:"/money"},
         {id:5,name:"Reminders" ,link:"/reminders"},
