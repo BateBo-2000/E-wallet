@@ -1,5 +1,6 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import ListBalance from "./ListBalance";
 const Home = () => {
     const NavElements = [
         {id:1,name:"Admin" ,link:"/admin"},
@@ -17,6 +18,7 @@ const Home = () => {
                     <div className="box">
                         <div className="title">
                             <h2>Home</h2>
+                            <ListBalance/>
                         </div>
                     </div>
                 </div>

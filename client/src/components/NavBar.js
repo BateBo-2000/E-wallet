@@ -12,7 +12,7 @@ const NavBar = ({elements}) => {
                 </div>
 
                 {elements && elements.map((element)=>(
-                    <div className="link-wrap">
+                    <div className="link-wrap" key={element.id}>
                     <Link to={element.link}>
                         <h2>{element.name}</h2>
                     </Link>
