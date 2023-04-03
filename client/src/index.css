@@ -334,6 +334,7 @@ text-align: center;
   padding: 10px;
 }
 .account .box .form-content{
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -579,4 +580,43 @@ text-align: center;
 .tran .content-box{
   flex-direction: column;
   height: auto;
+}
+
+/*Balance history*/
+
+.balance-history .page-content{
+  max-width: 90vh;
+}
+.balance-history .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+}
+.balance-history .title {
+  margin-bottom: 10px;
+}
+
+.balance-history .form-pair{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.balance-history .form-pair .selection{
+  margin: 0 25%;
+  width: 50%;
+}
+
+.tran .content-box{
+  flex-direction: column;
+  height: auto;
+}
+
+/*Make Transaction*/
+.transaction .submit-button{
+  margin-bottom: 25px;
 }

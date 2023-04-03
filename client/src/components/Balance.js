@@ -46,7 +46,7 @@ const Balance = () => {
         {id:1,name:"Home" ,link:"/"},
         {id:3,name:"Balance History" ,link:"/balance-history"},
         {id:4,name:"Make Transaction" ,link:"/make-transaction"},
-        {id:5,name:"Add money" ,link:"/add"},
+        {id:5,name:"Add money" ,link:"/add-money"},
         {id:6,name:"Withdraw money" ,link:"/withdraw"}
     ]
 
