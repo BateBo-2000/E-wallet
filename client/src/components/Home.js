@@ -5,7 +5,7 @@ const Home = () => {
     const NavElements = [
         {id:1,name:"Admin" ,link:"/admin"},
         {id:3,name:"Account" ,link:"/account"},
-        {id:4,name:"Money" ,link:"/money"},
+        {id:4,name:"Stats" ,link:"/stats"},
         {id:5,name:"Reminders" ,link:"/reminders"},
         {id:6,name:"Exchange rates" ,link:"/exchange-rates"}, 
         {id:7,name:"Log out" ,link:"/login"}

@@ -101,7 +101,7 @@ body{
   width: 260px;
 }
 
-.submit-button:focus {
+.submit-button:active {
   color: #8ca2e7;
   background-color: #2e57dd;
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(13, 90, 179, 0.3) 0 0 0 4px;
@@ -316,22 +316,21 @@ footer .contact-wrap{
 .account .box h1{
 text-align: center;
 }
-.account .box .data-pair{
+.data-pair{
   width: 100%;
   display: flex;
   flex-direction: row;  
 }
-.account .box .data-pair .name{
+.data-pair .name{
   
   width: 30%;
   text-align: left;
 }
-.account .box .data-pair .value{
-  
+.data-pair .value{
   width: 70%;
   text-align: left;
 }
-.account .box .data-pair h2{
+.data-pair h2{
   padding: 10px;
 }
 .account .box .form-content{
@@ -345,4 +344,239 @@ text-align: center;
   background-color: #c1dcff;
   border-radius: 6px;
   margin-bottom: 25px;
+}
+
+/* Stats */
+.stats .page-content{
+  max-width: 90vh;
+}
+.stats .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats .title {
+  margin-bottom: 10px;
+}
+
+.content-box{
+  margin: 0 auto;
+  min-height: 50px;
+  height: 7vh;
+  width: 95%;
+  background-color: #c1dcff;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.options{
+  width: 30%;
+}
+
+.selector{
+  width: 80%;
+  margin: 20px;
+  font-size: 18px;
+}
+
+.param{
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-align: end;
+}
+
+.stats .form-pair{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.selector-mini{
+  width: 50%;
+  align-self: center;
+}
+
+.stats .graph .content-box{
+  background-color: #d3d3d3;
+  min-height: 50vh;
+}
+
+/* Exchange Rates*/
+.exchange-rates .page-content{
+  max-width: 90vh;
+}
+.exchange-rates .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.exchange-rates .title {
+  margin-bottom: 10px;
+}
+
+
+.exchange-rates .form-pair{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.selector-mini{
+  width: 50%;
+  align-self: center;
+}
+
+/*Converter*/
+.converter .page-content{
+  max-width: 90vh;
+}
+.converter .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.converter .title {
+  margin-bottom: 10px;
+}
+
+.converter .form-pair{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.selector-mini{
+  width: 50%;
+  align-self: center;
+}
+.converter .submit-button{
+  margin-bottom: 25px;
+}
+
+.answer{
+  width: 20%;
+}
+
+.answer-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Reminders */
+.reminders .page-content{
+  max-width: 90vh;
+}
+.reminders .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+.reminders .title {
+  margin-bottom: 10px;
+}
+
+.reminder-preview .element-box{
+  height: auto;
+  margin: 15px auto;
+}
+
+.reminders .data-pair .value{ 
+  width: 60%;
+}
+
+.data-pair .button-wrap .submit-button{
+  width: 50px;
+}
+.data-pair .button-wrap{
+  width: 10%;
+}
+
+/* Create Reminder*/
+.create-reminder .page-content{
+  max-width: 90vh;
+}
+.create-reminder .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+.create-reminder .title {
+  margin-bottom: 10px;
+}
+
+.reminder-preview .element-box{
+  height: auto;
+  margin: 15px auto;
+}
+
+.create-reminder .data-pair .name{ 
+  width: 50%;
+}
+
+.create-reminder .data-pair .value{ 
+  padding: 10px;
+  width: 50%;
+}
+
+.data-pair .button-wrap .submit-button{
+  width: 50px;
+}
+.data-pair .button-wrap{
+  width: 10%;
+}
+.create-reminder .form input{
+  min-width: 90%;
+}
+/* Balance */
+
+.balance .page-content{
+  max-width: 90vh;
+}
+.balance .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+}
+.balance .title {
+  margin-bottom: 10px;
+}
+
+.balance .form-pair{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.balance .form-pair .selection{
+  margin: 0 25%;
+  width: 50%;
+}
+
+.tran .content-box{
+  flex-direction: column;
+  height: auto;
 }

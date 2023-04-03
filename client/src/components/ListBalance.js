@@ -55,16 +55,16 @@ const ListBalance = () => {
         <div className="balances">
             {balances.map((balance) => (
                 <div className="balanceElement" key={balance.balance_id}>
-                    <Link to={`/balance/${balance.balance_id}`}>
+                    <Link to={`/balance/id=${balance.balance_id}`}>
                         <div className="element-box" >
-                            {<div className="balance-preview">
+                            <div className="balance-preview">
                                 <div className="balance-id-wrap">
                                     <h2>Balance: {balance.balance_id}</h2>
                                 </div>
                                 <div className="balance-data-wrap">
                                     <h3>{balance.balance}{balance.currency_id}</h3>
                                 </div>
-                            </div>}
+                            </div>
                         </div>
                     </Link>
                 </div>
