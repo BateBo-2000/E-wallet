@@ -19,6 +19,7 @@ import BalanceHistory from './components/BalanceHistory'
 import Withdraw from './components/Withdraw'
 import AddMoney from './components/AddMoney'
 import MakeTrans from './components/MakeTrans'
+import CreateBalance from './components/CreateBalance'
 
 function App() {
   
@@ -28,52 +29,55 @@ function App() {
         <header className="App-header">
             <div className="content">
               <Switch>
-              <Route path='/withdraw'>
+              <Route exact path='/withdraw'>
                 <Withdraw/>
               </Route>
-              <Route path='/add-money'>
+              <Route exact path='/add-money'>
                 <AddMoney/>
               </Route>
-              <Route path='/make-transaction'>
+              <Route exact path='/make-transaction'>
                 <MakeTrans/>
               </Route>
-              <Route path='/balance-history'>
+              <Route exact path='/create-balance'>
+                <CreateBalance/>
+              </Route>
+              <Route exact path='/balance-history'>
                 <BalanceHistory/>
               </Route>
-              <Route path='/login'>
+              <Route exact path='/login'>
                 <LoginForm/>
               </Route>
-              <Route path='/balance'>
+              <Route exact path='/balance/:id'>
                 <Balance/>
               </Route>
-              <Route path='/sign-in'>
+              <Route exact path='/sign-in'>
                 <SignInForm/>
               </Route>
-              <Route path='/terms'>
+              <Route exact path='/terms'>
                 <Terms/>
               </Route>
-              <Route path='/account-info-form'>
+              <Route exact path='/account-info-form'>
                 <AccountInfoForm/>
               </Route>
-              <Route path='/account'>
+              <Route exact path='/account'>
                 <Account/>
               </Route>
-              <Route path='/converter'>
+              <Route exact path='/converter'>
                 <Converter/>
               </Route>
-              <Route path='/exchange-rates'>
+              <Route exact path='/exchange-rates'>
                 <ExchangeRates/>
               </Route>
-              <Route path='/reminders'>
+              <Route exact path='/reminders'>
                 <Reminders/>
               </Route>
-              <Route path='/create-reminder'>
+              <Route exact path='/create-reminder'>
                 <CreateReminder/>
               </Route>
-              <Route path='/stats'>
+              <Route exact path='/stats'>
                 <Stats/>
               </Route>
-              <Route path='/'>
+              <Route exact path='/'>
                 <Home/>
               </Route>
               <Route path='*'>

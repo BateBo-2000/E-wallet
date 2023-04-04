@@ -7,9 +7,13 @@ const NotFound = () => {
         <div>
             <NavBar elements={NavElements}/>
             <div className="NotFound">
-                <h2>Sorry!</h2>
-                <p>The page you are looking for cannot be found</p>
-                <Link to='/'>Back to home page ...</Link>
+                <div className="page-content">
+                        <div className="title">
+                            <h2>Sorry!</h2>
+                            <p>The page you are looking for cannot be found</p>
+                            <Link to='/'><h4>Back to home page ...</h4></Link>
+                        </div>
+                </div>
             </div>
             <Footer/>
         </div>  

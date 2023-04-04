@@ -48,7 +48,7 @@ const ListBalance = () => {
 
     const history = useHistory()
     const handleClick = () => {
-        history.push('/balance/create')
+        history.push('/create-balance')
     }
 
     return ( 
