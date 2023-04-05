@@ -1,16 +1,19 @@
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useState } from "react";
 import React from 'react'
-import {tokenHandler} from '../common/ResponseHandler'
+import {tokenHandler, statusChecker} from '../common/ResponseHandler'
+import { useAuth } from "../utils/auth";
 
 const LoginForm = () => {
     React.useEffect(() => { /*set the window title */
         document.title = 'E-wallet Login'; 
     }, []);
 
+    const auth = useAuth()
+    const history = useHistory()
     const [user, setUser] = useState('')
     const [pass, setPass] = useState('')
     const [error, setError] = useState(null)
@@ -19,7 +22,7 @@ const LoginForm = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        setError('');
+        setError(null);
 
         login(user, pass);
     };
@@ -35,7 +38,19 @@ const LoginForm = () => {
                 password: password
             })
         })
-        .then(res => tokenHandler (res, setError))
+        .then(res => {
+            if(statusChecker(res, setError)){
+                return res.json()
+            }
+            throw Error(error) // stops the promise cahin and goes directly to the catch block
+        })
+        .then(data=>{
+            if(tokenHandler(data, setError)){
+                auth.Login()        //sets the cotext
+                history.push('/')   //If everything is ok up to here, redirects to home
+            }
+            throw Error(error) //throws error if there is problem in the token handler
+        })
         .catch(err => setError('Something went wrong!'));
     }
 

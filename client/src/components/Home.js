@@ -11,9 +11,9 @@ const Home = () => {
         {id:6,name:"Exchange rates" ,link:"/exchange-rates", onClickF: ()=> {console.log('rates')}}, 
         {id:7,name:"Log out" ,link:"/login", onClickF: ()=> {auth.Logout()}}
     ]
-    if(auth.user.role === 'admin'){
-        NavElements.unshift({id:1,name:"Admin" ,link:"/admin", onClickF: ()=> {console.log('admin')}})
-    }
+    // if(auth.user.role === 'admin'){
+    //     NavElements.unshift({id:1,name:"Admin" ,link:"/admin", onClickF: ()=> {console.log('admin')}})
+    // }
 
     return ( 
         <div>

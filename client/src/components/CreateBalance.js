@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const CreateBalance = () => {
 
-    const currency = "BGN"
+    //const currency = "BGN"
     const NavElements = [
         {id:1,name:"Back" ,link:"/"},
     ]

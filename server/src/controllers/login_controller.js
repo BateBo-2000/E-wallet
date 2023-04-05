@@ -22,7 +22,7 @@ exports.Login = async (req, res) =>{
             res.status(200).json({message: "Success", token:createToken(payload, process.env.ACCESS_TOKEN_SECRET)})        
         }else{
             loginTryStatus = "Tryed to log in with incorrect password" 
-            res.status(401).send("Invalid password!")
+            res.status(401).json({message: "Invalid password"})
         }
     }catch{
         loginTryStatus = "Tryed to log but server error has occured" 

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../utils/auth";
+//import { useAuth } from "../utils/auth";
 
 const NavBar = ({elements}) => {
-    const auth = useAuth()
+    //const auth = useAuth()
     return ( 
         <nav>
             <div className="box">
