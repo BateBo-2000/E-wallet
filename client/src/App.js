@@ -20,75 +20,79 @@ import Withdraw from './components/Withdraw'
 import AddMoney from './components/AddMoney'
 import MakeTrans from './components/MakeTrans'
 import CreateBalance from './components/CreateBalance'
+import { AuthProvider } from './utils/auth'
 
 function App() {
   
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-            <div className="content">
-              <Switch>
-              <Route exact path='/withdraw'>
-                <Withdraw/>
-              </Route>
-              <Route exact path='/add-money'>
-                <AddMoney/>
-              </Route>
-              <Route exact path='/make-transaction'>
-                <MakeTrans/>
-              </Route>
-              <Route exact path='/create-balance'>
-                <CreateBalance/>
-              </Route>
-              <Route exact path='/balance-history'>
-                <BalanceHistory/>
-              </Route>
-              <Route exact path='/login'>
-                <LoginForm/>
-              </Route>
-              <Route exact path='/balance/:id'>
-                <Balance/>
-              </Route>
-              <Route exact path='/sign-in'>
-                <SignInForm/>
-              </Route>
-              <Route exact path='/terms'>
-                <Terms/>
-              </Route>
-              <Route exact path='/account-info-form'>
-                <AccountInfoForm/>
-              </Route>
-              <Route exact path='/account'>
-                <Account/>
-              </Route>
-              <Route exact path='/converter'>
-                <Converter/>
-              </Route>
-              <Route exact path='/exchange-rates'>
-                <ExchangeRates/>
-              </Route>
-              <Route exact path='/reminders'>
-                <Reminders/>
-              </Route>
-              <Route exact path='/create-reminder'>
-                <CreateReminder/>
-              </Route>
-              <Route exact path='/stats'>
-                <Stats/>
-              </Route>
-              <Route exact path='/'>
-                <Home/>
-              </Route>
-              <Route path='*'>
-                <NavBar/>
-                <NotFound/>
-              </Route>
-              </Switch>
-            </div>
-        </header>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+              <div className="content">
+                <Switch>
+                  <Route exact path='/login'>
+                    <LoginForm/>
+                  </Route>
+                  <Route exact path='/sign-in'>
+                    <SignInForm/>
+                  </Route>
+
+                  <Route exact path='/withdraw'>
+                    <Withdraw/>
+                  </Route>
+                  <Route exact path='/add-money'>
+                    <AddMoney/>
+                  </Route>
+                  <Route exact path='/make-transaction'>
+                    <MakeTrans/>
+                  </Route>
+                  <Route exact path='/create-balance'>
+                    <CreateBalance/>
+                  </Route>
+                  <Route exact path='/balance-history'>
+                    <BalanceHistory/>
+                  </Route>
+                  <Route exact path='/balance/:id'>
+                    <Balance/>
+                  </Route>
+                  <Route exact path='/terms'>
+                    <Terms/>
+                  </Route>
+                  <Route exact path='/account-info-form'>
+                    <AccountInfoForm/>
+                  </Route>
+                  <Route exact path='/account'>
+                    <Account/>
+                  </Route>
+                  <Route exact path='/converter'>
+                    <Converter/>
+                  </Route>
+                  <Route exact path='/exchange-rates'>
+                    <ExchangeRates/>
+                  </Route>
+                  <Route exact path='/reminders'>
+                    <Reminders/>
+                  </Route>
+                  <Route exact path='/create-reminder'>
+                    <CreateReminder/>
+                  </Route>
+                  <Route exact path='/stats'>
+                    <Stats/>
+                  </Route>
+                  <Route exact path='/'>
+                    <Home/>
+                  </Route>
+                  <Route path='*'>
+                    <NavBar/>
+                    <NotFound/>
+                  </Route>
+                </Switch>
+              </div>
+          </header>
+        </div>
+      </Router>
+    </AuthProvider>
   )
 }
 

@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const routerAccount = require('./src/routes/account')
 const routerExchange = require('./src/routes/exchange')
 const routerStats = require('./src/routes/stats')
@@ -15,7 +16,9 @@ const {startReminders} = require('./src/app/reminderStarter')
 const app = express()
 const port = process.env.PORT || 5000
 app.use(express.json())
-
+app.use(cors({
+    origin: "*"
+}))
 startReminders()
 
 //routes
@@ -30,6 +33,10 @@ app.use('/delayed-payments',routerDelayedPayments)
 app.use('/admin',routerAdmin)
 app.use('/payment', routerPayment)
 
+app.post('/test', (req,res)=>{
+    req.body = {...req.body, status: "success"}
+    res.json(req.body).status(200)
+})
 
 app.listen(port,err => {
     if(err) return console.log('ERROR!'+err) 
