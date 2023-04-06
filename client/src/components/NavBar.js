@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-//import { useAuth } from "../utils/auth";
+import { useAuth } from "../utils/auth";
 
 const NavBar = ({elements}) => {
-    //const auth = useAuth()
+    const auth = useAuth()
     return ( 
         <nav>
             <div className="box">
@@ -11,7 +11,7 @@ const NavBar = ({elements}) => {
                 </div>
 
                 {/**added check if user is logged*/}
-                {/*auth.user &&*/ elements && elements.map((element)=>(
+                {auth.user && elements && elements.map((element)=>(
                     <div className="link-wrap" key={element.id}>
                         <Link to={element.link} onClick={element.onClickF} >
                             <h2>{element.name}</h2>
