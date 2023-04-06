@@ -30,13 +30,13 @@ const CreateBalance = () => {
         })
         .then(res => {
             if(res.ok){
-                history.push('/')
+                //history.push('/')
             } else{
                 res.json()
             }
         })
-        .then(err => setError(err.message ? err.message : 'Something went wrong!'))
-        .catch(err=> setError('Something went worng!'))
+        .then(body => setError(body ? body : 'Something went wrong2!'))
+        .catch(err=> setError(err.message ? err.message : 'Something went worng1!'))
     }
 
     const handleSubmit = () => {

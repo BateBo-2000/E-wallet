@@ -22,12 +22,16 @@ exports.createBalance = async (req, res) =>{
     let currency = await new Currency(req.body.currency).getId()
     let user_id = req.body.user_id *1
     let balance = new Balance(user_id)
-    try{
+    if(currency) {
         balance = await balance.createBalance(currency.currency_id) // this should be string not a number
         res.json(balance).status(200)
-    } catch (err) {
+    }else{
         res.json({message: "NO SUCH CURRENCY!"}).status(404)
-    }
+    }   
+
+
+    
+
    
     
 }

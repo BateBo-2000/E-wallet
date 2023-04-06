@@ -187,7 +187,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "currency":"BGN"
+    "currency":"ZZZ"
 }
 ###
 POST  http://localhost:5000/balance/update
