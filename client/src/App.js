@@ -21,7 +21,7 @@ import AddMoney from './components/AddMoney'
 import MakeTrans from './components/MakeTrans'
 import CreateBalance from './components/CreateBalance'
 import { AuthProvider } from './utils/auth'
-
+import RequireAuth from './utils/RequireAuth'
 function App() {
   
   return (
@@ -29,15 +29,16 @@ function App() {
       <Router>
         <div className="App">
           <header className="App-header">
-              <div className="content">
-                <Switch>
-                  <Route exact path='/login'>
-                    <LoginForm/>
-                  </Route>
-                  <Route exact path='/sign-in'>
-                    <SignInForm/>
-                  </Route>
+            <div className="content">
+              <Switch>
+                <Route exact path='/login'>
+                  <LoginForm/>
+                </Route>
+                <Route exact path='/sign-in'>
+                  <SignInForm/>
+                </Route>
 
+                <RequireAuth>
                   <Route exact path='/withdraw'>
                     <Withdraw/>
                   </Route>
@@ -83,12 +84,15 @@ function App() {
                   <Route exact path='/'>
                     <Home/>
                   </Route>
-                  <Route path='*'>
-                    <NavBar/>
-                    <NotFound/>
-                  </Route>
-                </Switch>
-              </div>
+                </RequireAuth>
+                  
+
+                <Route path='*'>
+                  <NavBar/>
+                  <NotFound/>
+                </Route>
+              </Switch>
+            </div>
           </header>
         </div>
       </Router>
