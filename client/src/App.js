@@ -37,6 +37,9 @@ function App() {
                 <Route exact path='/sign-in'>
                   <SignInForm/>
                 </Route>
+                <Route exact path='/account-info-form'>
+                    <AccountInfoForm/>
+                </Route>
 
                 <RequireAuth>
                   <Route exact path='/withdraw'>
@@ -59,9 +62,6 @@ function App() {
                   </Route>
                   <Route exact path='/terms'>
                     <Terms/>
-                  </Route>
-                  <Route exact path='/account-info-form'>
-                    <AccountInfoForm/>
                   </Route>
                   <Route exact path='/account'>
                     <Account/>

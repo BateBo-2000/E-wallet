@@ -13,6 +13,6 @@ routerBalance.use(function stamp(req,res,next){
 routerBalance
 .get('/',  authenticate, balance_con.getUserBalance)
 .post('/create', createBalance, authenticate, balance_con.createBalance)
-.post('/update', authenticate, balance_con.updateBalance) //admin only //useless
+.post('/upd ate', authenticate, balance_con.updateBalance) //admin only //useless
 
 module.exports = routerBalance;

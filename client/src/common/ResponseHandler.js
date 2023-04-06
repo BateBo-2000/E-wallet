@@ -21,3 +21,9 @@ export const statusChecker = (response, setError)=>{
     }
     return true     //if there is no error return true
 }
+
+export const errorChecker = (res, setError) => {
+    res.json()
+    .then(err => setError(err ? err : 'Something went wrong!'))
+    .catch(err => setError('Something went worng!1') )
+}

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useState } from "react";
-import {statusChecker} from '../common/ResponseHandler'
+
 import React from "react";
 const AccountInfoForm = () => {
     React.useEffect(() => { 

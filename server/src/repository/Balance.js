@@ -4,7 +4,7 @@ class Balance{
         this.user_id = user_id
     }
     async getBalanceByUser(){
-        let sql = `Select * FROM paypal.balance WHERE user_id=${this.user_id};`
+        let sql = `Select * FROM paypal.balcur WHERE user_id=${this.user_id};`
         const [balance, _] = await db.execute(sql)
         return balance
     }

@@ -19,7 +19,7 @@ const ListBalance = ({balances}) => {
                                     <h2>Balance: {balance.balance_id}</h2>
                                 </div>
                                 <div className="balance-data-wrap">
-                                    <h3>{balance.balance}{balance.currency_id}</h3>
+                                    <h3>{balance.balance} {balance.currency_name}</h3>
                                 </div>
                             </div>
                         </div>
