@@ -1,11 +1,35 @@
 import { useHistory } from "react-router-dom";
+import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import { useState } from "react";
 const SignInForm = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Sign in'; 
+    }, []);
+
     const history = useHistory();
-    const handleClick = () => {
-        history.push('/account-info-form')
+    const [error, setError] = useState()
+    const [user,setUser] = useState('')
+    const [pass,setPass] = useState('')
+    const [pass2,setPass2] = useState('')
+
+    const handleRegister = (e) => {
+        //dont reset the page
+        e.preventDefault();
+
+        //validate passwords
+        if(pass !== pass2) return setError('Passwords dont match!')
+        if(user.length<4 || user.length>40) return setError('Username must be 4 to 40 symbols')
+        if(pass.length<4 || pass.length>40) return setError('Password must be 4 to 40 symbols')
+
+        // check if the username already exists
+        sessionStorage.setItem('username',user)
+        sessionStorage.setItem('password',pass)
+
+        history.push('/account-info-form',{username: user, password: pass})
     }
     return ( 
         <div>
@@ -19,22 +43,25 @@ const SignInForm = () => {
                         <form className="form">
                             <div className="form-pair">
                                 <label>Username</label>
-                                <input type="text" />
+                                <input type="text"  value={user} required onChange={(e)=> {setUser(e.target.value)}}  />
                             </div>
                             <div className="form-pair">
                                 <label>Password</label>
-                                <input type="password" />
+                                <input type="password" value={pass} required onChange={(e)=> {setPass(e.target.value)}}  />
                             </div>
                             <div className="form-pair">
                                 <label>Confirm Password</label>
-                                <input type="password" />
+                                <input type="password" value={pass2} required onChange={(e)=> {setPass2(e.target.value)}}  />
                             </div>
                             <div className="button-wrap">
-                                <button className="submit-button" onClick={handleClick}>Next</button>
+                                <button className="submit-button" onClick={handleRegister}>Next</button>
                             </div>
                             <div className="link">
                                 <Link to="/login">Login</Link>
                             </div>
+                            {error && (<div className="error">
+                                <h2>{error}</h2>
+                            </div>)}
                         </form>
                     </div>
                 </div>
