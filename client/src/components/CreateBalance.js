@@ -19,7 +19,7 @@ const CreateBalance = () => {
 
     const fetchCreateBalance = (curString) => {
 
-        fetch('http://localhost:5000/balance/create', {
+        fetch(`${process.env.REACT_APP_BASE_URL}/balance/create`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${sessionStorage.getItem('e-w_token')}`,

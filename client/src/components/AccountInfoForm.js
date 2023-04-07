@@ -54,7 +54,7 @@ const AccountInfoForm = () => {
 
 
     const Register = (user) => {
-        fetch(`http://localhost:5000/login/register`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/login/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

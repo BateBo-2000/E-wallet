@@ -9,7 +9,7 @@ const Account = () => {
     const [error, setError] = useState(null)
 
     const fetchAccount = () => {
-        fetch(`http://localhost:5000/account/info`, { 
+        fetch(`${process.env.REACT_APP_BASE_URL}/account/info`, { 
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${sessionStorage.getItem('e-w_token')}`

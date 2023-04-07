@@ -21,7 +21,7 @@ const Home = () => {
     const [balances, setBalances] = useState(null)
 
     const fetchBalances = () => {
-        fetch(`http://localhost:5000/balance`, { 
+        fetch(`${process.env.REACT_APP_BASE_URL}/balance`, { 
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${sessionStorage.getItem('e-w_token')}`
@@ -31,7 +31,7 @@ const Home = () => {
             if(res.ok){
                 return res.json()
             } else{
-                throw Error('Something went worng!')
+                throw new Error(`HTTP error! status: ${res.status}`);
             }
         })
         .then(data => setBalances(data))
