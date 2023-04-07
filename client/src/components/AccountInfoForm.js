@@ -40,7 +40,7 @@ const AccountInfoForm = () => {
         if(SAnswer.length<15 || SAnswer.length>45) return setError('Secret Question must be 15 to 45 symbols!')
         if(!isValidEmail(email)) return setError('Email is invalid!')
         if(!isChecked) return  setError('You have to agree the trems an conditions')
-        if(user == null || pass == null) history.push('/sign-in')
+        if(user == null || pass == null) return history.push('/sign-in')
         return true;
     }
 
