@@ -15,8 +15,10 @@ const AccountInfoForm = () => {
 
     const [error, setError] = useState('')
     //gets the elements from the last page
-    const user = sessionStorage.getItem('username') 
-    const pass = sessionStorage.getItem('password')
+    let user = sessionStorage.getItem('username')
+    let pass = sessionStorage.getItem('password')
+    
+ 
 
     const [egn, setEgn] = useState('')
     const [firstName, setFirstName] = useState('')
@@ -31,15 +33,17 @@ const AccountInfoForm = () => {
 
     //if everything is allright returns true
     const chechData = () => {
+        if(!user || !pass)  return history.push('/sign-in')
+        if(user.length < 4 || pass.length < 4) return history.push('/sign-in')
         if(firstName.length<3 || firstName.length>45) return setError('First Name must be 3 to 45 symbols!')
         if(lastName.length<3 || lastName.length>45) return setError('Last Name must be 3 to 45 symbols!')
+        if(midName.length<3 || midName.length>45) return setError('Last Name must be 3 to 45 symbols!')
         if(egn.length!==10) return setError('Incorrect egn!')
         if(address.length<15 || address.length>250) return setError('Address must be 15 to 250 symbols!')
         if(SQuestion.length<15 || SQuestion.length>100) return setError('Secret Question must be 15 to 100 symbols!')
         if(SAnswer.length<15 || SAnswer.length>45) return setError('Secret Question must be 15 to 45 symbols!')
         if(!isValidEmail(email)) return setError('Email is invalid!')
         if(!isChecked) return  setError('You have to agree the trems an conditions')
-        if(user == null || pass == null) return history.push('/sign-in')
         return true;
     }
 
@@ -70,25 +74,26 @@ const AccountInfoForm = () => {
             })
         })
         .then(res => {
-            if(res.ok){
-                //redirect to login if res is ok after 2 seconds
-                console.log('res is ok')
-                setTimeout(Redirect, 2000) 
+            if(!res.ok){
+                throw new Error(`HTTP error! status: ${res.status}`);
             }else{
                 return res.json()
             }
         })  
-        //spent like 2 hours to debug this line
-        //if there is no error probably everything is fine
-        .then(err => setError(err ? err : 'Register done! Going Login!'))
-        //just checks the register
+        .then(data => {
+            
+            if(data?.message === "SUCCESS"){
+                history.push('/login')
+                //clears the storage after everything is done
+                sessionStorage.clear() 
+            }else{
+                setError(data?.message ? data?.message : 'Something went worng!')
+            }
+        })
         .catch(err => {
-            setError('Something went wrong! ' +err)
+            setError(err?.message ? err?.message : 'Something went worng!')
         });
-
     }
-
-    const Redirect = () => {history.push('/login')}
 
     const handleClick = (e) =>{
         e.preventDefault()
@@ -108,9 +113,6 @@ const AccountInfoForm = () => {
             email: email
         }
         Register(userData)
-
-        //clears the storage after everything is done
-        sessionStorage.clear() 
     }
     return ( 
         <div>
@@ -187,4 +189,4 @@ const AccountInfoForm = () => {
      );
 }
  
-export default AccountInfoForm;
+export default AccountInfoForm

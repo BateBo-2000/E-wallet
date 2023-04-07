@@ -29,7 +29,7 @@ const SignInForm = () => {
         sessionStorage.setItem('username',user)
         sessionStorage.setItem('password',pass)
 
-        history.push('/account-info-form',{username: user, password: pass})
+        history.push('/account-info-form')
     }
     return ( 
         <div>

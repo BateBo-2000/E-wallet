@@ -34,11 +34,15 @@ exports.Register = async (req, res) =>{
     let {username, password} = req.body
     let hashedPassword = await bcrypt.hash(password, process.env.SALT_ROUNDS*1)
 
-    let user = new User()                           
-    user = await user.addUser(req.body)             /*adding the account data*/
-    let logger = new Logger(username,hashedPassword)
-    logger = await logger.insertUserLoginData(user.insertId)       /*adding the login data */  
-    logger = {user, logger}
-    res.json(logger).status(200)
+    try{
+        let user = new User()                           
+        user = await user.addUser(req.body)
+        let logger = new Logger(username,hashedPassword)
+        logger = await logger.insertUserLoginData(user.insertId)  
+        res.json({message: "SUCCESS"}).status(200)
+    }catch (err){
+        res.json({message: "Something went wrong on the server!"}).status(400)
+    }
+    
 
 }

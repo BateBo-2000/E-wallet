@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 const CreateBalance = () => {
 
