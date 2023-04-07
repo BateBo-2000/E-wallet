@@ -33,7 +33,6 @@ const AccountInfoForm = () => {
     const chechData = () => {
         if(firstName.length<3 || firstName.length>45) return setError('First Name must be 3 to 45 symbols!')
         if(lastName.length<3 || lastName.length>45) return setError('Last Name must be 3 to 45 symbols!')
-        if(midName.length<3 || midName.length>45) return setError('Middle Name must be 3 to 45 symbols!')
         if(egn.length!==10) return setError('Incorrect egn!')
         if(address.length<15 || address.length>250) return setError('Address must be 15 to 250 symbols!')
         if(SQuestion.length<15 || SQuestion.length>100) return setError('Secret Question must be 15 to 100 symbols!')
