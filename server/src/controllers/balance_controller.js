@@ -18,20 +18,17 @@ exports.updateBalance = async (req, res) =>{
     res.json(balance).status(200)
 }
 exports.createBalance = async (req, res) =>{
+    console.log("req.body.currency = "+ req.body.currency)
     //create a new balance
     let currency = await new Currency(req.body.currency).getId()
     let user_id = req.body.user_id *1
     let balance = new Balance(user_id)
     if(currency) {
-        balance = await balance.createBalance(currency.currency_id) // this should be string not a number
-        res.json(balance).status(200)
+        console.log("res will be 200")
+        balance = await balance.createBalance(currency.currency_id)
+        res.json({message: "SUCCESS"}).status(200)
     }else{
-        res.json({message: "NO SUCH CURRENCY!"}).status(404)
+        console.log("res will be 400")
+        res.json({message: "NO SUCH CURRENCY!"}).status(400)
     }   
-
-
-    
-
-   
-    
 }

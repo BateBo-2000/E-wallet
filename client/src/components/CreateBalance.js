@@ -18,7 +18,8 @@ const CreateBalance = () => {
     }
 
     const fetchCreateBalance = (curString) => {
-        fetch(`http://localhost:5000/balance/create`, {
+
+        fetch('http://localhost:5000/balance/create', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${sessionStorage.getItem('e-w_token')}`,
@@ -28,15 +29,22 @@ const CreateBalance = () => {
                 currency: curString
             })
         })
-        .then(res => {
-            if(res.ok){
-                //history.push('/')
-            } else{
-                res.json()
+        .then(res => {          /** here the res is checked if it is technically alright  (like if the server has answered) */
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(data => {
+            if(data?.message === "SUCCESS"){
+                history.push('/')
+            }else{
+                setError(data.message ? data.message : 'Something went worng!')
             }
         })
-        .then(body => setError(body ? body : 'Something went wrong2!'))
-        .catch(err=> setError(err.message ? err.message : 'Something went worng1!'))
+        .catch(err => {
+            console.error(err);
+        });
     }
 
     const handleSubmit = () => {
