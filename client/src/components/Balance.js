@@ -38,6 +38,9 @@ const Balance = () => {
         .catch(err=> setError(err?.message ? err?.message :'Something went worng!'))
     }
 
+    
+
+    /* eslint-disable */
     //sets the new transactions
     useEffect(()=>{
         setTrans(null)
@@ -72,6 +75,7 @@ const Balance = () => {
         .catch(err=> setError(err?.message ? err?.message :'Something went worng!'))
     }
 
+    
     //sets the new transactions by date
     useEffect(()=>{
         setTrans(null)
@@ -82,8 +86,9 @@ const Balance = () => {
                 fetchTransByDate(startDate, endDate)
             } 
         } 
-    },[startDate, endDate, selectValue])
+    },[startDate, endDate])
     
+
     const fetchTransByMoney = () => {
         fetch(`${process.env.REACT_APP_BASE_URL}/transactions/searchByMoney`, { 
             method: 'POST',
@@ -114,13 +119,13 @@ const Balance = () => {
         setError(null)
         if(selectValue === 'byMoney'){
             //checks if the amount
-            if(amount != 0){
+            if(amount !== 0){
                 fetchTransByMoney()
             }else{
                 setError('Amount must be grater than 0')
             }
         }   
-    },[amount, dependency, selectValue])
+    },[amount, dependency])
     
     const fetchTransByReciever = () => {
         fetch(`${process.env.REACT_APP_BASE_URL}/transactions/searchByReciever`, { 
@@ -151,14 +156,14 @@ const Balance = () => {
         setError(null)
         if(selectValue === 'byReciever'){
             //checks if the amount
-            if(recieverId != 0){
+            if(recieverId !== 0){
                 fetchTransByReciever()
             }else{
                 setError('Reciever id must be grater than 0')
             }
         }   
     },[recieverId])
-    
+    /* eslint-enable */
     
     
     const NavElements = [
