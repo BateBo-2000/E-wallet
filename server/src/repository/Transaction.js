@@ -19,31 +19,31 @@ class Transaction{
         return transaction
     }
     async getAll(){
-        let sql = `SELECT * from paypal.transcur where user_id = ${this.user_id}`
+        let sql = `SELECT * from paypal.transcur where user_id = ${this.user_id} LIMIT 50`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
-    async searchByMoney(amount, dependency){
-        let sql = `SELECT * from paypal.transcur where amount ${dependency} ${amount} AND user_id = ${this.user_id}`
+    async searchByMoney(amount, dependency, balance_id){
+        let sql = `SELECT * from paypal.transcur where amount ${dependency} ${amount} AND user_id = ${this.user_id} and sender_balance_id = ${balance_id}`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
-    async searchByReciever(reciever_id){
-        let sql = `SELECT * from paypal.transcur where reciever_id = "${reciever_id}" AND user_id = ${this.user_id}`
+    async searchByReciever(reciever_id,balance_id){
+        let sql = `SELECT * from paypal.transcur where reciever_id = "${reciever_id}" AND user_id = ${this.user_id} and sender_balance_id = ${balance_id}`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
-    async searchByDate(start_date, end_date){
-        let sql = `SELECT * from paypal.transcur where user_id = ${this.user_id} AND date_done between "${start_date}" and "${end_date}";`
+    async searchByDate(start_date, end_date, balance_id){
+        let sql = `SELECT * from paypal.transcur where user_id = ${this.user_id} AND date_done between "${start_date}" and "${end_date} and sender_balance_id = ${balance_id}";`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
-    async serachByPlace(reciever_id){ 
-        //when you put a reciever_id it return all transactions assosiated with it
-        let sql = `SELECT amount,currency_name, date_done from paypal.transcur WHERE reciever_id = ${reciever_id} AND user_id = ${this.user_id}; `
-        const data = await db.execute(sql)
-        return data[0]
-    }
+    // async serachByPlace(reciever_id){ 
+    //     //when you put a reciever_id it return all transactions assosiated with it
+    //     let sql = `SELECT amount,currency_name, date_done from paypal.transcur WHERE reciever_id = ${reciever_id} AND user_id = ${this.user_id}; `
+    //     const data = await db.execute(sql)
+    //     return data[0]
+    // }
     async searchByBalance(balance_id){
         let sql = `Select * from paypal.transactions WHERE user_id = ${this.user_id} and sender_balance_id = ${balance_id}`
         const [transaction, _] = await db.execute(sql)

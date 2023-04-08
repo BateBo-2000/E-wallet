@@ -42,7 +42,7 @@ const LoginForm = () => {
             if(statusChecker(res, setError)){
                 return res.json()
             }
-            throw Error(error) // stops the promise cahin and goes directly to the catch block
+            throw new Error(`HTTP error! status: ${res.status}`); // stops the promise cahin and goes directly to the catch block
         })
         .then(data=>{
             if(tokenHandler(data, setError)){

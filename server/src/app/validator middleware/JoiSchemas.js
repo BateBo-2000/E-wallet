@@ -71,14 +71,17 @@ exports.transactionsMake = Joi.object({
 })
 exports.transactionsSearchByDate = Joi.object({
     start_date: Joi.date().iso().raw().required(),
-    end_date:   Joi.date().iso().raw().greater(Joi.ref('start_date')).required()
+    end_date:   Joi.date().iso().raw().greater(Joi.ref('start_date')).required(),
+    balance_id: Joi.number().integer().positive().required()
 })
 exports.transactionsSearchByMoney = Joi.object({
     dependency: Joi.string().valid('<','>').required(),
-    amount: Joi.number().positive().required()
+    amount: Joi.number().positive().required(),
+    balance_id: Joi.number().integer().positive().required()
 })
 exports.transactionsSearchByReciever = Joi.object({
-    reciever_id: Joi.number().integer().positive().required()
+    reciever_id: Joi.number().integer().positive().required(),
+    balance_id: Joi.number().integer().positive().required()
 })
 exports.transactionsSearchByBalance = Joi.object({
     balance_id: Joi.number().integer().positive().required()

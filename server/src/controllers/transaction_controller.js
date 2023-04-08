@@ -35,26 +35,26 @@ exports.makeTrans = async (req,res) => {
 }
 exports.getHistory = async (req,res) => {
     //returns full list of transactions made from this user:)
-    let transaction = new Transaction(req.query.user_id*1)
+    let transaction = new Transaction(req.body.user_id*1)
     transaction = await transaction.getAll()
     res.json(transaction).status(200)
 }
 exports.searchByReciever = async (req,res) => {
     //returns full list of transactions made from this user:) for the specific reciever
     let transaction = new Transaction(req.body.user_id*1)
-    transaction = await transaction.searchByReciever(req.body.reciever_id)
+    transaction = await transaction.searchByReciever(req.body.reciever_id, req.body.balance_id)
     res.json(transaction).status(200)
 }
 exports.searchByMoney = async (req,res) => {
     //returns full list of transactions made from this user:) for more '<' or less '>' than the moeny
     let transaction = new Transaction(req.body.user_id*1)
-    transaction = await transaction.searchByMoney(req.body.amount*1, req.body.dependency)
+    transaction = await transaction.searchByMoney(req.body.amount*1, req.body.dependency, req.body.balance_id)
     res.json(transaction).status(200)
 }
 exports.searchByDate = async (req,res) => {
     //returns list of transactions made in a window of time between_start date and end_date for the user
     let transaction = new Transaction(req.body.user_id*1)
-    transaction = await transaction.searchByDate(req.body.start_date, req.body.end_date)
+    transaction = await transaction.searchByDate(req.body.start_date, req.body.end_date, req.body.balance_id)
     res.json(transaction).status(200)
 }
 exports.searchByBalance = async (req,res) => {
