@@ -22,7 +22,7 @@ exports.import = async(req, res) =>{
         let balance_after_change = await balance.getBalanceById(balance_id)
         let bh = new BalanceHistroy(balance_id)
         bh = await bh.record(balance_after_change[0].balance,amount,"Imported money to the balance")
-        return res.json({balance_res, bh}).status(200)
+        return res.json({message: 'SUCCESS'}).status(200)
     }
     //gives status fail
     res.json({message: "error"}).status(400)
@@ -46,7 +46,7 @@ exports.withdraw = async(req, res) =>{
         let balance_after_change = await balance.getBalanceById(balance_id)
         let bh = new BalanceHistroy(balance_id)
         bh = await bh.record(balance_after_change[0].balance,amount,"Exported money from the balance")
-        return res.json({balance_res, bh}).status(200)
+        return res.json({message: 'SUCCESS'}).status(200)
     }
     //gives status fail
     res.json({message: "error"}).status(400)

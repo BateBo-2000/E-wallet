@@ -42,9 +42,7 @@ const Balance = () => {
         })
         .then(data => setTrans(data))
         .catch(err=> setError(err?.message ? err?.message :'Something went worng!'))
-    }
-
-    
+    } 
 
     /* eslint-disable */
     //sets the new transactions
@@ -81,7 +79,6 @@ const Balance = () => {
         .catch(err=> setError(err?.message ? err?.message :'Something went worng!'))
     }
 
-    
     //sets the new transactions by date
     useEffect(()=>{
         setTrans(null)
@@ -171,12 +168,11 @@ const Balance = () => {
     },[recieverId])
     /* eslint-enable */
     
-    
     const NavElements = [
         {id:1,name:"Home" ,link:"/"},
         {id:3,name:"Balance History" ,link:"/balance-history"},
         {id:4,name:"Make Transaction" ,link:"/make-transaction"},
-        {id:5,name:"Add money" ,link:"/add-money"},
+        {id:5,name:"Add money" ,link:{ pathname: `/add-money`, state:  {balance}}},
         {id:6,name:"Withdraw money" ,link:"/withdraw"}
     ]
     
