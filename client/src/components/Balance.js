@@ -173,7 +173,7 @@ const Balance = () => {
         {id:3,name:"Balance History" ,link:"/balance-history"},
         {id:4,name:"Make Transaction" ,link:"/make-transaction"},
         {id:5,name:"Add money" ,link:{ pathname: `/add-money`, state:  {balance}}},
-        {id:6,name:"Withdraw money" ,link:"/withdraw"}
+        {id:6,name:"Withdraw money" ,link:{ pathname: `/withdraw`, state:  {balance}}}
     ]
     
     const handleChange = (e) => {
