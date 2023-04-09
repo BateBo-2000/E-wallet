@@ -45,7 +45,7 @@ class Transaction{
     //     return data[0]
     // }
     async searchByBalance(balance_id){
-        let sql = `Select * from paypal.transactions WHERE user_id = ${this.user_id} and sender_balance_id = ${balance_id}`
+        let sql = `Select * from paypal.transcur WHERE user_id = ${this.user_id} and sender_balance_id = ${balance_id}`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }

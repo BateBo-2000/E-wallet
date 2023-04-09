@@ -125,7 +125,7 @@ const Balance = () => {
         setError(null)
         if(selectValue === 'byMoney'){
             //checks if the amount
-            if(amount !== 0){
+            if(amount !== '0' && amount !==''){
                 fetchTransByMoney()
             }else{
                 setError('Amount must be grater than 0')
@@ -162,7 +162,7 @@ const Balance = () => {
         setError(null)
         if(selectValue === 'byReciever'){
             //checks if the amount
-            if(recieverId !== 0){
+            if(recieverId !== '0' && recieverId !== ""){
                 fetchTransByReciever()
             }else{
                 setError('Reciever id must be grater than 0')
