@@ -52,7 +52,7 @@ exports.BHgetHistory = (req, res, next) => {
 }
 exports.BHgetHistoryByDates = (req, res, next) => {
     const {error, value} = validator(schemas.BHgetHistoryByDates, req .body)
-	if(error) return res.status(400).json(error.message) 
+	if(error) return res.status(400).json({message: error.message}) 
     next()
 }
 /** TRANSACTIONS */

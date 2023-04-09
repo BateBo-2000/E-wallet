@@ -34,9 +34,13 @@ const CreateBalance = () => {
                 currency: curString
             })
         })
-        .then(res => {          /** here the res is checked if it is technically alright  (like if the server has answered) */
+        .then(res => {          
             if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
+                if (res.status === 400) {
+                    return res.json();
+                }else{
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }    
             }
             return res.json();
         })
@@ -44,7 +48,7 @@ const CreateBalance = () => {
             if(data?.message === "SUCCESS"){
                 history.push('/')
             }else{
-                setError(data.message ? data.message : 'Something went worng!')
+                setError(data ? data : 'Something went worng!')
             }
         })
         .catch(err => {

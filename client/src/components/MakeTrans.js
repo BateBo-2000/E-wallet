@@ -38,7 +38,11 @@ const MakeTrans = () => {
         })
         .then(res => {          /** here the res is checked if it is technically alright  (like if the server has answered) */
             if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
+                if (res.status === 400) {
+                    return res.json();
+                }else{
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }    
             }
             return res.json();
         })
@@ -47,10 +51,11 @@ const MakeTrans = () => {
                 //if the payment is successfull
                 history.push({ pathname: `/balance/id=${balance.balance_id}`, state:  {balance}})
             }else{
-                setError(data.message ? data.message : 'Something went worng!')
+                
+                setError(data? data: 'Something went worng!')
             }
         })
-        .catch(err=> setError(err?.message ? err?.meassge : "Something went wrong"))
+        .catch(err => setError(err?.message ? err?.meassge : "Something went wrong"))
     }
 
     const handleTransaction = () =>{

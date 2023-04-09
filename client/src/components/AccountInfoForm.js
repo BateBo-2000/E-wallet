@@ -74,11 +74,14 @@ const AccountInfoForm = () => {
             })
         })
         .then(res => {
-            if(!res.ok){
-                throw new Error(`HTTP error! status: ${res.status}`);
-            }else{
-                return res.json()
+            if (!res.ok) {
+                if (res.status === 400) {
+                    return res.json();
+                }else{
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }    
             }
+            return res.json();
         })  
         .then(data => {
             
@@ -87,7 +90,7 @@ const AccountInfoForm = () => {
                 //clears the storage after everything is done
                 sessionStorage.clear() 
             }else{
-                setError(data?.message ? data?.message : 'Something went worng!')
+                setError(data ? data : 'Something went worng!')
             }
         })
         .catch(err=> setError(err?.message ? err?.meassge : "Something went wrong"))
