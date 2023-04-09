@@ -1,6 +1,11 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import React from "react";
 const Terms = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet terms of use'
+    }, []);
     const isLogged = false   //change if logged 
 
     const NavElements = [{id:2,name:"Home" ,link:"/"},{id:1,name:"Back" ,link:"/account-info-form"}]

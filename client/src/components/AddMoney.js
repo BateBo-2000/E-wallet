@@ -1,7 +1,51 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import React from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const AddMoney = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Add'; 
+    }, []);
+
+    
+    const history = useHistory()
+    const [error, setError]= useState(null)
+    const [currencyStr, setCurrency] = useState('')
+
+    // const fetchImportMoney = (amount) => {
+        
+
+    //     fetch(`${process.env.REACT_APP_BASE_URL}/balance/create`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Authorization': `Bearer ${sessionStorage.getItem('e-w_token')}`,
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             currency: amount
+    //         })
+    //     })
+    //     .then(res => {          /** here the res is checked if it is technically alright  (like if the server has answered) */
+    //         if (!res.ok) {
+    //             throw new Error(`HTTP error! status: ${res.status}`);
+    //         }
+    //         return res.json();
+    //     })
+    //     .then(data => {
+    //         if(data?.message === "SUCCESS"){
+    //             history.push('/')
+    //         }else{
+    //             setError(data.message ? data.message : 'Something went worng!')
+    //         }
+    //     })
+    //     .catch(err => {
+    //         console.error(err);
+    //     });
+    // }
+
 
     const currency = "BGN"
     const NavElements = [

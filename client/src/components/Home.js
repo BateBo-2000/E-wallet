@@ -3,7 +3,13 @@ import Footer from "./Footer";
 import ListBalance from "./ListBalance";
 import { useAuth } from "../utils/auth";
 import { useEffect, useState } from "react";
+import React from "react";
 const Home = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Home'; 
+    }, []);
+
     const auth = useAuth()
     const NavElements = [
         {id:3,name:"Account" ,link:"/account", onClickF: ()=> {console.log('account')}},

@@ -8,7 +8,7 @@ import React from "react";
 const AccountInfoForm = () => {
     React.useEffect(() => { 
         // set window title
-        document.title = 'User information form'; 
+        document.title = 'User Sign in form'; 
     }, []);
 
     const history = useHistory();

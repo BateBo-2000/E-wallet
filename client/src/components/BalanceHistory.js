@@ -1,7 +1,12 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-
+import React from "react";
 const BalanceHistory = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Balance History'
+    }, []);
+    
     const balance_history = [
         {
           "balance_history_id": 1,

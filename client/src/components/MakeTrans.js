@@ -1,7 +1,11 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-
+import React from "react";
 const MakeTrans = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Transaction'
+    }, []);
 
     const currency = "BGN"
     const NavElements = [

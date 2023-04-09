@@ -1,6 +1,11 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import React from "react";
 const Stats = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Statistics'
+    }, []);
     const NavElements = [{id:2,name:"Home" ,link:"/"}]
 
     return ( 

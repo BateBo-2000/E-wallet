@@ -2,7 +2,14 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
+import React from "react";
 const Account = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Account'
+    }, []);
+
+
     const NavElements = [{id:2,name:"Home" ,link:"/"}]
 
     const [accountInfo, setAccountInfo] = useState(null)

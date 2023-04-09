@@ -1,7 +1,12 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import React from "react";
 
 const Withdraw = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Withdraw'
+    }, []);
 
     const currency = "BGN"
     const NavElements = [

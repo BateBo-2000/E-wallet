@@ -1,7 +1,12 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useHistory } from "react-router-dom";
+import React from "react";
 const Reminders = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Reminders'
+    }, []);
     const reminders = [
         {id:0,title:"title reminder1", text: "sadfsadfasfdsafdsadf!", date:"10-10-2010 00:22:22", recurrning: true, cron_ex:'* 5 * 5 *' },
         {id:1,title:"title reminder2", text: "sadfdfsasadfasfdsafdsadf!", date:"10-10-2010 00:22:22", recurrning: false, cron_ex:"none"},

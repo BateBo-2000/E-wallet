@@ -2,7 +2,13 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import React from "react";
 const Balance = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Balance:'
+    }, []);
+
     const location = useLocation()
     const balance = location.state.balance
     // thats the driving value

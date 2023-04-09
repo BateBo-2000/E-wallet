@@ -1,7 +1,11 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-
+import React from "react";
 const Converter = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Converter'
+    }, []);
 
     // const converted = {
     //     "success": true,

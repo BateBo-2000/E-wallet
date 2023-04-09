@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import React from "react";
 const NotFound = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet 404'
+    }, []);
+
     const NavElements = [{id:2,name:"Home" ,link:"/"}]
     return ( 
         <div>

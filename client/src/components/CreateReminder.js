@@ -1,7 +1,13 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useHistory } from "react-router-dom";
+import React from "react";
 const CreateReminder = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Create Reminder'
+    }, []);
+
     const NavElements = [{id:2,name:"Back" ,link:"/reminders"}]
     const history = useHistory()
     const handleClick = () => {

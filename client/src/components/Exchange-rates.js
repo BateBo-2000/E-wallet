@@ -1,6 +1,12 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import React from "react";
 const ExchangeRates = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Exchange Rates'
+    }, []);
+
     const NavElements = [{id:2,name:"Converter" ,link:"/converter"},{id:1,name:"Home" ,link:"/"}]
 
     // const answer = {

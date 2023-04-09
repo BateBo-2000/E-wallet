@@ -2,7 +2,12 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import React from "react";
 const CreateBalance = () => {
+    React.useEffect(() => { 
+        // set window title
+        document.title = 'E-wallet Create Balance'
+    }, []);
 
     const NavElements = [
         {id:1,name:"Back" ,link:"/"},
