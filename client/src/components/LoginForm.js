@@ -51,7 +51,7 @@ const LoginForm = () => {
             }
             throw Error(error) //throws error if there is problem in the token handler
         })
-        .catch(err => setError('Something went wrong!'));
+        .catch(err=> setError(err?.message ? err?.meassge : "Something went wrong"))
     }
 
     return ( 

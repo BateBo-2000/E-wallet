@@ -30,7 +30,7 @@ const Account = () => {
             }
         })
         .then(data => setAccountInfo(data))
-        .catch(err=> setError('Something went worng!'))
+        .catch(err=> setError(err?.message ? err?.meassge : "Something went wrong"))
     }
     useEffect(()=>{
         fetchAccount()

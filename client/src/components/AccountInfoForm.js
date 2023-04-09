@@ -90,9 +90,7 @@ const AccountInfoForm = () => {
                 setError(data?.message ? data?.message : 'Something went worng!')
             }
         })
-        .catch(err => {
-            setError(err?.message ? err?.message : 'Something went worng!')
-        });
+        .catch(err=> setError(err?.message ? err?.meassge : "Something went wrong"))
     }
 
     const handleClick = (e) =>{

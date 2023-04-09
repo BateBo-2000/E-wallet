@@ -171,7 +171,7 @@ const Balance = () => {
     const NavElements = [
         {id:1,name:"Home" ,link:"/"},
         {id:3,name:"Balance History" ,link:{ pathname: `/balance-history`, state:  {balance}}},
-        {id:4,name:"Make Transaction" ,link:"/make-transaction"},
+        {id:4,name:"Make Transaction" ,link:{ pathname: `/make-transaction`, state:  {balance}}},
         {id:5,name:"Add money" ,link:{ pathname: `/add-money`, state:  {balance}}},
         {id:6,name:"Withdraw money" ,link:{ pathname: `/withdraw`, state:  {balance}}}
     ]

@@ -47,9 +47,7 @@ const AddMoney = () => {
                 setError(data.message ? data.message : 'Something went worng!')
             }
         })
-        .catch(err => {
-            console.error(err);
-        });
+        .catch(err=> setError(err?.message ? err?.meassge : "Something went wrong"))
     }
         
     const NavElements = [

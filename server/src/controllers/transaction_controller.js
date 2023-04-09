@@ -31,7 +31,7 @@ exports.makeTrans = async (req,res) => {
     let bh2_reciever = new BalanceHistroy(reciever_balance_id)
     let bhResRec = await bh2_reciever.record(reciever_balance_after_change[0].balance, amount*1, `Recieved transaction from user ${sender}`)
     //gives status
-    res.json({transaction, bResSend, bResRec, bhResSend, bhResRec}).status(200)
+    res.json({message: "SUCCESS"}).status(200)
 }
 exports.getHistory = async (req,res) => {
     //returns full list of transactions made from this user:)
