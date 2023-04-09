@@ -17,6 +17,6 @@ exports.getHistoryByDate = async (req, res) =>{
     //gets balance history by balance_id and between dates provided
     let {end_date,start_date,balance_id} = req.body
     let balanceHistory = new BalanceHistory(balance_id*1)
-    balanceHistory = await balanceHistory.getHistory()
+    balanceHistory = await balanceHistory.getHistoryByDate(start_date, end_date)
     res.status(200).json(balanceHistory)
 }

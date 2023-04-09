@@ -170,7 +170,7 @@ const Balance = () => {
     
     const NavElements = [
         {id:1,name:"Home" ,link:"/"},
-        {id:3,name:"Balance History" ,link:"/balance-history"},
+        {id:3,name:"Balance History" ,link:{ pathname: `/balance-history`, state:  {balance}}},
         {id:4,name:"Make Transaction" ,link:"/make-transaction"},
         {id:5,name:"Add money" ,link:{ pathname: `/add-money`, state:  {balance}}},
         {id:6,name:"Withdraw money" ,link:{ pathname: `/withdraw`, state:  {balance}}}
@@ -266,7 +266,7 @@ const Balance = () => {
                                             <h2>Amount:</h2>
                                         </div>
                                         <div className="value">
-                                            <h2>{trans?.amount} {trans?.currency_name}</h2>
+                                            <h2>{trans?.amount.toFixed(2)} {trans?.currency_name}</h2>
                                         </div>
                                     </div>
                                     <div className="data-pair">
