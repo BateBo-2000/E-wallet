@@ -5,11 +5,10 @@ exports.getCountbyReciever = async (req, res) =>{
     let {user_id, start_date, end_date} = req.body
     let stat = new Statics(user_id*1)
     stat = await stat.getRecieverCount(start_date, end_date)
-    let result = [['transactions made','reciever']]
+    let result = []
     stat.forEach(element => {
-        result.push([Object.values(element)[0], Object.values(element)[1]])
+        result.push({transactions:Object.values(element)[0],reciever: Object.values(element)[1]})
     });
-    if(result.length === 1) return res.json({message: "no transactions to reciever"}).status(204)
     res.json(result).status(200)
     
 }
@@ -18,15 +17,13 @@ exports.getSpendingByReciever = async (req, res) =>{
     let {user_id} = req.body
     let stat = new Statics(user_id*1)
     stat = await stat.getSpendingByReciever()
-    console.log(stat)
-    let result = [['amount','currency','spent at']]
+    let result = []
     stat.forEach(element => {
         let amount = Object.values(element)[0] ? Object.values(element)[0].toFixed(2) : Object.values(element)[0]
         let currency = Object.values(element)[1]
         let reciever = Object.values(element)[2]
-        result.push([amount, currency, reciever])
+        result.push({amount:amount, currency:currency, reciever:reciever})
     });
-    if(result.length === 1) return res.json({message: "no transactions to that reciever"}).status(204)
     res.json(result).status(200)
     
 }
@@ -41,16 +38,16 @@ exports.getSpending = async (req, res) =>{
     //temp dates for the search in the interval
     let sDate = startDate
     let eDate = dateSetter(sDate,step)
-    let result = [['date','amount','currency']]
+    let result = []
     let temp
     while(sDate.getTime()<eDate.getTime() && sDate.getTime() < endDate.getTime()){
         //do stuff
         temp = await stat.searchSumByDate(dateFormater(sDate),dateFormater(eDate))
-        /* the sql returns name that cannot be written so im suing this way to read from the obj (it returns 'SUM(amount)' as a name of the value)*/
+        /* the sql returns name that cannot be written so im using this way to read from the obj (it returns 'SUM(amount)' as a name of the value)*/
        
         let amount = Object.values(temp)[0] ? Object.values(temp)[0].toFixed(2) : Object.values(temp)[0]
         let currency = Object.values(temp)[1] 
-        result.push([dateFormater(sDate),amount,currency])
+        result.push({date:dateFormater(sDate), amount:amount, currency:currency})
         
         
         //change for the algorithm
@@ -58,7 +55,6 @@ exports.getSpending = async (req, res) =>{
         eDate = dateSetter(sDate,step)
         
     }
-    if(result.length === 1) return res.json({message: "no spending found"}).status(204)
     res.json(result).status(200)
 }
 

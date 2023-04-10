@@ -380,6 +380,12 @@ text-align: center;
   margin-bottom: 10px;
 }
 
+.stats .elements{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .content-box{
   margin: 0 auto;
   min-height: 50px;
