@@ -2,7 +2,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import React from "react";
 import { useState } from "react";
-import {BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import {BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { useEffect } from "react";
 
 
