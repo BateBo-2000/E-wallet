@@ -100,37 +100,41 @@ const ExchangeRates = () => {
     }
 
     const FluctuationsChart = (data) => {
-        return (
-          <BarChart width={600} height={300} data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="start_rate" fill="#8884d8" name="Start Rate"/>
-            <Bar dataKey="end_rate" fill="#82ca9d" name="End Rate" />
-          </BarChart>
-        );
+        if(data){
+            return (
+                <BarChart width={600} height={300} data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Bar dataKey="start_rate" fill="#8884d8" name="Start Rate"/>
+                  <Bar dataKey="end_rate" fill="#82ca9d" name="End Rate" />
+                </BarChart>
+              );
+        }   
     }
 
     const TimeseriesChart = (data) => {
-        const lines = currencyArray.map((cur) => (
-            <Line
-              key={cur}
-              type="monotone"
-              dataKey={cur}
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-          ));
-        return (
-        <LineChart width={800} height={300} data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            {lines}
-        </LineChart>
-        );
+        if(data){
+            const lines = currencyArray.map((cur) => (
+                <Line
+                  key={cur}
+                  type="monotone"
+                  dataKey={cur}
+                  stroke="#8884d8"
+                  activeDot={{ r: 8 }}
+                />
+              ));
+            return (
+            <LineChart width={800} height={300} data={data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                {lines}
+            </LineChart>
+            );
+        } 
     }
 
     /* eslint-disable */
