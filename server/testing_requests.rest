@@ -109,10 +109,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "currencyArray":["USD","BGN","GBP"],
-    "baseCurrency":"EUR",
-    "start_date":"2023-02-17",
-    "end_date":"2023-01-12"
+    "currencyArray":["USD", "GBP"],   
+    "baseCurrency":"BGN",
+    "start_date":"2023-03-26",
+    "end_date":"2023-04-01"
 }
 
 ###
