@@ -12,41 +12,6 @@ const Stats = () => {
     }, []) 
     const NavElements = [{id:2,name:"Home" ,link:"/"}]
 
-    //SPENDING BY RECIEVER COUNT -/reciever
-    // [
-    //     {
-    //       "transactions": 74,
-    //       "reciever": 6
-    //     }
-    //   ]
-
-    //SPENDING BY RECIEVER  -/spending-reciever
-    //   [
-    //     {
-    //       "amount": "3634.83",
-    //       "currency": "BGN",
-    //       "reciever": 6
-    //     }
-    //   ]
-
-    //SPENDING EACH DAY -/spending 
-    //   {
-    //     "date": "2023-03-20",
-    //     "amount": "139.47",
-    //     "currency": "BGN"
-    //   },
-    //   {
-    //     "date": "2023-03-21",
-    //     "amount": "418.41",
-    //     "currency": "BGN"
-    //   },
-    //   {
-    //     "date": "2023-03-22",
-    //     "amount": null,
-    //     "currency": null
-    //   },
-
-
     const [error, setError] = useState('Input dates')
     const [selectValue, setSelectValue] = useState('spendingByDate')
     const [selectStep, setSelectStep] = useState('day')

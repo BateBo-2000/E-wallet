@@ -12,8 +12,6 @@ const Account = () => {
     const [accountInfo, setAccountInfo] = useState(null)
     const [error, setError] = useState(null)
 
-    
-
     const fetchAccount = () => {
         fetch(`${process.env.REACT_APP_BASE_URL}/account/info`, { 
             method: 'GET',
