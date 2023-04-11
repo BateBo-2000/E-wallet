@@ -48,15 +48,16 @@ exports.createReminder = async(req, res) => {
     if(now >= checkdate) {
         res.status(400).json({message: "cant set reminders for the past ;)"})
     }else{
+        const title = `Your E-wallet reminder: ${req.body.title}`
+        const text = req.body.text
         //add in db
         let reminder = new DelayedPayments(req.body.user_id)
-        result = await reminder.createReminder(req.body.title, req.body.text, req.body.start_date)
+        result = await reminder.createReminder(title, req.body.text, req.body.start_date)
         //add in scheduler
         let email = new User()
         email = await email.getEmail(req.body.user_id)
         const jobname = result.insertId+"" //generating job name
-        const title = `Your E-wallet reminder: ${req.body.title}`
-        const text = req.body.text
+    
         schedule.scheduleJob(jobname, req.body.start_date, async function (){
             //mail
             await emailer.sendMail(email,title, text)

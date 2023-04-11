@@ -2,6 +2,7 @@ const colors = require('colors');
 const schedule = require('node-schedule')
 const emailer = require('../repository/Emailer')
 const DelayedPayments = require('../repository/DelayedPayment')
+const dp_con = require('../controllers/delayed_payments_controller')
 
 /**This function should start the jobs when server is restarted */
 exports.startScheduledJobs = async () => {
@@ -26,6 +27,11 @@ exports.startScheduledJobs = async () => {
         }
         const reminders = await fetchAllReminders()
         
+        const deleteReminderById = (id) =>{
+            let reminder = new DelayedPayments(0)
+            reminder = reminder.deleteReminder(id*1)
+        }  
+
         // Loop through the reminders and schedule each job
         reminders.forEach((reminder) => {
             const jobName = reminder.reminder_id+""
@@ -36,14 +42,34 @@ exports.startScheduledJobs = async () => {
                 time = formatDate(reminder.remind_date)
             }
 
-            console.log(time)
+              
+
+            if(reminder.remind_interval === 'null' ){
+                const now = new Date();
+                const date = new Date(reminder.remind_date);
+                if (date > now) {
+                    console.log('job added one time ')
+                    //starts job if it is one time and the time hasn't passed
+                    schedule.scheduleJob(jobName, time , async () => {
+                        await emailer.sendMail(reminder.email, reminder.title, reminder.text);
+                        console.log(`Email sent for job ${jobName}`);
+                    })
+                }else{
+                    deleteReminderById(jobName)
+                }
+            }else{
+                console.log('job added recurning')
+                //starts the job regardless if it is recurning
+                schedule.scheduleJob(jobName, time , async () => {
+                    await emailer.sendMail(reminder.email, reminder.title, reminder.text);
+                    console.log(`Email sent for job ${jobName}`);
+                })
+            }
             
             
-            //starts the job regardless if it is recurrning or not
-            schedule.scheduleJob(jobName, time , async () => {
-                await emailer.sendMail(reminder.email, reminder.title, reminder.text);
-                console.log(`Email sent for job ${jobName}`);
-            })
+            
+            
+            
         })
         //console.log(schedule.scheduledJobs)
         console.log('Reminders Started'.blue)
