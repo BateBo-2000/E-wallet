@@ -13,11 +13,15 @@ exports.deleteUser = async (req, res) =>{
     res.status(200).json(user)              //if we have found the id
 }
 exports.changeField = async (req, res) =>{
-    let user = new User()  
-    let oldData = await user.getById(req.body.user_id *1)   
-    let updatedData = Object.assign(oldData[0], req.body) 
-    user = await user.changeField(updatedData)  // column value id
-    res.status(200).json(user)
+    try {
+        let user = new User()  
+        let oldData = await user.getById(req.body.user_id *1)   
+        let updatedData = Object.assign(oldData[0], req.body) 
+        user = await user.changeField(updatedData)  // column value id
+        res.status(200).json({message: "SUCCESS"})
+    } catch (error) {
+        res.status(400).json({message: "Something went wrong when patching"})
+    }
 }
 exports.getLoginTry = async (req, res) =>{
     let user = new User()

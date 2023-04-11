@@ -18,6 +18,13 @@ exports.signInSchema = Joi.object({
     secret_answer: Joi.string().min(15).required(),
     email: Joi.string().email().lowercase().required(),
 })
+exports.patchAccount = Joi.object({
+    first_name: Joi.string().min(3).max(45).optional(),
+    mid_name: Joi.string().min(3).max(45).optional(),
+    last_name: Joi.string().min(3).max(45).optional(),
+    address: Joi.string().min(15).max(250).optional(),
+    email: Joi.string().email().lowercase().optional(),
+})
 /** EXCHANGE RATES */
 exports.exchangeRates = Joi.object({
     // "currencyArray":["USD","BGN","GBP"],

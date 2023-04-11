@@ -9,11 +9,10 @@ const Account = () => {
         document.title = 'E-wallet Account'
     }, []);
 
-
-    const NavElements = [{id:2,name:"Home" ,link:"/"}]
-
     const [accountInfo, setAccountInfo] = useState(null)
     const [error, setError] = useState(null)
+
+    
 
     const fetchAccount = () => {
         fetch(`${process.env.REACT_APP_BASE_URL}/account/info`, { 
@@ -36,10 +35,21 @@ const Account = () => {
         fetchAccount()
     },[])
 
-    const history = useHistory()
-    const handleClick = () => {
-        history.push('/account-info-form')
-    }
+    const NavElements = [
+        {id:2,name:"Home" ,link:"/"}
+    ]
+
+    
+    const history = useHistory();
+
+    const handleClick = (accountInfo) => {
+        history.push({
+        pathname: '/update',
+        state: {
+            accountInfo: accountInfo,
+            },
+        });
+    };
 
     return ( 
         <div>
@@ -127,7 +137,7 @@ const Account = () => {
                             </div>)}
                         </div>
                         <div className="button-wrap">
-                            <button className="submit-button" onClick={handleClick}>Edit</button>
+                            <button className="submit-button" onClick={() => handleClick(accountInfo)}>Edit</button>
                         </div>
                     </div>
                 </div>

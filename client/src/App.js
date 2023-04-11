@@ -22,6 +22,8 @@ import MakeTrans from './components/MakeTrans'
 import CreateBalance from './components/CreateBalance'
 import { AuthProvider } from './utils/auth'
 import RequireAuth from './utils/RequireAuth'
+import InputDataForm from './components/InputDataForm'
+
 function App() {
   
   return (
@@ -47,6 +49,9 @@ function App() {
                 <RequireAuth>
                   <Route exact path='/withdraw'>
                     <Withdraw/>
+                  </Route>
+                  <Route exact path='/update'>
+                    <InputDataForm/>
                   </Route>
                   <Route exact path='/add-money'>
                     <AddMoney/>

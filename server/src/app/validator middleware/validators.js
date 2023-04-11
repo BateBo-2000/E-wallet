@@ -17,6 +17,13 @@ exports.signInValidator = (req, res, next) => {
 	if(error) return res.status(400).json(error.message) 
     next()
 }
+exports.patchAcccountValidator = (req, res, next) => {
+    const {error, value} = validator(schemas.patchAccount, req .body)
+	if(error) return res.status(400).json(error.message) 
+    next()
+}
+/** ACCOUNT PATCH*/
+
 /** EXCHANGE RATES */
 exports.exchangeRates = (req, res, next) => {
     const {error, value} = validator(schemas.exchangeRates, req .body)
