@@ -10,7 +10,9 @@ exports.startReminder = async (req, res) => {
     const cron = req.body.cron
     //add in db
     let reminder = new DelayedPayments(req.body.user_id)
-    result = await reminder.createReminder(title, text, req.body.start_date, true, cron)
+    const date = formatDate(req.body.start_date)
+    console.log(text)
+    result = await reminder.createReminder(title, text, date, true, cron)
 
     /*job's name is saved as the id of the reminder in the database for ease of access */
     const jobname = result.insertId+"" //to convert it to string faster
@@ -57,8 +59,10 @@ exports.createReminder = async(req, res) => {
         let email = new User()
         email = await email.getEmail(req.body.user_id)
         const jobname = result.insertId+"" //generating job name
-    
-        schedule.scheduleJob(jobname, req.body.start_date, async function (){
+        const date = formatDate(req.body.start_date)
+        console.log(text)
+
+        schedule.scheduleJob(jobname, date, async function (){
             //mail
             await emailer.sendMail(email,title, text)
             //delete from db
@@ -88,4 +92,15 @@ exports.deleteReminder = (req, res) => {
     let reminder = new DelayedPayments(req.body.user_id)
     reminder = reminder.deleteReminder(req.body.reminder_id)
     res.status(200).send('Done')
+}
+
+const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
