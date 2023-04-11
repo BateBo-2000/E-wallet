@@ -352,20 +352,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "start_date":"2023-04-11 22:14:00",
-    "title":"pay the bills",
-    "text":"ready for production ig"
+    "start_date":"2023-04-12 00:13:00",
+    "title":"testing the title :)",
+    "text":"testing the text body here :)"
 }
 ###
-POST  http://localhost:5000/delayed-payments//create-recurring
+POST  http://localhost:5000/delayed-payments/create-recurring
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjgxMjI5MTc0LCJleHAiOjE2ODEzMTU1NzR9.2irCASy4jrR7xl9PRIsPi2ozqKPeFT0A4pLIupLCM0Q
 Content-Type: application/json
 
 {
     "start_date":"2023-03-27 20:43:00",
-    "title":"pay the bills",
-    "text":"ready for production ig",
-    "cron": "* * * * *"
+    "title":"testing the title :)",
+    "text":"testing the text body here :)",
+    "cron": "30 03 01 */3 *"
 }
 ###
 POST  http://localhost:5000/delayed-payments/delete
@@ -373,7 +373,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "reminder_id":151
+    "reminder_id":173
 }
 
 

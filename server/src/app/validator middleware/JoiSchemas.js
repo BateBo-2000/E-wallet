@@ -107,12 +107,13 @@ exports.reciever = Joi.object({
 exports.DPcreate = Joi.object({
     start_date: Joi.date().iso().raw().required(),
     title: Joi.string().max(50).required(),
-    text: Joi.string().max(1000).required()
+    text: Joi.string().max(1000).required(),
+    cron: Joi.optional()
 })
 exports.DPcreateReocurrning = Joi.object({
     start_date: Joi.date().iso().raw().required().greater(new Date()),
     title: Joi.string().length(50).required(),
-    text: Joi.string().length(1000).required(),
+    text: Joi.string().max(1000).required(),
     cron: Joi.string().required()
 
 })

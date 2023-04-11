@@ -5,24 +5,28 @@ class DelayedPayment{
     }
     async createReminder(title,text,remind_date,isReocurrning=false,remind_interval=null){
         //creates a reminder
-        let sql = `INSERT INTO paypal.reminders(
-            user_id,
-            remind,
-            remind_date,
-            isReocurrning,
-            remind_interval,
-            title
-            )
-            VALUES
-            (${this.user_id},
-            "${text}",
-            "${remind_date}",
-            ${isReocurrning},
-            "${remind_interval}",
-            "${title}"
-            );`
-        const [result, _] = await db.execute(sql)
-        return result
+        try {
+            let sql = `INSERT INTO paypal.reminders(
+                user_id,
+                remind,
+                remind_date,
+                isReocurrning,
+                remind_interval,
+                title
+                )
+                VALUES
+                (${this.user_id},
+                "${text}",
+                "${remind_date}",
+                ${isReocurrning},
+                "${remind_interval}",
+                "${title}"
+                );`
+            const [result, _] = await db.execute(sql)
+            return result
+        } catch (error) {
+            return error
+        }
     }
     async getReminders(){
         //get all of the user's reminders

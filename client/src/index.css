@@ -535,18 +535,27 @@ text-align: center;
   margin: 15px auto;
 }
 
-.reminders .data-pair .value{ 
+.data-pair .button-wrap .submit-button{
+  width: 50px;
+  float: left;
+}
+
+.reminders .value{
   width: 60%;
 }
 
-.data-pair .button-wrap .submit-button{
-  width: 50px;
-}
 .data-pair .button-wrap{
   width: 10%;
 }
-
 /* Create Reminder*/
+
+.value .selector-mini{
+  width: 95%;
+  border-radius: 6px;
+  border: 0;
+  font-size: 20px;
+}
+
 .create-reminder .page-content{
   max-width: 90vh;
 }
@@ -573,10 +582,6 @@ text-align: center;
 .create-reminder .data-pair .value{ 
   padding: 10px;
   width: 50%;
-}
-
-.data-pair .button-wrap .submit-button{
-  width: 50px;
 }
 .data-pair .button-wrap{
   width: 10%;

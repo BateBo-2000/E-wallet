@@ -5,13 +5,12 @@ const cronValidator = require('cron-validator');
 const emailer = require('../repository/Emailer')
 
 exports.startReminder = async (req, res) => {
-    const title = `Your E-wallet reminder: ${req.body.title}`
+    const title = `E-wallet:${req.body.title}`
     const text = req.body.text
     const cron = req.body.cron
     //add in db
     let reminder = new DelayedPayments(req.body.user_id)
     const date = formatDate(req.body.start_date)
-    console.log(text)
     result = await reminder.createReminder(title, text, date, true, cron)
 
     /*job's name is saved as the id of the reminder in the database for ease of access */
@@ -33,7 +32,8 @@ exports.startReminder = async (req, res) => {
             //console for less ptsd
             console.log('email sent job name = '+jobname)
         });
-        return res.status(200).json({result, cron}) 
+        res.status(200).json({message:"SUCCESS"})
+        return 0
     } 
     res.status(400).json({error: "invalid cron expression"})
     
@@ -50,7 +50,7 @@ exports.createReminder = async(req, res) => {
     if(now >= checkdate) {
         res.status(400).json({message: "cant set reminders for the past ;)"})
     }else{
-        const title = `Your E-wallet reminder: ${req.body.title}`
+        const title = `E-wallet:${req.body.title}`
         const text = req.body.text
         //add in db
         let reminder = new DelayedPayments(req.body.user_id)
@@ -60,8 +60,6 @@ exports.createReminder = async(req, res) => {
         email = await email.getEmail(req.body.user_id)
         const jobname = result.insertId+"" //generating job name
         const date = formatDate(req.body.start_date)
-        console.log(text)
-
         schedule.scheduleJob(jobname, date, async function (){
             //mail
             await emailer.sendMail(email,title, text)
@@ -70,7 +68,7 @@ exports.createReminder = async(req, res) => {
             //console for less ptsd
             //added it in the sendMail part
         });
-        res.status(200).json(result)
+        res.status(200).json({message:"SUCCESS"})
     }
     
 }
@@ -86,12 +84,16 @@ exports.deleteReminder = (req, res) => {
      * Here first the reminder is stopped 
      * Then it is removed from the db
      */
-    //stop
-    schedule.cancelJob(req.body.reminder_id+"")
-    //remove from db
-    let reminder = new DelayedPayments(req.body.user_id)
-    reminder = reminder.deleteReminder(req.body.reminder_id)
-    res.status(200).send('Done')
+    try {
+        //stop
+        schedule.cancelJob(req.body.reminder_id+"")
+        //remove from db
+        let reminder = new DelayedPayments(req.body.user_id)
+        reminder = reminder.deleteReminder(req.body.reminder_id)
+        res.status(200).json({message:"SUCCESS"})
+    } catch (error) {
+        res.status(400).json(error)
+    }
 }
 
 const formatDate = (dateString) => {
