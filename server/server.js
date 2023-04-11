@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
+const colors = require('colors');
 const routerAccount = require('./src/routes/account')
 const routerExchange = require('./src/routes/exchange')
 const routerStats = require('./src/routes/stats')
@@ -11,7 +12,7 @@ const routerBalanceHistory = require('./src/routes/balance_history')
 const routerDelayedPayments = require('./src/routes/delayedpayments')
 const routerAdmin = require('./src/routes/admin')
 const routerPayment = require('./src/routes/payment')
-const {startReminders} = require('./src/app/reminderStarter')
+const starter = require('./src/app/reminderStarter')
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -19,7 +20,7 @@ app.use(express.json())
 app.use(cors({
     origin: "*"
 }))
-startReminders()
+starter.startScheduledJobs()
 
 //routes
 app.use('/stats',routerStats)
@@ -40,4 +41,4 @@ app.post('/test', (req,res)=>{
 
 app.listen(port,err => {
     if(err) return console.log('ERROR!'+err) 
-    console.log(`Server listening on port ${port}`)})
+    console.log(`Server listening on port ${port}`.magenta)})

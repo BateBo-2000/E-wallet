@@ -74,7 +74,7 @@ exports.getReminders = async (req, res) => {
     let user_id = req.body.user_id
     let reminder = new DelayedPayments(user_id)
     reminder = await reminder.getReminders()
-    res.status(200).send(reminder)
+    res.status(200).send(reminder)  
 }
 exports.deleteReminder = (req, res) => {
     /**

@@ -30,6 +30,12 @@ class DelayedPayment{
         const [result, _] = await db.execute(sql)
         return result
     }
+    async getAllReminders(){
+        //get all of the reminders
+        let sql = `select * from paypal.reminders_with_emails;`
+        const [result, _] = await db.execute(sql)
+        return result
+    }
     async deleteReminder(reminder_id){
         //deletes the reminder
         let sql = `DELETE from paypal.reminders where reminder_id = ${reminder_id}`

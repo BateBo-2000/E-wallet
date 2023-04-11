@@ -352,7 +352,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "start_date":"2023-03-27 23:28:00",
+    "start_date":"2023-04-11 21:46:10",
     "title":"pay the bills",
     "text":"ready for production ig"
 }
@@ -373,7 +373,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "reminder_id":138
+    "reminder_id":144
 }
 
 
