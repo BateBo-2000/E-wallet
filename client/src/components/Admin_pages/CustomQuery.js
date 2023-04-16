@@ -2,7 +2,6 @@ import NavBar from "../NavBar";
 import Footer from "../Footer";
 import React from "react";
 import { useState } from "react";
-import { useEffect } from "react";
 const Custom = () => {
     React.useEffect(() => { 
         // set window title
@@ -13,7 +12,6 @@ const Custom = () => {
         {id:1,name:"Back" ,link:"/admin-menu" },
     ]
 
-    const [error, setError] = useState(null)
     const [table, setTable]= useState('account_logins')
     const [condition, setCondition] = useState('1')
     const [res, setRes] = useState(null)
@@ -91,11 +89,6 @@ const Custom = () => {
                             </div>
                         </div>
                     )}
-                    {error && 
-                            <div className="error">
-                                <h2>{error}</h2>
-                            </div> 
-                    }
                 </div>
             </div>
         </div>

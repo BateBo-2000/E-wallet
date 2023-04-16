@@ -51,7 +51,7 @@ const EditBalance = () => {
             }   
         })
         .catch(err => {
-            console.error(err);
+            setError(err.message ? err.message : 'something went wrong')
         });
     }
 

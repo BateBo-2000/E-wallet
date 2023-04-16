@@ -17,7 +17,6 @@ const UpdateBalance = () => {
     const [error, setError] = useState(null)
     const [balances, setBalances] = useState(null)
     const [userId, setUserId] = useState(0)
-    const [changeAmount, setChangeAmount] = useState(0)
     const history = useHistory()
 
     const fetchBalances = (table,condition) => {
