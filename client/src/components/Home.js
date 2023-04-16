@@ -18,10 +18,11 @@ const Home = () => {
         {id:6,name:"Exchange rates" ,link:"/exchange-rates"}, 
         {id:7,name:"Log out" ,link:"/login", onClickF: ()=> {auth.Logout()}}
     ]
+    
     if(auth.user === 'admin'){
-        NavElements.unshift({id:1,name:"Admin" ,link:"/admin", onClickF: ()=> {console.log('admin')}})
+        NavElements.unshift({id:1,name:"Admin" ,link:"/admin-menu"})
     }
-
+    
 
     const [error, setError] = useState(null)
     const [balances, setBalances] = useState(null)
