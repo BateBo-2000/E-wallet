@@ -10,13 +10,13 @@ const AdminMenu = () => {
     }, []);
 
     const NavElements = [
-        {id:3,name:"Send Mail" ,link:"/send-mail" },
-        {id:4,name:"Update Role" ,link:"/update-role" },
-        {id:5,name:"Update Balance" ,link:"/update-balance" },
-        {id:6,name:"Manage User" ,link:"/manage-user"}, 
-        {id:6,name:"Currency" ,link:"/currency"}, 
+        {id:1,name:"Send Mail" ,link:"/send-mail" },
+        {id:2,name:"Update Role" ,link:"/update-role" },
+        {id:3,name:"Update Balance" ,link:"/update-balance" },
+        {id:4,name:"Manage User" ,link:"/manage-user"}, 
+        {id:5,name:"Currency" ,link:"/currency"}, 
         {id:6,name:"Custom Query" ,link:"/custom-query"}, 
-        {id:1,name:"Home" ,link:"/" },
+        {id:7,name:"Home" ,link:"/" },
     ]
 
     const [error, setError] = useState(null)
