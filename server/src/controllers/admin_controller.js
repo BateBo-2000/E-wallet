@@ -26,7 +26,7 @@ exports.deleteUser = async (req, res)=>{
 // BALANCE 
 exports.changeBalance = async (req, res)=>{
     let admin = new Admin(req.body.user_id)
-    admin = await admin.changeBalance(req.body.amount,req.body.user_id)
+    admin = await admin.changeBalance(req.body.amount, req.body.balance_id)
     res.json(admin).status(200)
 }
 exports.deleteBalance = async (req, res)=>{

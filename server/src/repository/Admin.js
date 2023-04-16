@@ -56,15 +56,15 @@ class Admin{
         }
     }
     //used to change the amount of money in the balance
-    async changeBalance(new_amount, user_id){
+    async changeBalance(new_amount, balance_id){
         try{
-            let sql = `UPDATE paypal.balance SET balance = ${new_amount} WHERE user_id = ${user_id}`
+            let sql = `UPDATE paypal.balance SET balance = ${new_amount} WHERE balance_id = ${balance_id}`
             const [data, _] = await db.execute(sql)
             //write it down
             await this.wirteChanges("BALANCE CHANGE: this admin executed query:"+sql)
             //let user know
             let user = new User()
-            this.sendEmail(await user.getEmail(user_id),"Balance change", "your balance has been changed by admin to "+new_amount)
+            this.sendEmail(await user.getEmail(user_id),"Balance change", `your balance ${balance_id} has been changed by admin to `+new_amount)
             return ({message: 'SUCCESS'})
         } catch (error) {
             return error

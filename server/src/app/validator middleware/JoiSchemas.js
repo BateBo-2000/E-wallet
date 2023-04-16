@@ -140,7 +140,7 @@ exports.AdeleteBalance = Joi.object({
     balance_id: Joi.number().integer().positive().required()
 })
 exports.AchangeBalance = Joi.object({
-    user_id: Joi.number().integer().positive().required(),
+    balance_id: Joi.number().integer().positive().required(),
     amount: Joi.number().positive().required()
 })
 exports.AupdateRole = Joi.object({

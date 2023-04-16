@@ -414,8 +414,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "user_id":45,
-    "amount":256.05
+    "balance_id":45,
+    "amount":25556.05
 }
 
 ###
@@ -424,8 +424,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "user_id":50,
-    "role":"admin"
+    "chnage_user_id":50,
+    "chnge_role":"user"
 }
 
 ###
