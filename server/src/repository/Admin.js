@@ -39,7 +39,7 @@ class Admin{
             let sql = `DELETE from paypal.users WHERE user_id= ${user_id}`
             const [data, _] = await db.execute(sql)
             //write it down
-            await this.wirteChanges("BALANCE CHANGE: this admin executed query:"+sql)
+            await this.wirteChanges("DELETE: this admin executed query:"+sql)
             return data
         } catch (error) {
             return error
