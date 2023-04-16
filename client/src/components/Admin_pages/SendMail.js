@@ -1,19 +1,17 @@
 import NavBar from "../NavBar";
 import Footer from "../Footer";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import React from "react";
 const SendMail = () => {
     React.useEffect(() => { 
         // set window title
-        document.title = 'Add Currency'
+        document.title = 'Send Email'
     }, []);
 
     const NavElements = [
         {id:1,name:"Back" ,link:"/admin-menu"},
     ]
 
-    const history = useHistory()
     const [error, setError]= useState(null)
     const [reciever, setReciever] = useState('')
     const [title, setTitle] = useState('')
