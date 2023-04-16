@@ -7,26 +7,9 @@ const LoginAttempts = () => {
         document.title = 'E-wallet Login Attempts'; 
     }, []);
 
-    const NavElements = [{id:2,name:"Home" ,link:"/account"}]
+    const NavElements = [{id:2,name:"Back" ,link:"/account"}]
     const [error, setError] = useState(null)
     const [attempts, setAttempts] = useState(null)
-
-    /**
-     *  [
-            {
-                "account_logins_id": 55,
-                "user_id": 35,
-                "login_try": "Logged in successfully",
-                "login_timestamp": "2023-03-20T21:28:42.000Z"
-            },
-            {
-                "account_logins_id": 56,
-                "user_id": 35,
-                "login_try": "Logged in successfully",
-                "login_timestamp": "2023-03-20T21:29:33.000Z"
-            }
-        ]
-     */
 
     const fetchAttempts = () => {
         fetch(`${process.env.REACT_APP_BASE_URL}/account/login_info`, { 
@@ -78,7 +61,7 @@ const LoginAttempts = () => {
                                         <h2>Time:</h2>
                                     </div>
                                     <div className="value">
-                                        <h2>{attempt.login_timestamp.split('T')[0]} Time: {attempt.login_timestamp.split('T')[1].split('.')[0]}</h2>
+                                        <h2>{attempt.login_timestamp.split('T')[0]} Time: {attempt.login_timestamp.split('T')[1].split('.')[0]} GMT</h2>
                                     </div>
                                 </div>
                             </div>
