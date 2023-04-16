@@ -23,6 +23,7 @@ import CreateBalance from './components/CreateBalance'
 import { AuthProvider } from './utils/auth'
 import RequireAuth from './utils/RequireAuth'
 import InputDataForm from './components/InputDataForm'
+import LoginAttempts from './components/LoginAttempts'
 
 function App() {
   
@@ -49,6 +50,9 @@ function App() {
                 <RequireAuth>
                   <Route exact path='/withdraw'>
                     <Withdraw/>
+                  </Route>
+                  <Route exact path='/login-attempts'>
+                    <LoginAttempts/>
                   </Route>
                   <Route exact path='/update'>
                     <InputDataForm/>

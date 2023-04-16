@@ -665,3 +665,14 @@ text-align: center;
 /*Not Found Page*/
 /*no need*/
 
+/*Login Attempts*/
+.login-attempts .page-content{
+  max-width: 90vh;
+}
+.login-attempts .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+}

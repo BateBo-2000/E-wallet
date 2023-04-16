@@ -34,6 +34,7 @@ const Account = () => {
     },[])
 
     const NavElements = [
+        {id:1,name:"Login Attempts" ,link:"/login-attempts"},
         {id:2,name:"Home" ,link:"/"}
     ]
 
