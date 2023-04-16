@@ -144,8 +144,8 @@ exports.AchangeBalance = Joi.object({
     amount: Joi.number().positive().required()
 })
 exports.AupdateRole = Joi.object({
-    user_id: Joi.number().integer().positive().required(),
-    role: Joi.string().valid('user','admin')
+    chnage_user_id: Joi.number().integer().positive().required(),
+    chnge_role: Joi.string().valid('user','admin')
 })
 exports.AsendMail = Joi.object({
     reciever: Joi.string().email().required(),

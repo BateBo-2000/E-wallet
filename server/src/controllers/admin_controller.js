@@ -37,7 +37,7 @@ exports.deleteBalance = async (req, res)=>{
 // ROLE 
 exports.updateRole = async (req, res)=>{
     let admin = new Admin(req.body.user_id)
-    admin = await admin.updateUserRole(req.body.user_id, req.body.role)
+    admin = await admin.updateUserRole(req.body.chnage_user_id, req.body.chnge_role)
     res.json(admin).status(200)
 }
 // SEND MAIL

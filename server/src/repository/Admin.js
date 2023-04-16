@@ -13,7 +13,7 @@ class Admin{
             const [data, _] = await db.execute(sql)
             //write it down
             await this.wirteChanges("ADDED CURRENCY: this admin executed query:"+sql)
-            return data
+            return ({message: 'SUCCESS'})
         }catch(err){
             await this.wirteChanges("ADDED CURRENCY FAIL: this admin tried to add currency:"+currency_name)
             return err
@@ -65,7 +65,7 @@ class Admin{
             //let user know
             let user = new User()
             this.sendEmail(await user.getEmail(user_id),"Balance change", "your balance has been changed by admin to "+new_amount)
-            return data
+            return ({message: 'SUCCESS'})
         } catch (error) {
             return error
         }
@@ -77,12 +77,13 @@ class Admin{
             const [data, _] = await db.execute(sql)
             //write it down
             await this.wirteChanges("BALANCE DELETE: this admin executed query:"+sql)
-            return data
+            return ({message: 'SUCCESS'})
         } catch (error) {
             return error
         }
     }
     async updateUserRole(user_id, role){
+        console.log(user_id, role)
         try{
             /**
              * this is the way the admins get promoted demoted from other admins
@@ -91,7 +92,7 @@ class Admin{
             const [data, _] = await db.execute(sql)
             //write it down
             await this.wirteChanges("UPDATE USER ROLE: this admin executed query:"+sql)
-            return data
+            return ({message: 'SUCCESS'})
         } catch (error) {
             return error
         }
@@ -117,8 +118,8 @@ class Admin{
             }
 
             let sql = `Select * FROM ${table} WHERE ${condition};`
+            console.log(sql)
             const [data, _] = await db.execute(sql)
-            await this.wirteChanges("SELECT: this admin executed query:"+sql)
             return data
         } catch (error) {
             return error

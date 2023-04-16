@@ -26,6 +26,13 @@ import InputDataForm from './components/InputDataForm'
 import LoginAttempts from './components/LoginAttempts'
 import AdminMenu from './components/Admin_pages/AdminMenu'
 import AdminAuth from './utils/AdminAuth'
+import UpdateRole from './components/Admin_pages/UpdateRole'
+import UpdateBalance from './components/Admin_pages/UpdateBalance'
+import ManageUsers from './components/Admin_pages/ManageUsers'
+import Currency from './components/Admin_pages/Currency'
+import Custom from './components/Admin_pages/CustomQuery'
+import SendMail from './components/Admin_pages/SendMail'
+import AddCurrency from './components/Admin_pages/AddCurrency'
 
 function App() {
   
@@ -96,27 +103,31 @@ function App() {
                 <Route exact path='/'>
                   <RequireAuth><Home/></RequireAuth>
                 </Route>
+                
                 {/*Routes that need to be logged in and be admin*/}
                 <Route exact path='/admin-menu'>
                   <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
                 </Route>
                 <Route exact path='/update-role'>
-                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                  <RequireAuth><AdminAuth><UpdateRole/></AdminAuth></RequireAuth>
                 </Route>
                 <Route exact path='/update-balance'>
-                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                  <RequireAuth><AdminAuth><UpdateBalance/></AdminAuth></RequireAuth>
                 </Route>
                 <Route exact path='/manage-user'>
-                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                  <RequireAuth><AdminAuth><ManageUsers/></AdminAuth></RequireAuth>
                 </Route>
                 <Route exact path='/currency'>
-                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                  <RequireAuth><AdminAuth><Currency/></AdminAuth></RequireAuth>
                 </Route>
                 <Route exact path='/custom-query'>
-                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                  <RequireAuth><AdminAuth><Custom/></AdminAuth></RequireAuth>
                 </Route>
                 <Route exact path='/send-mail'>
-                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                  <RequireAuth><AdminAuth><SendMail/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/add-currency'>
+                  <RequireAuth><AdminAuth><AddCurrency/></AdminAuth></RequireAuth>
                 </Route>
 
 
