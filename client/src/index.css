@@ -676,3 +676,28 @@ text-align: center;
   display: flex;
   flex-direction: column;
 }
+
+/*Admin Menu*/
+.admin-menu .page-content{
+  max-width: 90vh;
+}
+.admin-menu .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Send Mail*/
+.send-mail .page-content{
+  max-width: 90vh;
+}
+.send-mail .box{
+  padding-bottom: 25px;
+  width: 100vh;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+}
+
