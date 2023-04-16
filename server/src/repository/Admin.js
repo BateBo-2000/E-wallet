@@ -62,9 +62,13 @@ class Admin{
             const [data, _] = await db.execute(sql)
             //write it down
             await this.wirteChanges("BALANCE CHANGE: this admin executed query:"+sql)
+            //get user_id
+            sql = 'SELECT user_id FROM balance where balance_id ='+balance_id
+            let user_id = await db.execute(sql)
+            user_id = user_id[0][0].user_id
             //let user know
             let user = new User()
-            this.sendEmail(await user.getEmail(user_id),"Balance change", `your balance ${balance_id} has been changed by admin to `+new_amount)
+            this.sendEmail(await user.getEmail(user_id),"Balance change", `Your balance No ${balance_id} has been changed by admin to `+new_amount)
             return ({message: 'SUCCESS'})
         } catch (error) {
             return error
