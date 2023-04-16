@@ -24,6 +24,8 @@ import { AuthProvider } from './utils/auth'
 import RequireAuth from './utils/RequireAuth'
 import InputDataForm from './components/InputDataForm'
 import LoginAttempts from './components/LoginAttempts'
+import AdminMenu from './components/Admin_pages/AdminMenu'
+import AdminAuth from './utils/AdminAuth'
 
 function App() {
   
@@ -34,6 +36,7 @@ function App() {
           <header className="App-header">
             <div className="content">
               <Switch>
+                {/*Routes that doesn't need to be logged in*/}
                 <Route exact path='/login'>
                   <LoginForm/>
                 </Route>
@@ -47,54 +50,75 @@ function App() {
                     <Terms/>
                 </Route>
 
-                <RequireAuth>
-                  <Route exact path='/withdraw'>
-                    <Withdraw/>
-                  </Route>
-                  <Route exact path='/login-attempts'>
-                    <LoginAttempts/>
-                  </Route>
-                  <Route exact path='/update'>
-                    <InputDataForm/>
-                  </Route>
-                  <Route exact path='/add-money'>
-                    <AddMoney/>
-                  </Route>
-                  <Route exact path='/make-transaction'>
-                    <MakeTrans/>
-                  </Route>
-                  <Route exact path='/create-balance'>
-                    <CreateBalance/>
-                  </Route>
-                  <Route exact path='/balance-history'>
-                    <BalanceHistory/>
-                  </Route>
-                  <Route exact path='/balance/:id'>
-                    <Balance/>
-                  </Route>
-                  <Route exact path='/account'>
-                    <Account/>
-                  </Route>
-                  <Route exact path='/converter'>
-                    <Converter/>
-                  </Route>
-                  <Route exact path='/exchange-rates'>
-                    <ExchangeRates/>
-                  </Route>
-                  <Route exact path='/reminders'>
-                    <Reminders/>
-                  </Route>
-                  <Route exact path='/create-reminder'>
-                    <CreateReminder/>
-                  </Route>
-                  <Route exact path='/stats'>
-                    <Stats/>
-                  </Route>
-                  <Route exact path='/'>
-                    <Home/>
-                  </Route>
-                </RequireAuth>
-                  
+                {/*Routes that need to be logged in*/}
+                <Route exact path='/withdraw'>
+                  <RequireAuth><Withdraw/></RequireAuth>
+                </Route>
+                <Route exact path='/login-attempts'>
+                  <RequireAuth><LoginAttempts/></RequireAuth>  
+                </Route>
+                <Route exact path='/update'>
+                  <RequireAuth><InputDataForm/></RequireAuth>
+                </Route>
+                <Route exact path='/add-money'>
+                  <RequireAuth><AddMoney/></RequireAuth>
+                </Route>
+                <Route exact path='/make-transaction'>
+                  <RequireAuth><MakeTrans/></RequireAuth>
+                </Route>
+                <Route exact path='/create-balance'>
+                  <RequireAuth><CreateBalance/></RequireAuth>
+                </Route>
+                <Route exact path='/balance-history'>
+                  <RequireAuth><BalanceHistory/></RequireAuth>
+                </Route>
+                <Route exact path='/balance/:id'>
+                  <RequireAuth><Balance/></RequireAuth>
+                </Route>
+                <Route exact path='/account'>
+                  <RequireAuth><Account/></RequireAuth>
+                </Route>
+                <Route exact path='/converter'>
+                  <RequireAuth><Converter/></RequireAuth>
+                </Route>
+                <Route exact path='/exchange-rates'>
+                  <RequireAuth><ExchangeRates/></RequireAuth>
+                </Route>
+                <Route exact path='/reminders'>
+                  <RequireAuth> <Reminders/></RequireAuth>
+                </Route>
+                <Route exact path='/create-reminder'>
+                  <RequireAuth><CreateReminder/></RequireAuth>
+                </Route>
+                <Route exact path='/stats'>
+                  <RequireAuth><Stats/></RequireAuth>
+                </Route>
+                <Route exact path='/'>
+                  <RequireAuth><Home/></RequireAuth>
+                </Route>
+                {/*Routes that need to be logged in and be admin*/}
+                <Route exact path='/admin-menu'>
+                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/update-role'>
+                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/update-balance'>
+                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/manage-user'>
+                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/currency'>
+                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/custom-query'>
+                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/send-mail'>
+                  <RequireAuth><AdminAuth><AdminMenu/></AdminAuth></RequireAuth>
+                </Route>
+
 
                 <Route path='*'>
                   <NavBar/>
