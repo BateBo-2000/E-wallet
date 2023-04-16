@@ -42,7 +42,7 @@ const AdminMenu = () => {
     }
 
     useEffect(()=>{
-        fetchChanges('admin_changes',1)
+        fetchChanges('admin_changes',"1 ORDER BY admin_changes_id DESC")
     },[])
 
     return (<div>
@@ -78,7 +78,7 @@ const AdminMenu = () => {
                                         <h2>Timestamp:</h2>
                                     </div>
                                     <div className="value">
-                                        <h2>{change.datetime_done.split('T')[0]} Time: {change.datetime_done.split('T')[1].split('.')[0]}</h2>
+                                        <h2>{change.datetime_done.split('T')[0]} Time: {change.datetime_done.split('T')[1].split('.')[0]} GMT</h2>
                                     </div>
                                 </div>
                             </div>
