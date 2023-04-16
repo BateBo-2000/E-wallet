@@ -33,6 +33,7 @@ import Currency from './components/Admin_pages/Currency'
 import Custom from './components/Admin_pages/CustomQuery'
 import SendMail from './components/Admin_pages/SendMail'
 import AddCurrency from './components/Admin_pages/AddCurrency'
+import EditBalance from './components/Admin_pages/EditBalance'
 
 function App() {
   
@@ -128,6 +129,9 @@ function App() {
                 </Route>
                 <Route exact path='/add-currency'>
                   <RequireAuth><AdminAuth><AddCurrency/></AdminAuth></RequireAuth>
+                </Route>
+                <Route exact path='/change-balance'>
+                  <RequireAuth><AdminAuth><EditBalance/></AdminAuth></RequireAuth>
                 </Route>
 
 

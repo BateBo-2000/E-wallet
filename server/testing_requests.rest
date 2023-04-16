@@ -404,7 +404,7 @@ DELETE  http://localhost:5000/admin/deleteUser?deleteUser_id=54
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjgxNjQwNzAyLCJleHAiOjE2ODE3MjcxMDJ9._DzI96gpqfXwe6VZPsp764sGMEOXNYDCC3cj5cFVqCE
 ###
 //change balance_id and user_id
-DELETE  http://localhost:5000/admin/deleteBalance?balance_id=55
+DELETE  http://localhost:5000/admin/deleteBalance?balance_id=33
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjgxNjQwNzAyLCJleHAiOjE2ODE3MjcxMDJ9._DzI96gpqfXwe6VZPsp764sGMEOXNYDCC3cj5cFVqCE
 
 
@@ -414,7 +414,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwic
 Content-Type: application/json
 
 {
-    "balance_id":45,
+    "balance_id":17,
     "amount":25556.05
 }
 

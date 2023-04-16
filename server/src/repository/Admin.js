@@ -77,7 +77,7 @@ class Admin{
     //used to delete balance of user
     async deleteBalance(balance_id){
         try{
-            let sql = `DELETE from paypal.balance WHERE balance = ${balance_id}`
+            let sql = `DELETE from paypal.balance WHERE balance_id = ${balance_id}`
             const [data, _] = await db.execute(sql)
             //write it down
             await this.wirteChanges("BALANCE DELETE: this admin executed query:"+sql)
