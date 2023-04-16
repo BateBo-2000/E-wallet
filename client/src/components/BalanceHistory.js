@@ -149,7 +149,7 @@ const BalanceHistory = () => {
                                             <h2>Date:</h2>
                                         </div>
                                         <div className="value">
-                                            <h2>{record.date_of_update.split('T')[0]+"  Time: "+record.date_of_update.split('T')[1].split('.')[0]}</h2>
+                                            <h2>{record.date_of_update.split('T')[0]+"  Time: "+record.date_of_update.split('T')[1].split('.')[0]} GMT</h2>
                                         </div>
                                     </div>
                                     <div className="data-pair">

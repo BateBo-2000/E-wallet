@@ -274,7 +274,7 @@ const Balance = () => {
                                             <h2>Date:</h2>
                                         </div>
                                         <div className="value">
-                                            <h2>{trans.date_done.split('T')[0]} Time: {trans.date_done.split('T')[1].split('.')[0]}</h2>
+                                            <h2>{trans.date_done.split('T')[0]} Time: {trans.date_done.split('T')[1].split('.')[0]} GMT</h2>
                                         </div>
                                     </div>
                                 </div>

@@ -382,7 +382,7 @@ Content-Type: application/json
 //ADMIN
 ###
 //have to set the table and teh condition for search
-GET http://localhost:5000/admin/getCustom?table=users&condition="user_id=4"
+GET http://localhost:5000/admin/getCustom?table=users&condition=user_id=35
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjgxNjQwNzAyLCJleHAiOjE2ODE3MjcxMDJ9._DzI96gpqfXwe6VZPsp764sGMEOXNYDCC3cj5cFVqCE
 
 ###
@@ -396,7 +396,7 @@ Content-Type: application/json
 }
 ###
 //change currency
-DELETE  http://localhost:5000/admin/deleteCurrency?currency_id=8
+DELETE  http://localhost:5000/admin/deleteCurrency?currency_id=2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjgxNjQwNzAyLCJleHAiOjE2ODE3MjcxMDJ9._DzI96gpqfXwe6VZPsp764sGMEOXNYDCC3cj5cFVqCE
 ###
 //change user_id

@@ -133,7 +133,7 @@ const Reminders = () => {
                                             <h2>Date:</h2>
                                         </div>
                                         <div className="value">
-                                            <h2>{reminder.remind_date}</h2>
+                                            <h2>{reminder.remind_date.split('T')[0]} Time: {reminder.remind_date.split('T')[1].split('.')[0]} GMT</h2>
                                         </div>
                                     </div>
                                     <div className="data-pair">

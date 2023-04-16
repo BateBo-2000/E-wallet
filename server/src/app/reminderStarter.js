@@ -48,7 +48,6 @@ exports.startScheduledJobs = async () => {
                 const now = new Date();
                 const date = new Date(reminder.remind_date);
                 if (date > now) {
-                    console.log('job added one time ')
                     //starts job if it is one time and the time hasn't passed
                     schedule.scheduleJob(jobName, time , async () => {
                         await emailer.sendMail(reminder.email, reminder.title, reminder.text);
@@ -58,7 +57,6 @@ exports.startScheduledJobs = async () => {
                     deleteReminderById(jobName)
                 }
             }else{
-                console.log('job added recurning')
                 //starts the job regardless if it is recurning
                 schedule.scheduleJob(jobName, time , async () => {
                     await emailer.sendMail(reminder.email, reminder.title, reminder.text);
