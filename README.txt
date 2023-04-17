@@ -2,7 +2,7 @@ E-wallet
 This is my thesis project.
 
 The project is an abstraction of a bank account where you can (like in steam) add money and use/withdraw them. 
-The money will be in other bank account (not owned by you) - stripe(for now). 
+The money will be in other bank account (not owned by you)
 
 It will include the following features:
 -login/sign-in service
