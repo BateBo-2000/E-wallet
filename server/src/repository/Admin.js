@@ -87,7 +87,6 @@ class Admin{
         }
     }
     async updateUserRole(user_id, role){
-        console.log(user_id, role)
         try{
             /**
              * this is the way the admins get promoted demoted from other admins
@@ -122,7 +121,6 @@ class Admin{
             }
 
             let sql = `Select * FROM ${table} WHERE ${condition};`
-            console.log(sql)
             const [data, _] = await db.execute(sql)
             return data
         } catch (error) {
