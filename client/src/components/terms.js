@@ -6,13 +6,10 @@ const Terms = () => {
         // set window title
         document.title = 'E-wallet terms of use'
     }, []);
-    const isLogged = false   //change if logged 
 
-    const NavElements = [{id:2,name:"Home" ,link:"/"},{id:1,name:"Back" ,link:"/account-info-form"}]
     return ( 
         <div>
-            {isLogged && <NavBar elements={[NavElements[0]]}/>}
-            {!isLogged && <NavBar elements={[NavElements[1]]}/>}
+            <NavBar></NavBar>
             <div className="terms">
                     <div className="page-content">
                         <div className="box">

@@ -48,7 +48,12 @@ const CreateBalance = () => {
             if(data?.message === "SUCCESS"){
                 history.push('/')
             }else{
-                setError(data ? data : 'Something went worng!')
+                if(data?.message) {
+                    setError(data.message)
+                }else{
+                    setError('Something went worng!')
+                }
+                
             }
         })
         .catch(err => {

@@ -51,7 +51,7 @@ const Custom = () => {
             <div className="page-content">
                 <div className="box">
                     <div className="title">
-                        <h2>Custom Query</h2>
+                        <h2>Custom Select</h2>
                     </div>
                     <div className="input-wrap">
                         <form className="form">

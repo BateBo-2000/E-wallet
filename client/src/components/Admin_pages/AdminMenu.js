@@ -15,7 +15,7 @@ const AdminMenu = () => {
         {id:3,name:"Update Balance" ,link:"/update-balance" },
         {id:4,name:"Manage User" ,link:"/manage-user"}, 
         {id:5,name:"Currency" ,link:"/currency"}, 
-        {id:6,name:"Custom Query" ,link:"/custom-query"}, 
+        {id:6,name:"Custom Select" ,link:"/custom-query"}, 
         {id:7,name:"Home" ,link:"/" },
     ]
 

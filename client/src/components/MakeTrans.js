@@ -51,8 +51,11 @@ const MakeTrans = () => {
                 //if the payment is successfull
                 history.push({ pathname: `/balance/id=${balance.balance_id}`, state:  {balance}})
             }else{
-                
-                setError(data? data: 'Something went worng!')
+                if(data?.message) {
+                    setError(data.message)
+                }else{
+                    setError('Something went worng!')
+                }
             }
         })
         .catch(err => setError(err?.message ? err?.meassge : "Something went wrong"))

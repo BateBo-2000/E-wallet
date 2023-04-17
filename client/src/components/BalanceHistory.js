@@ -84,13 +84,9 @@ const BalanceHistory = () => {
         if(startDate.length > 1 && endDate.length > 1){
             //searches by date
             fetchBalanceHistoryByDate(balance.balance_id, startDate, endDate)
-            console.log('first')
-            console.log(balanceHistory)
         }else{
             //searches all
             fetchBalanceHistoryLast50(balance.balance_id)
-            console.log('second')
-            console.log(balanceHistory)
         }
     },[startDate, endDate])
     /* eslint-enable */
