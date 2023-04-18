@@ -77,7 +77,7 @@ const MakeTrans = () => {
                         <div className="input-wrap">
                             <form className="form">
                                 <div className="form-pair">
-                                    <label>Reciever ID</label>
+                                    <label>Receiver ID</label>
                                     <input type="Number" value={recieverID} onChange={(e)=>setRecieverID(e.target.value)}/>
                                 </div>
                                 <div className="form-pair">

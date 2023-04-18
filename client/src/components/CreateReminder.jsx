@@ -45,7 +45,11 @@ const CreateReminder = () => {
             if(data?.message === "SUCCESS"){
                 history.push('/reminders')
             }else{
-                setError(data ? data : 'Something went worng!')
+                if(data?.message){
+                    setError(data.message)
+                }else{
+                    setError(data ? data : 'Something went worng!')
+                }
             }
         })
         .catch(err => {
@@ -81,7 +85,12 @@ const CreateReminder = () => {
             if(data?.message === "SUCCESS"){
                 history.push('/reminders')
             }else{
-                setError(data ? data : 'Something went worng!')
+                if(data?.message){
+                    setError(data.message)
+                }else{
+                    setError(data ? data : 'Something went worng!')
+                }
+                
             }
         })
         .catch(err => {
@@ -140,7 +149,7 @@ const CreateReminder = () => {
                                 </div>
                                 <div className="data-pair">
                                     <div className="name">
-                                        <h2>Recurrance:</h2>
+                                        <h2>Recurrence:</h2>
                                     </div>
                                     <div className="value">
                                         <select className="selector-mini" name="graph" id="graph-select" select value={cron} onChange={(e)=>setCron(e.target.value)}>

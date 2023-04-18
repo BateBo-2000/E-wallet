@@ -194,7 +194,7 @@ const Balance = () => {
                                 <select className="selector" name="graph" id="graph-select" select value={selectValue} onChange={handleChange}>
                                     <option value="Last50">Last 50 transactions</option>
                                     <option value="byDate">Search By Date</option>
-                                    <option value="byReciever">Search By Reciever</option>
+                                    <option value="byReciever">Search By Receiver</option>
                                     <option value="byMoney">Search By Money</option>
                                 </select>
                             </div>
@@ -228,7 +228,7 @@ const Balance = () => {
                             {selectValue === "byReciever" && 
                                 <div className="param">
                                     <div className="form-pair">
-                                        <label>Reciever balance id</label>
+                                        <label>Receiver balance id</label>
                                         <input type="number" className="selector-mini" value={recieverId} onChange={(e)=>setRecieverId(e.target.value)}/>
                                     </div>
                                 </div>
@@ -247,7 +247,7 @@ const Balance = () => {
                                     </div>
                                     <div className="data-pair">
                                         <div className="name">
-                                            <h2>Reciever id</h2>
+                                            <h2>Receiver id</h2>
                                         </div>
                                         <div className="value">
                                             <h2>{trans.reciever_id}</h2>
@@ -255,7 +255,7 @@ const Balance = () => {
                                     </div>
                                     <div className="data-pair">
                                         <div className="name">
-                                            <h2>Reciever's balance id</h2>
+                                            <h2>Receiver's balance id</h2>
                                         </div>
                                         <div className="value">
                                             <h2>{trans.reciever_balance_id}</h2>

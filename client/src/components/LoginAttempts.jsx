@@ -43,14 +43,14 @@ const LoginAttempts = () => {
                         <h2>Login Attempts</h2>
                     </div>
                     <div className="error">
-                        <h2>If you find any unusual logins, please change your password immediately!</h2>
+                        <h2>If you find any unusual logins, please contact us immediately!</h2>
                     </div>
                     {attempts && attempts.map((attempt) => (
                         <div className="tran" key={attempt.account_logins_id}>
                             <div className="content-box">
                                 <div className="data-pair">
                                     <div className="name">
-                                        <h2>Status</h2>
+                                        <h2>Status:</h2>
                                     </div>
                                     <div className="value">
                                         <h2>{attempt.login_try}</h2>

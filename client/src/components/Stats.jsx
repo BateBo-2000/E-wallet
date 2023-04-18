@@ -127,7 +127,7 @@ const Stats = () => {
         if(data){
             const formattedData = data?.map(({amount, reciever}) => ({
                 amount: +amount,
-                reciever: 'Reciever '+reciever,
+                reciever: 'Receiver '+reciever,
             })) 
             return (
             <PieChart width={800} height={400}>
@@ -212,8 +212,8 @@ const Stats = () => {
                         <div className="options">
                             <select className="selector" name="graph" id="graph-select" value={selectValue} onChange={(e) => setSelectValue(e.target.value)}>
                                 <option value="spendingByDate">Spending By Date</option>
-                                <option value="spendingByReciever">Spending With Reciever</option>
-                                <option value="count">Count by reciever</option>
+                                <option value="spendingByReciever">Spending With Receiver</option>
+                                <option value="count">Count By Receiver</option>
                             </select>
                         </div>
                         <div className="param">

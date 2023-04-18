@@ -55,6 +55,7 @@ const SendMail = () => {
     }
 
     const handleSubmit = () => {
+        setError(null)
         fetchSendMail(reciever, title, text)  
     }
 
@@ -70,7 +71,7 @@ const SendMail = () => {
                         <div className="input-wrap">
                             <form className="form">
                                 <div className="form-pair">
-                                    <label>Reciever</label>
+                                    <label>Receiver</label>
                                     <input type="text"  value={reciever} required onChange={(e)=> {setReciever(e.target.value)}} />
                                 </div>
                             </form>

@@ -19,7 +19,7 @@ class Transaction{
         return transaction
     }
     async getAll(){
-        let sql = `SELECT * from paypal.transcur where user_id = ${this.user_id} LIMIT 50`
+        let sql = `SELECT * FROM paypal.transcur WHERE user_id = ${this.user_id} ORDER BY trans_id DESC LIMIT 50;`
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
@@ -38,12 +38,6 @@ class Transaction{
         const [transaction, _] = await db.execute(sql)
         return transaction
     }
-    // async serachByPlace(reciever_id){ 
-    //     //when you put a reciever_id it return all transactions assosiated with it
-    //     let sql = `SELECT amount,currency_name, date_done from paypal.transcur WHERE reciever_id = ${reciever_id} AND user_id = ${this.user_id}; `
-    //     const data = await db.execute(sql)
-    //     return data[0]
-    // }
     async searchByBalance(balance_id){
         let sql = `Select * from paypal.transcur WHERE user_id = ${this.user_id} and sender_balance_id = ${balance_id}`
         const [transaction, _] = await db.execute(sql)

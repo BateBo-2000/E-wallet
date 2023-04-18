@@ -138,7 +138,7 @@ const Reminders = () => {
                                     </div>
                                     <div className="data-pair">
                                         <div className="name">
-                                            <h2>Recurrance:</h2>
+                                            <h2>Recurrence:</h2>
                                         </div>
                                         <div className="value">
                                             <h2>{cronConv(reminder.remind_interval)}</h2>

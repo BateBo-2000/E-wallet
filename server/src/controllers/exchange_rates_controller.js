@@ -76,8 +76,12 @@ exports.getCustomTimeseries = async (req, res)=>{          /*return the currency
     res.json(data).status(200)
 }
 exports.converter = async (req, res)=>{    
-
-    let {date, fromCurrency, toCurrency, amount} = req.body
-    let data = await convert(fromCurrency,toCurrency,amount,date,process.env.APILAYER_KEY)
-    res.json(data).status(200)
+    try {
+        let {date, fromCurrency, toCurrency, amount} = req.body
+        let data = await convert(fromCurrency,toCurrency,amount,date,process.env.APILAYER_KEY)
+        res.json(data).status(200)
+    } catch (error) {
+        res.json({message:'Something went wrong!'}).status(400)
+    }
+    
 }
