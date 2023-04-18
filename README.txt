@@ -2,20 +2,19 @@ E-wallet
 This is my thesis project.
 
 The project is an abstraction of a bank account where you can (like in steam) add money and use/withdraw them. 
-The money will be in other bank account (not owned by you) - stripe(for now). 
+The money will be in other bank account (not owned by you)
 
 It will include the following features:
 -login/sign-in service
 -administrator and user role system
 -main menu with the user's balance, including buttons for other pages
--my account window with all the information about the user and options for changing it 
+-'my account' window with all the information about the user and options for changing it 
 -currency tracker 
--a way to pay and receive payments with history - stripe
+-a way to pay and receive payments with history
 -statistics represented by tables and charts
--calendar with payment reminders
--budget manager made with carts and diagrams
+-reminders
 
-I am planning to use 3 layer architecture:
+The project is made with the following technologies:
 -database - MySQL workbench
 -backend - JS, npm, express.js
 -frontend - html/css, JS, React
