@@ -15,7 +15,7 @@ const Converter = () => {
     const [date, setDate] = useState('')
     const [ans, setAns] = useState('')
 
-    const fetchMakeTransaction = (fromCurrency, toCurrency, amount, date) => {
+    const fetchConvert = (fromCurrency, toCurrency, amount, date) => {
         fetch(`${process.env.REACT_APP_BASE_URL}/exchange-rates/converter`, {
             method: 'POST',
             headers: {
@@ -52,7 +52,7 @@ const Converter = () => {
         
         //adding the oprion to not set date
         if(date.length > 1) {  
-            fetchMakeTransaction(C1,C2,amount, date)
+            fetchConvert(C1,C2,amount, date)
             
         }else{  
             //if date isnt set youll just need to double click

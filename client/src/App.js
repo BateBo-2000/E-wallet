@@ -5,7 +5,6 @@ import NotFound from './components/NotFound'
 import Home from './components/Home'
 import LoginForm from './components/LoginForm'
 import SignInForm from './components/SignInForm'
-import NavBar from './components/NavBar'
 import Account from './components/Account'
 import ExchangeRates from './components/Exchange-rates'
 import Reminders from './components/Reminders'
@@ -136,7 +135,6 @@ function App() {
 
 
                 <Route path='*'>
-                  <NavBar/>
                   <NotFound/>
                 </Route>
               </Switch>

@@ -1,6 +1,5 @@
 const db = require('../app/connectionPool')
 const Emailer = require('./Emailer')
-const Balance_history = require('./BalanceHistory')
 const User = require('./User')
 class Admin{
     constructor(admin_id){

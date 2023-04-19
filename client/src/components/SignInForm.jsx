@@ -25,7 +25,6 @@ const SignInForm = () => {
         if(user.length<4 || user.length>40) return setError('Username must be 4 to 40 symbols')
         if(pass.length<4 || pass.length>40) return setError('Password must be 4 to 40 symbols')
 
-        // check if the username already exists
         sessionStorage.setItem('username',user)
         sessionStorage.setItem('password',pass)
 
