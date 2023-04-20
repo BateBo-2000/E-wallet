@@ -78,7 +78,6 @@ async function convert(fromCurrency, toCurrency, amount, date, apikey){
 
 //exporting
 module.exports = {
-  getLatest,
   getInTime,
   dateFormater,
   convert
