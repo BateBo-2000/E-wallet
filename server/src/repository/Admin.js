@@ -19,19 +19,6 @@ class Admin{
         }
         
     }
-    //used for removing supported currency
-    async deleteCurrency(currency_id){
-
-        try {
-            let sql = `DELETE from paypal.currency WHERE currency_id= ${currency_id}`
-            const [data, _] = await db.execute(sql)
-            //write it down
-            await this.wirteChanges("DELETED CURRENCY: this admin executed query:"+sql)
-            return data
-        } catch (error) {
-            return error
-        }
-    }
     //delete user by id
     async deleteUser(user_id){
         try{

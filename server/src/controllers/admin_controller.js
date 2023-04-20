@@ -12,11 +12,6 @@ exports.addCurrency = async (req, res)=>{
     admin = await admin.addCurrency(req.body.currency_id,req.body.currency_name)
     res.json(admin).status(200)
 }
-exports.deleteCurrency = async (req, res)=>{
-    let admin = new Admin(req.body.user_id)
-    admin = await admin.deleteCurrency(req.query.currency_id)
-    res.json(admin).status(200)
-}
 // USER
 exports.deleteUser = async (req, res)=>{
     let admin = new Admin(req.body.user_id)

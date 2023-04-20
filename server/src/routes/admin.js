@@ -14,7 +14,6 @@ routerAdmin.use(function stamp(req,res,next){
 routerAdmin
 .get('/getCustom', AgetCustom, authenticate, admin_auth,admin.get)
 .post('/addCurrency', AaddCurrency, authenticate, admin_auth,admin.addCurrency)
-.delete('/deleteCurrency', AdeleteCurrency, authenticate, admin_auth,admin.deleteCurrency)
 .delete('/deleteUser', AdeleteUser, authenticate, admin_auth,admin.deleteUser)
 .delete('/deleteBalance', AdeleteBalance, authenticate, admin_auth,admin.deleteBalance)
 .patch('/changeBalance', AchangeBalance, authenticate, admin_auth,admin.changeBalance)
