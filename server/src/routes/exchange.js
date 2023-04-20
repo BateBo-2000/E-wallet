@@ -18,4 +18,3 @@ routerExchange
 .post('/converter', exchangeRatesConverter ,authenticate, exchage_con.converter)
 
 module.exports = routerExchange;
-//should i make a request for every currency .?.
