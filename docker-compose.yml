@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   database: 
-    image: database
+    image: boyansinilkov/database:latest
     volumes:  
       - data:/var/lib/data
     environment:
@@ -11,7 +11,7 @@ services:
       MYSQL_DATABASE: paypal
 
   server:
-    image: server
+    image: boyansinilkov/server:latest
     ports:
       - 5000:5000
     working_dir: /server
@@ -38,7 +38,7 @@ services:
       - database
 
   client: 
-    image: client
+    image: boyansinilkov/client:latest
     ports:
       - 3000:3000
     working_dir: /client
