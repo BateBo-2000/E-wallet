@@ -1,0 +1,50 @@
+version: "3.7"
+
+services:
+  database: 
+    image: database
+    volumes:  
+      - data:/var/lib/data
+    environment:
+      MYSQL_ROOT_PASSWORD:
+        # password for the datanase
+      MYSQL_DATABASE: paypal
+
+  server:
+    image: server
+    ports:
+      - 5000:5000
+    working_dir: /server
+    environment:
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: 
+        #fill in the password mentioned earlier
+      DATABASE: paypal
+      HOST: database
+      ACCESS_TOKEN_SECRET: 
+        # generate JWT secret and put it here (one string)
+      APILAYER_KEY: 
+        #go to https://apilayer.com/ and fill in with your key
+      PORT: 5000
+      SALT_ROUNDS: 10
+        # 10 should be good enough
+      EMAIL_PLATFORM: 
+        # gmail is recomended
+      EMAIL_USERNAME: 
+        # here enter your gmail address
+      EMAIL_APP_PASSWORD: 
+        # here add your gmail api key (you should make one for the email you want the app to be using to send messages from)
+    depends_on:
+      - database
+
+  client: 
+    image: client
+    ports:
+      - 3000:3000
+    working_dir: /client
+    environment:
+      REACT_APP_BASE_URL: "http://localhost:5000" 
+        # might be changed in production
+
+volumes:
+  data:
